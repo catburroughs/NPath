@@ -1,10 +1,12 @@
-import captouch
+from captouch import NPath
 import pygame
 
-npath = captouch.NPath()
+npath = NPath()
 
 npath.set_volume
 npath.make_soundlist
 npath.print_volume
 npath.print_soundlist
-#npath.play_board
+
+while True:
+    npath.play_board

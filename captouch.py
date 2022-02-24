@@ -44,8 +44,7 @@ class NPath:
         print(self.volume)
         
     def play_board(self):
-        while True:
-            for i in range(len(self.soundlist)):
+        for i in range(len(self.soundlist)):
                 if self.mpr121[i].value:
                     self.soundlist[i].play()
                     print("Input {} touched!".format(i))
