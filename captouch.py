@@ -9,7 +9,6 @@ class NPath:
         i2c = busio.I2C(board.SCL, board.SDA)
         mpr121 = adafruit_mpr121.MPR121(i2c)
         self.mpr121 = mpr121
-        self.soundlist
         pygame.init()
 
 
@@ -34,17 +33,20 @@ class NPath:
 
     def set_volume(self, vol=.65):
         self.volume = vol
-        for x in self.soundlist:
-            x.set_volume(vol)
+        
             
     def get_volume(self):
         return self.volume
     
     def print_volume(self):
-        print(self.volume)
+        print("Here")
+        print(self.get_volume())
         
     def play_board(self):
-        for i in range(len(self.soundlist)):
+        for x in self.soundlist:
+            x.set_volume(self.volume)
+        while True:
+            for i in range(len(self.soundlist)):
                 if self.mpr121[i].value:
                     self.soundlist[i].play()
                     print("Input {} touched!".format(i))
