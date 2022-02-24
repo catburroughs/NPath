@@ -24,6 +24,9 @@ tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
 
 soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
 
+for x in soundList:
+    x.set_volume(.65)
+
 
 while True:
     for i in range(len(soundList)):
