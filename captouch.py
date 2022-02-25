@@ -3,6 +3,8 @@ import board
 import busio
 import adafruit_mpr121
 import pygame
+import samples
+import os
 
 class NPath: 
     def __init__(self):
@@ -10,6 +12,15 @@ class NPath:
         mpr121 = adafruit_mpr121.MPR121(i2c)
         self.mpr121 = mpr121
         pygame.init()
+        
+    def set_soundlist(self):
+        setsoundlist = []
+        for soundfiles in os.listdir('samples'):
+            if soundfiles.endswith('.wav'):
+                setsoundlist.append(soundfiles)
+        for x in range(len(setsoundlist)):
+            x = pygame.mixer.Sound(x)
+        return setsoundlist
 
 
     def make_soundlist(self):
@@ -29,12 +40,12 @@ class NPath:
         self.soundlist = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
  
     def print_soundlist(self):
-        print(self.soundlist)
+        for x in self.soundlist:
+            print(str(x))
 
     def set_volume(self, vol=.65):
         self.volume = vol
-        
-            
+                  
     def get_volume(self):
         return self.volume
     
@@ -43,6 +54,7 @@ class NPath:
         print(self.get_volume())
         
     def play_board(self):
+        self.soundlist = self.setsoundlist()
         for x in self.soundlist:
             x.set_volume(self.volume)
         while True:
