@@ -1,16 +1,16 @@
 import time
-import board
-import busio
-import adafruit_mpr121
+#import board
+#import busio
+#import adafruit_mpr121
 import pygame
 import samples
 import os
 
 class NPath: 
     def __init__(self):
-        i2c = busio.I2C(board.SCL, board.SDA)
-        mpr121 = adafruit_mpr121.MPR121(i2c)
-        self.mpr121 = mpr121
+        #i2c = busio.I2C(board.SCL, board.SDA)
+        #mpr121 = adafruit_mpr121.MPR121(i2c)
+        #self.mpr121 = mpr121
         pygame.init()
         
     def set_soundlist(self):
