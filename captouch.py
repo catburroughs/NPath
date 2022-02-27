@@ -13,6 +13,16 @@ class NPath:
         #self.mpr121 = mpr121
         pygame.init()
         
+    def set_mode(self, mode=1):
+        self.mode = mode
+     
+        
+    def get_mode(self):
+        if self.mode == 1:
+            return("Default mode is on.")
+        else:
+            return("Upload files to create new mode.")
+        
     def set_soundlist(self):
         setsoundlist = []
         for soundfile in os.listdir('samples'):
