@@ -8,7 +8,7 @@ class Volume(FlaskForm):
     submit = SubmitField('Submit')
 
 class FileUpload(FlaskForm):
-    soundfiles = MultipleFileField('filename', validators=[FileRequired(), FileAllowed(['wav'])])
+    soundfiles = MultipleFileField('filename', validators=[FileRequired()])
     upload = SubmitField('Upload')
     
 class LandingPage(FlaskForm):

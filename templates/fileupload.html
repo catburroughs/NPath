@@ -3,10 +3,20 @@
 <head>
 <title>Upload</title>
 </head>
-<form action="{{ url_for('upload') }}" form method="post" enctype="multipart/form-data">
+<form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
     {{ form.csrf_token }}
     <dl>
         {{render_field(form.soundfiles)}}
         {{render_field(form.upload)}}
     </dl>
-    </form>
+</form>
+
+{%- if files %}
+  <h2>Files</h2>
+ 
+  <ul>
+  {%- for code, file in files.items() %}
+      <li><a href="/download/{{ code }}">{{ file }}</a></li>
+  {% endfor %}
+  </ul>
+{% endif %}

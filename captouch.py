@@ -23,11 +23,11 @@ class NPath:
         else:
             return("Upload files to create new mode.")
         
-    def set_soundlist(self):
+    def set_soundlist(self, folder = 'samples'):
         setsoundlist = []
-        for soundfile in os.listdir('samples'):
+        for soundfile in os.listdir(folder):
             if soundfile.endswith('.wav'):
-                setsoundlist.append(pygame.mixer.Sound('samples/' + str(soundfile)))
+                setsoundlist.append(pygame.mixer.Sound(folder + '/' + str(soundfile)))
             else:
                 print("Music files must be .wav")
                 break
