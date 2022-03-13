@@ -1,23 +1,33 @@
 import time
-import board
-import busio
-import adafruit_mpr121
+#import board
+#import busio
+#import adafruit_mpr121
 import pygame
 import samples
 import os
 
 class NPath: 
     def __init__(self):
-        i2c = busio.I2C(board.SCL, board.SDA)
-        mpr121 = adafruit_mpr121.MPR121(i2c)
-        self.mpr121 = mpr121
+        #i2c = busio.I2C(board.SCL, board.SDA)
+        #mpr121 = adafruit_mpr121.MPR121(i2c)
+        #self.mpr121 = mpr121
         pygame.init()
         
-    def set_soundlist(self):
+    def set_mode(self, mode=1):
+        self.mode = mode
+     
+        
+    def get_mode(self):
+        if self.mode == 1:
+            return("Default mode is on.")
+        else:
+            return("Upload files to create new mode.")
+        
+    def set_soundlist(self, folder = 'samples'):
         setsoundlist = []
-        for soundfile in os.listdir('samples'):
+        for soundfile in os.listdir(folder):
             if soundfile.endswith('.wav'):
-                setsoundlist.append(pygame.mixer.Sound('samples/' + str(soundfile)))
+                setsoundlist.append(pygame.mixer.Sound(folder + '/' + str(soundfile)))
             else:
                 print("Music files must be .wav")
                 break

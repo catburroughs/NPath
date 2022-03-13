@@ -1,0 +1,18 @@
+{% from "_formhelpers.html" import render_field %}
+
+<head>
+    <title>Volume</title>
+    </head>
+<form action="{{ url_for('volume') }}"  method = "POST">
+    {{ form.csrf_token }}
+    <dl>
+        {{render_field(form.set_volume)}}
+        {{render_field(form.submit)}}
+    </dl>
+</form>
+
+
+
+
+
+
