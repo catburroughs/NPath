@@ -3,8 +3,19 @@ import sys
 import board
 import busio
 import pygame
+import os
+import json
 import Adafruit_MPR121.MPR121 as MPR121
 
+def set_soundlist(folder = 'files'):
+    setsoundlist = []
+    for soundfile in os.listdir(folder):
+        #if soundfile.endswith('.wav'):
+        setsoundlist.append(pygame.mixer.Sound(folder + '/' + str(soundfile)))
+        ##else:
+            #print("Music files must be .wav")
+            #break
+    return setsoundlist
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
@@ -36,10 +47,10 @@ hihat = pygame.mixer.Sound('samples/3 hihat-digital.wav')
 snare2 = pygame.mixer.Sound('samples/3 snare-electro.wav')
 tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
 
-soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
-
-for x in soundList:
-    x.set_volume(.65)
+#soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
+soundList = set_soundlist()
+#for x in soundList:
+#    x.set_volume(.65)
 
 
 #while True:
@@ -71,3 +82,6 @@ while True:
     time.sleep(0.1)
 
 #print("Hello World")
+
+
+
