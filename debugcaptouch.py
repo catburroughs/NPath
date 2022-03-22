@@ -8,7 +8,7 @@ import json
 import Adafruit_MPR121.MPR121 as MPR121
 
 
-def _get_files():
+def get_files():
     path = os.getcwd()
     file_list = os.path.join(path, 'files.json')
     if os.path.exists(file_list):
@@ -16,8 +16,8 @@ def _get_files():
             return json.load(fh)
     return {}
 
-def set_soundlist(folder = 'files'):
-    files = _get_files
+def set_soundlist():
+    files = get_files()
     creatorsoundlist = []
     for x in files:
         creatorsoundlist.append(pygame.mixer.Sound("files/" + str(x)))
