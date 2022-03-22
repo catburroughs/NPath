@@ -34,23 +34,23 @@ pygame.init()
 #cap.begin()
 cap.set_thresholds(6, 6)
 
-clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
-hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
-shaker = pygame.mixer.Sound('samples/1 shaker-analog.wav')
-snare1 = pygame.mixer.Sound('samples/1 snare-acoustic01.wav')
-tom1 = pygame.mixer.Sound('samples/1 tom-808.wav')
-clap2 = pygame.mixer.Sound('samples/2 clap-808.wav')
-cow = pygame.mixer.Sound('samples/2 cowbell-808.wav')
-openhat = pygame.mixer.Sound('samples/2 openhat-slick.wav')
-crash = pygame.mixer.Sound('samples/3 crash-noise.wav')
-hihat = pygame.mixer.Sound('samples/3 hihat-digital.wav')
-snare2 = pygame.mixer.Sound('samples/3 snare-electro.wav')
-tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
+# clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
+# hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
+# shaker = pygame.mixer.Sound('samples/1 shaker-analog.wav')
+# snare1 = pygame.mixer.Sound('samples/1 snare-acoustic01.wav')
+# tom1 = pygame.mixer.Sound('samples/1 tom-808.wav')
+# clap2 = pygame.mixer.Sound('samples/2 clap-808.wav')
+# cow = pygame.mixer.Sound('samples/2 cowbell-808.wav')
+# openhat = pygame.mixer.Sound('samples/2 openhat-slick.wav')
+# crash = pygame.mixer.Sound('samples/3 crash-noise.wav')
+# hihat = pygame.mixer.Sound('samples/3 hihat-digital.wav')
+# snare2 = pygame.mixer.Sound('samples/3 snare-electro.wav')
+# tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
 
 #soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
 soundList = set_soundlist()
-#for x in soundList:
-#    x.set_volume(.65)
+for x in soundList:
+    x.set_volume(1)
 
 
 #while True:
