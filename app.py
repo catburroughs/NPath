@@ -18,7 +18,7 @@ npath.set_mode()
 sList = npath.set_soundlist()
 #npath.print_soundlist()
 #npath.print_volume()
-#npath.play_board(sList)
+#npath.play_board()
 #volume = npath.get_volume()
 csrf = CSRFProtect()
 app=Flask(__name__)
@@ -72,7 +72,7 @@ def volume():
     print("volume is",form.set_volume.data)
     new_volume = form.set_volume.data
     if form.validate_on_submit():
-        volume = npath.set_volume(new_volume)
+        npath.set_volume(new_volume)
         return redirect('/')
     return render_template('volume.html',form=form)
 
