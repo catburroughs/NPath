@@ -1,0 +1,27 @@
+{% from "_formhelpers.html" import render_field %}
+
+
+<!DOCTYPE html>
+   <head>
+      <title>{{ title }}</title>
+      <link rel="stylesheet" href="../static/style.css/">
+   </head>
+   <body>
+    {%- if files %}
+
+    <h2>Files</h2>
+    <form method="post" action="/">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  </form>
+    <ul>
+    {%- for code, file in files.items() %}
+        <li><a href="/download/{{ code }}">{{ file }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+   </body>
+</html>
+
+   
+
+</form>

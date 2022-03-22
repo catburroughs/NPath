@@ -16,3 +16,4 @@ class LandingPage(FlaskForm):
     submit = SubmitField('Submit')
     
     
+    

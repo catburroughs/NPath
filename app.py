@@ -6,7 +6,9 @@ import all_forms
 from flask import Flask, render_template, Response, request, redirect, url_for, flash, send_file, abort
 from werkzeug.utils import secure_filename
 import os
-from flask_wtf.csrf import CsrfProtect
+from flask_wtf.csrf import CSRFProtect
+import json
+
 
 npath = NPath()
 
@@ -18,7 +20,7 @@ sList = npath.set_soundlist()
 #npath.print_volume()
 #npath.play_board(sList)
 #volume = npath.get_volume()
-csrf = CsrfProtect()
+csrf = CSRFProtect()
 app=Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -55,7 +57,15 @@ def index():
             return redirect('/volume')
     return render_template('index.html', form=form1, **templateData)
     
-
+@app.route('/assigntouchpads', methods=['POST', 'GET'])
+def assigntouchpads():
+    files = _get_files()
+    npath.creator_soundlist(files)
+    #currentSounds = npath.get_soundlist()
+    return render_template('assigntouchpads.html', files=files)
+    #return redirect(url_for('assigntouchpads.html'))
+    
+    
 @app.route('/volume', methods = ['POST', 'GET'])
 def volume():
     form = all_forms.Volume()
@@ -129,7 +139,6 @@ def _show_page():
     #soundform = all_forms.FileUpload()
     files = _get_files()
     return render_template('upload.html', files=files)
-
 
 
 
