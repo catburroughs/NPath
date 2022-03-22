@@ -21,7 +21,7 @@ if not cap.begin():
 
 pygame.init()
 #cap.begin()
-cap.set_thresholds(6, 6)
+cap.set_thresholds(6, 4)
 
 clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
 hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
@@ -39,7 +39,7 @@ tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
 soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
 
 for x in soundList:
-    x.set_volume(.65)
+    x.set_volume(1)
 
 
 #while True:
