@@ -6,7 +6,8 @@ import pygame
 import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
-
+import files
+pygame.init()
 
 def get_files():
     path = os.getcwd()
@@ -16,12 +17,19 @@ def get_files():
             return json.load(fh)
     return {}
 
-def set_soundlist():
+def creator_soundlist():
     files = get_files()
     creatorsoundlist = []
     for x in files:
         creatorsoundlist.append(pygame.mixer.Sound("files/" + str(x)))
     return creatorsoundlist
+
+def set_soundlist():
+	setsoundlist = []
+	for soundfile in os.listdir('files'):
+		if soundfile.endswith('.wav'):
+			setsoundlist.append(pygame.mixer.Sound("files/" + str(soundfile)))
+	return setsoundlist
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
@@ -36,7 +44,7 @@ if not cap.begin():
 #i2c = busio.I2C(board.SCL, board.SDA)
 
 
-pygame.init()
+#pygame.init()
 #cap.begin()
 cap.set_thresholds(6, 4)
 
@@ -55,10 +63,13 @@ cap.set_thresholds(6, 4)
 
 #soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
 soundList = set_soundlist()
+soundList2 = creator_soundlist()
+
 for x in soundList:
-    x.set_volume(1)
+    x.set_volume(.65)
 
-
+print("Soundlist length is ", len(soundList))
+print("Creator soundlist length is ", len(soundList2))
 #while True:
  #   for i in range(len(soundList)):
 #        if cap[i].value:
