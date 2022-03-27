@@ -1,20 +1,21 @@
-from Back_End.captouch import NPath
+from captouch import NPath
 import json
 import uuid
 import pygame
-import Back_End.all_forms as all_forms
+import all_forms as all_forms
 from flask import Flask, render_template, Response, request, redirect, url_for, flash, send_file, abort
 from werkzeug.utils import secure_filename
 import os
 from flask_wtf.csrf import CSRFProtect
 import json
+import templates
 
 
 npath = NPath()
 
 npath.set_volume()
 npath.set_mode()
-npath.set_soundlist()
+#npath.set_soundlist()
 #npath.play_board()
 csrf = CSRFProtect()
 app=Flask(__name__)
@@ -46,7 +47,7 @@ def index():
         npath.set_mode(int(modechoice))
         mode = npath.get_mode()
         print("the mode is",mode)
-        if mode != ("NPath mode is on.") or ("Nature mode is on."):
+        if mode != ("NPath Sounds mode is on.") and mode != ("Nature Sounds mode is on."):
             return redirect('/upload')
         else:
             return redirect('/volume')
@@ -55,7 +56,7 @@ def index():
 @app.route('/assigntouchpads', methods=['POST', 'GET'])
 def assigntouchpads():
     files = _get_files()
-    npath.creator_soundlist(files)
+    #npath.creator_soundlist(files)
     return render_template('assigntouchpads.html', files=files)
     
     

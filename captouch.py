@@ -1,21 +1,23 @@
 import time
+import sys
 import pygame
 import Nature_Sounds
 import NPath_Sounds
 import Creator_Sounds
 import os
 import json
-#import playboard
+#from Back_End.playboard import playBoard
 
 class NPath: 
     def __init__(self):
+        pygame.init()
         self.modeDict = {1:"NPath_Sounds",2:"Nature_Sounds",3:"Creator_Sounds"}
         self.set_mode()
-        self.pygame.mixer.set_volume()
+        self.set_volume()
         self.soundList = self.set_soundlist()
         self.touchPads = [x for x in range(12)]
         
-        pygame.init()
+        
         
     def set_mode(self, mode=1):
          self.mode = mode
@@ -64,7 +66,7 @@ class NPath:
         
     def play_board(self):
         while True:
-            playboard.playBoard(self.soundlist, self.volume)
+            playBoard(self.soundList, self.volume)
 
 
 
