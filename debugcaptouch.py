@@ -6,7 +6,9 @@ import pygame
 import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
-import files
+import Nature_Sounds
+import NPath_Sounds
+import Creator_Sounds
 pygame.init()
 
 def get_files():
@@ -26,8 +28,8 @@ def creator_soundlist():
 
 def set_soundlist():
 	setsoundlist = []
-	for soundfile in os.listdir('files'):
-		if soundfile.endswith('.wav'):
+	for soundfile in os.listdir('NPath_Sounds'):
+		if soundfile.endswith('.wav')or soundfile.endswith('.mp3'):
 			setsoundlist.append(pygame.mixer.Sound("files/" + str(soundfile)))
 	return setsoundlist
 
