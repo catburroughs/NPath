@@ -1,14 +1,12 @@
 from captouch import NPath
 import json
 import uuid
-import pygame
 import all_forms
-from flask import Flask, render_template, Response, request, redirect, url_for, flash, send_file, abort
+from flask import Flask, render_template, Response, request, redirect, url_for, flash, send_file, abort, current_app,jsonify
 from werkzeug.utils import secure_filename
 import os
 from flask_wtf.csrf import CSRFProtect
-import json
-import templates
+from flask_cors import CORS
 
 
 npath = NPath()
@@ -18,10 +16,12 @@ npath.set_mode()
 #npath.set_soundlist()
 #npath.play_board()
 csrf = CSRFProtect()
+cors = CORS()
 app=Flask(__name__)
 SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 csrf.init_app(app)
+cors.init_app(app)
 
 path = os.getcwd()
 UPLOAD_FOLDER = os.path.join(path, 'Creator_Sounds')
@@ -29,20 +29,25 @@ if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+@app.route('/frontend', methods = ['POST', 'GET'], strict_slashes=False)
+def frontend():
+    volume = npath.get_volume()
+    _return_frontend(volume)
+    return jsonify(volume)
 
-@app.route('/', methods = ['POST', 'GET'])
 
+@app.route('/', methods = ['POST', 'GET'], strict_slashes=False)
 def index():
     volume = npath.get_volume()
     mode = npath.get_mode()
-    modeSelect = all_forms.LandingPage()
-    templateData = {
+    modeselect = all_forms.LandingPage()
+    templatedata = {
     'title' : 'Final Project',
     'mode' : mode,
     'volume': str(volume)
     }
-    if modeSelect.validate_on_submit():
-        modechoice = modeSelect.select.data
+    if modeselect.validate_on_submit():
+        modechoice = modeselect.select.data
         print("modechoice is",modechoice)
         npath.set_mode(int(modechoice))
         mode = npath.get_mode()
@@ -51,30 +56,29 @@ def index():
             return redirect('/upload')
         else:
             return redirect('/volume')
-    return render_template('index.html', form=modeSelect, **templateData)
+    return render_template('index.html', form=modeselect, **templatedata)
     
-@app.route('/assigntouchpads', methods=['POST', 'GET'])
+@app.route('/assigntouchpads', methods=['POST', 'GET'], strict_slashes=False)
 def assigntouchpads():
     files = _get_files()
-    #npath.creator_soundlist(files)
     return render_template('assigntouchpads.html', files=files)
     
     
-@app.route('/volume', methods = ['POST', 'GET'])
+@app.route('/volume', methods = ['POST', 'GET'], strict_slashes=False)
 def volume():
     form = all_forms.Volume()
     print("volume is",form.set_volume.data)
     new_volume = form.set_volume.data
     if form.validate_on_submit():
         npath.set_volume(new_volume)
+        _return_frontend(new_volume)
         return redirect('/')
     return render_template('volume.html',form=form)
 
 @app.route('/upload', methods=['GET'])
 def upload():
     return _show_page()
-    
-        
+           
 @app.route('/upload', methods=['POST'])
 @csrf.exempt
 def upload_file():
@@ -83,14 +87,12 @@ def upload_file():
         print("1: file not in request files")
         flash('No file part')
         return redirect(request.url)
-    #file = request.files['file']
+  
     app.logger.info(request.files)
     upload_files = request.files.getlist('file')
     print("upload files ---->", str(upload_files))
     app.logger.info(upload_files)
-    #if upload_files.validate_on_submit():
-      #  print("Here are soundforms")
-        #soundfiles = request.files.getlist(soundform.soundfiles)
+  
     if not upload_files:
         print("2: file not in upload files")
         flash('No selected file')
@@ -109,7 +111,7 @@ def upload_file():
     flash('Upload succeeded')
     return redirect(url_for('upload_file'))
 
-    #return render_template('fileupload.html', form=soundform)
+   
 
 @app.route('/download/<code>', methods=['GET'])
 @csrf.exempt
@@ -134,7 +136,8 @@ def _show_page():
     return render_template('upload.html', files=files)
 
 
-
+def _return_frontend(info):
+    return jsonify(info)
 
 
 

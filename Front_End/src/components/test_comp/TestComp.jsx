@@ -1,12 +1,17 @@
 
 
-function TestComp({name}) {
+function TestComp({volume}) {
   return (
     <div className="Test">
-      Hello {name}
+      Volume =  {volume}
 
     </div>
   );
 }
 
 export default TestComp;
+
+
+ // in app.js <TestComp
+// volume = {volume}
+// />
