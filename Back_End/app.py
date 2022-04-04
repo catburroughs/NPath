@@ -32,7 +32,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 @app.route('/frontend', methods = ['POST', 'GET'], strict_slashes=False)
 def frontend():
     volume = npath.get_volume()
-    _return_frontend(volume)
     return jsonify(volume)
 
 
@@ -136,8 +135,7 @@ def _show_page():
     return render_template('upload.html', files=files)
 
 
-def _return_frontend(info):
-    return jsonify(info)
+
 
 
 

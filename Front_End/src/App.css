@@ -36,3 +36,180 @@
     transform: rotate(360deg);
   }
 }
+
+.mediaViewInfo {
+  --web-view-name: Landing Page;
+  --web-view-id: Landing_Page;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+:root {
+  --web-view-ids: Landing_Page;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+#Landing_Page {
+  position: absolute;
+  width: 1366px;
+  height: 768px;
+  background-color: rgba(255,255,255,1);
+  overflow: hidden;
+  --web-view-name: Landing Page;
+  --web-view-id: Landing_Page;
+  --web-scale-on-resize: true;
+  --web-enable-deep-linking: true;
+}
+#Labyrinth_Background {
+  position: absolute;
+  width: 1138.098px;
+  height: 1138.5px;
+  left: 767px;
+  top: 113.75px;
+  overflow: visible;
+}
+#labyrinth2 {
+  position: absolute;
+  width: 1138.099px;
+  height: 1138.5px;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+#Activate_Board_Button {
+  position: absolute;
+  width: 597px;
+  height: 77px;
+  left: 139px;
+  top: 606px;
+  overflow: visible;
+}
+#Rectangle_17 {
+  fill: rgba(12,11,11,1);
+  stroke: rgba(112,112,112,1);
+  stroke-width: 1px;
+  stroke-linejoin: bevel;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_17 {
+  position: absolute;
+  overflow: visible;
+  width: 597px;
+  height: 77px;
+  left: 0px;
+  top: 0px;
+}
+#Activate_NPath_Board {
+  left: 40px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 513px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Century;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  color: rgba(255,255,255,1);
+}
+#Set_Volume_Button {
+  position: absolute;
+  width: 398px;
+  height: 77px;
+  left: 139px;
+  top: 489px;
+  overflow: visible;
+}
+#Rectangle_16 {
+  fill: rgba(12,11,11,1);
+  stroke: rgba(112,112,112,1);
+  stroke-width: 1px;
+  stroke-linejoin: bevel;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_16 {
+  position: absolute;
+  overflow: visible;
+  width: 398px;
+  height: 77px;
+  left: 0px;
+  top: 0px;
+}
+#Set_Volume {
+  left: 67px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 268px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Century;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  color: rgba(255,255,255,1);
+}
+#Choose_Mode_Button {
+  position: absolute;
+  width: 398px;
+  height: 77px;
+  left: 139px;
+  top: 372px;
+  overflow: visible;
+}
+#Rectangle_15 {
+  fill: rgba(12,11,11,1);
+  stroke: rgba(112,112,112,1);
+  stroke-width: 1px;
+  stroke-linejoin: bevel;
+  stroke-linecap: round;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.Rectangle_15 {
+  position: absolute;
+  overflow: visible;
+  width: 398px;
+  height: 77px;
+  left: 0px;
+  top: 0px;
+}
+#Choose_Mode {
+  left: 46px;
+  top: 9px;
+  position: absolute;
+  overflow: visible;
+  width: 306px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Century;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  color: rgba(255,255,255,1);
+}
+#Find_your_NPath {
+  left: 84px;
+  top: 198px;
+  position: absolute;
+  overflow: visible;
+  width: 865px;
+  white-space: nowrap;
+  text-align: left;
+  font-family: Century;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 110px;
+  color: rgba(112,112,112,1);
+}
+
+
+
