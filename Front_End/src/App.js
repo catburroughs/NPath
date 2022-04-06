@@ -1,6 +1,9 @@
 //import logo from './logo.svg';
 import { useState, useEffect } from "react";
 import "./App.css";
+import BackgroundImage from "./components/BackgroundImage/BackgroundImage";
+import LandingButtons from "./components/Buttons/LandingButtons/LandingButtons";
+import LandingText from "./components/LandingText/LandingText";
 import Taskbar from "./components/Taskbar/Taskbar";
 import GetVolume from "./components/test_comp/GetVolume";
 //import TestComp from './components/test_comp/TestComp';
@@ -23,7 +26,12 @@ function App() {
   }, []);
 
   return (
+    <>
+    <BackgroundImage />
     <Taskbar />
+    <LandingButtons />
+    <LandingText />
+    </>
   );
 
   /*
