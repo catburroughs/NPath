@@ -1,7 +1,7 @@
 import "./TaskbarLink.css";
 
 function TaskbarLink({ children }) {
-    return (       
+    return (     
         <div className="taskbar_link">
             {children}
         </div>

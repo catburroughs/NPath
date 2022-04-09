@@ -1,117 +1,51 @@
+#Text_Style{
+    color: rgba(255,255,255,1);
+    white-space: nowrap;
+    text-align: center;
+    font-family: Century;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+}
+
 #Activate_Board_Button {
     position: absolute;
     width: 597px;
     height: 77px;
     left: 139px;
-    top: 606px;
+    top: 586px;
+    border-radius: 45px;
+    padding: 10px;
+    color: rgba(12,11,11,1);
+    background-color: black;
     overflow: visible;
-  }
-  #Rectangle_17 {
-    fill: rgba(12,11,11,1);
-    stroke: rgba(112,112,112,1);
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
     shape-rendering: auto;
-  }
-  .Rectangle_17 {
     position: absolute;
-    overflow: visible;
-    width: 597px;
-    height: 77px;
-    left: 0px;
-    top: 0px;
   }
-  #Activate_NPath_Board {
-    left: 40px;
-    top: 9px;
-    position: absolute;
-    overflow: visible;
-    width: 513px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Century;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
-  }
+
   #Set_Volume_Button {
-    position: absolute;
     width: 398px;
     height: 77px;
     left: 139px;
-    top: 489px;
-    overflow: visible;
-  }
-  #Rectangle_16 {
-    fill: rgba(12,11,11,1);
-    stroke: rgba(112,112,112,1);
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
+    top: 469px;
+    border-radius: 45px;
+    padding: 10px;
+    color: rgba(12,11,11,1);
+    background-color: black;
     shape-rendering: auto;
-  }
-  .Rectangle_16 {
     position: absolute;
-    overflow: visible;
-    width: 398px;
-    height: 77px;
-    left: 0px;
-    top: 0px;
   }
-  #Set_Volume {
-    left: 67px;
-    top: 9px;
-    position: absolute;
-    overflow: visible;
-    width: 268px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Century;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
-  }
+
   #Choose_Mode_Button {
     position: absolute;
     width: 398px;
     height: 77px;
     left: 139px;
-    top: 372px;
+    top: 352px;
     overflow: visible;
-  }
-  #Rectangle_15 {
-    fill: rgba(12,11,11,1);
-    stroke: rgba(112,112,112,1);
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-    stroke-linecap: round;
-    stroke-miterlimit: 4;
     shape-rendering: auto;
-  }
-  .Rectangle_15 {
-    position: absolute;
-    overflow: visible;
-    width: 398px;
-    height: 77px;
-    left: 0px;
-    top: 0px;
-  }
-  #Choose_Mode {
-    left: 46px;
-    top: 9px;
-    position: absolute;
-    overflow: visible;
-    width: 306px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Century;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
+    border-radius: 45px;
+    padding: 10px;
+    color: rgba(12,11,11,1);
+    background-color: black;
   }
