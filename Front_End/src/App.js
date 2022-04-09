@@ -1,77 +1,31 @@
-//import logo from './logo.svg';
-import { useState, useEffect } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+//import "./App.css";
 import BackgroundImage from "./components/BackgroundImage/BackgroundImage";
-import LandingButtons from "./components/Buttons/LandingButtons/LandingButtons";
-import LandingText from "./components/LandingText/LandingText";
 import Taskbar from "./components/Taskbar/Taskbar";
-import GetVolume from "./components/test_comp/GetVolume";
-//import TestComp from './components/test_comp/TestComp';
+import SetVolume from './pages/SetVolume';
+import UploadSounds from './pages/UploadSounds';
+import SetMode from './pages/SetMode';
+import LandingPage from './pages/LandingPage';
 
-function App() {
-  const [volume, setVolume] = useState([]);
 
-  // Modify the current state by setting the new data to
-  // the response from the backend
-  useEffect(() => {
-    fetch("http://localhost:5000/frontend", {
-      methods: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => setVolume(response))
-      .catch((error) => console.log(error));
-  }, []);
+const App = () => {
 
   return (
     <>
+    <Router>
     <BackgroundImage />
     <Taskbar />
-    <LandingButtons />
-    <LandingText />
+    <Routes>
+    <Route exact path='/' element ={<LandingPage/>} />
+    <Route exact path='/setmode' element ={<SetMode/>} />
+    <Route exact path='/setvolume' element ={<SetVolume/>} />
+    <Route exact path='/uploadsounds' element ={<UploadSounds/>} />
+    </Routes>
+    </Router>
     </>
   );
 
-  /*
-  return (
-    <>
-    <div className='Taskbar_Full'>Menu</div>
-    <div className="App container m-4">
-    <div className="row">
-    <div className="text-center">
-    <h1>NPath Project.</h1>
-    </div>
-  </div>
-
-    <GetVolume
-    volume = {volume}
-    />
-
-  
-
-  </div>
-  </>
-   // <div className="App">
-   //   <header className="App-header">
-    //    <img src={logo} className="App-logo" alt="logo" />
-     //   <p>
-    //      Edit <code>src/App.js</code> and Al has wonderful hair.
-      //  </p>
-
-      //  <TestComp name={response}/>
-      //  <a
-     //     className="App-link"
-       //   href="https://reactjs.org"
-        //  target="_blank"
-      //    rel="noopener noreferrer"
-      //  >
-       //   Learn React
-     //   </a>
-     // </header>
-   // </div>
-  );*/
+ 
 }
 
 export default App;
