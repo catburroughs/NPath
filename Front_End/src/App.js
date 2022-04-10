@@ -16,7 +16,6 @@ const App = () => {
   return (
     <>
     <Router>
-    <BackgroundImage />
     <Taskbar />
     <Routes>
     <Route exact path='/' element ={<LandingPage/>} />

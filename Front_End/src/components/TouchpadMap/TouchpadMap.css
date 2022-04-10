@@ -1,0 +1,16 @@
+#Touchpad_Map {
+    position: fixed;
+    top: 120px;
+    left: 800px;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+    display:flex;
+  }
+
+  #labmap{
+    max-width: 85%;
+    max-height: 85%;
+  }
+

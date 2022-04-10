@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
+import TouchpadMap from "../components/TouchpadMap/TouchpadMap";
 import GetTouchpads from "../components/Functions/GetTouchpads";
 
 function AssignTouchpads() {
@@ -24,7 +23,7 @@ function AssignTouchpads() {
 
   return (
     <>
-    <BackgroundImage />
+    <TouchpadMap />
     <div className="App container m-4">
     <div className="row">
     <div className="text-center">
