@@ -1,6 +1,7 @@
 import "./BackgroundImage.css";
 //import labyrinth2 from "./labyrinth2_r@2x.png";
-import background from "./labyrinth2.jpg";
+//import background from "./labyrinth2.jpg";
+import background from "./labyrinthbackground.jpg";
 
 function BackgroundImage() {
 

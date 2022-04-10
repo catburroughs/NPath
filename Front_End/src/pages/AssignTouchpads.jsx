@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from "react";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import GetVolume from "../components/Functions/GetVolume";
+import GetTouchpads from "../components/Functions/GetTouchpads";
 
-function SetVolume() {
-  const [volume, setVolume] = useState([]);
+function AssignTouchpads() {
+  const [touchpads, setTouchpads] = useState([]);
 
   // Modify the current state by setting the new data to
   // the response from the backend
@@ -16,7 +16,7 @@ function SetVolume() {
       },
     })
       .then((response) => response.json())
-      .then((response) => setVolume(response))
+      .then((response) => setTouchpads(response))
       .catch((error) => console.log(error));
   }, []);
 
@@ -33,12 +33,12 @@ function SetVolume() {
   </div>
   </div>
 
-    <GetVolume
-    volume = {volume}
+    <GetTouchpads
+    touchpads = {touchpads}
     />
 
   </>
   );
 }
 
-export default SetVolume;
+export default AssignTouchpads;

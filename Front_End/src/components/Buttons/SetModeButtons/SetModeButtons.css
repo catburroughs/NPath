@@ -1,0 +1,84 @@
+#Text_Style{
+    color: rgba(255,255,255,1);
+    white-space: nowrap;
+    text-align: center;
+    font-family: Century;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+}
+
+#Question_Button {
+    background-color: rgba(255,170,0,1);
+    position: absolute;
+    shape-rendering: auto;
+    width: 50px;
+    height: 50px;
+    left: 0px;
+    top: 4px;
+    padding: 3px;
+}
+
+
+#Choose_Mode {
+    left: 130px;
+    top: 180px;
+    position: absolute;
+    overflow: visible;
+    width: 900px;
+    background-color: black;
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+#NPath_Mode {
+    left: 415px;
+    top: 280px;
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    border-radius: 45px;
+    padding: 10px;
+    background-color:  rgba(145,60,241,1);
+    shape-rendering: auto;
+}
+
+#Nature_Mode {
+    left: 415px;
+    top: 380px;
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    background-color: rgba(137,190,31,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+#Creator_Mode {
+    left: 415px;
+    top: 480px;
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    background-color: rgba(213,53,160,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+
+#Assign_Touchpads {
+    left: 365px;
+    top: 580px;
+    position: absolute;
+    overflow: visible;
+    width: 420px;
+    background-color: rgb(247, 186, 74);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+

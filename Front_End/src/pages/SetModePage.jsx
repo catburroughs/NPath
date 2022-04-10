@@ -1,18 +1,19 @@
 import "../Global.css";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-//import SetModeButtons from "../components/Buttons/SetModeButtons/SetModeButtons";
+import SetModeButtons from "../components/Buttons/SetModeButtons/SetModeButtons";
 
 
 
-function UploadSounds() {
+function SetModePage() {
 
   return (
     <>
     <BackgroundImage />
+    <SetModeButtons />
     </>
   );
 
 
 }
 
-export default UploadSounds;
+export default SetModePage;

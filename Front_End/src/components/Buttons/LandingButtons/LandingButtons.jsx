@@ -1,7 +1,6 @@
 import "./LandingButtons.css";
 import { Link } from 'react-router-dom';
 
-const Styles = ['Activate_Board_Button', 'Set_Volume_Button', 'Choose_Mode_Button']
 
 function LandingButtons() {
   return (

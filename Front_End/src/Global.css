@@ -20,3 +20,13 @@ a:active {
   color: rgb(247, 245, 245);
   text-decoration: none;
  }
+
+ #Text_Style{
+  color: rgba(255,255,255,1);
+  white-space: nowrap;
+  text-align: center;
+  font-family: Century;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+}
