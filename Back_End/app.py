@@ -29,11 +29,15 @@ if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/frontend', methods = ['POST', 'GET'], strict_slashes=False)
-def frontend():
+@app.route("/volume", methods = ['POST', 'GET'], strict_slashes=False)
+def sendvolume():
     volume = npath.get_volume()
     return jsonify(volume)
 
+@app.route('/mode', methods = ['POST', 'GET'], strict_slashes=False)
+def sendmode():
+    mode = npath.get_mode()
+    return jsonify(mode)
 
 @app.route('/', methods = ['POST', 'GET'], strict_slashes=False)
 def index():

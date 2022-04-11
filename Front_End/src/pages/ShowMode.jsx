@@ -9,7 +9,7 @@ function ShowMode() {
   // Modify the current state by setting the new data to
   // the response from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/getmode", {
+    fetch("http://localhost:5000/mode", {
       methods: "GET",
       headers: {
         "Content-Type": "application/json",

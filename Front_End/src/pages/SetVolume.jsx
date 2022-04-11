@@ -9,7 +9,7 @@ function SetVolume() {
   // Modify the current state by setting the new data to
   // the response from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/frontend", {
+    fetch("http://localhost:5000/volume", {
       methods: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -11,7 +11,7 @@ function SetModeButtons() {
         </div>
     </div>
 
-        <Link to = '/Show_Mode'>
+        <Link to = '/ShowMode'>
       <div id="NPath_Mode" class="NPath_Mode">
         <div id="Text_Style">
           <span>NPath Mode</span>
@@ -21,7 +21,7 @@ function SetModeButtons() {
 
 
 
-      <Link to = '/Show_Mode'>
+      <Link to = '/ShowMode'>
       <div id="Nature_Mode" class="Nature_Mode">
       <div id="Text_Style">
           <span>Nature Mode</span> 
