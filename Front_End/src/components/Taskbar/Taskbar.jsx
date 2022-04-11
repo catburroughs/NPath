@@ -23,7 +23,7 @@ function Taskbar() {
                 </Link>
             </TaskbarLink>
             <TaskbarLink>
-                <Link to = '/SetVolume'>
+                <Link to = '/GetVolume'>
                 Volume
                 </Link>
             </TaskbarLink>

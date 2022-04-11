@@ -1,4 +1,4 @@
-function GetVolume({volume}) {
+function ShowVolume({volume}) {
 
     return (
         <div className="m-2">
@@ -9,4 +9,4 @@ function GetVolume({volume}) {
     );
 }
 
-export default GetVolume;
+export default ShowVolume;

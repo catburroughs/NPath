@@ -13,7 +13,7 @@ function LandingButtons() {
       </div>
       </Link>
 
-      <Link to = '/SetVolume'>
+      <Link to = '/GetVolume'>
       <div id="Set_Volume_Button" class="Set_Volume_Button">
       <div id="Text_Style">
           <span>Set Volume</span> 
