@@ -25,13 +25,14 @@ function GetVolume() {
 
   return (
     <>
+    <h1>Slide Toggle to Set Volume</h1>
     <VolSlider />
     <BackgroundImage />
     
     <div className="App container m-4">
     <div className="row">
     <div className="text-center">
-    <h1>NPath Project.</h1>
+    
     </div>
   </div>
   </div>

@@ -1,0 +1,39 @@
+#volcontainer{
+    width: 820px;
+    padding: auto;
+}
+
+
+.slider {
+    top: 100px;
+    left: 80px;  
+}
+
+
+.slider .MuiSlider-thumb{
+    top:15px;
+    height: 60px;
+    width:60px;
+    color: blueviolet;
+}
+
+.slider .MuiSlider-valueLabel{
+    top:-60px;
+    left: 15px;
+    font-size:large;
+    background: blueviolet;
+}
+
+.slider .MuiSlider-rail{
+    height: 50px;
+    width: 860px;
+}
+
+.slider .MuiSlider-track{
+    height: 50px;
+    width: 880px;
+}
+
+.slider .MuiSlider-mark{
+    height: 50px;
+}
