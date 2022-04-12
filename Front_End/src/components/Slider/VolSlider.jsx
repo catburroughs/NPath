@@ -3,6 +3,7 @@ import "./VolSlider.css";
 
 
 function valuetext(value) {
+  console.log({value});
     return `${value}°C`;
   }
 

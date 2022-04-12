@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 function SetModeButtons() {
   return (
     <>
-    <div id = 'Choose_Mode' class='Choose_Mode'>
+    <div id = 'Choose_Mode' className='Choose_Mode'>
         <div id ="Text_Style">
         <span>Choose a Mode</span>
         </div>
     </div>
 
         <Link to = '/ShowMode'>
-      <div id="NPath_Mode" class="NPath_Mode">
+      <div id="NPath_Mode" className="NPath_Mode">
         <div id="Text_Style">
           <span>NPath Mode</span>
         </div>
@@ -22,7 +22,7 @@ function SetModeButtons() {
 
 
       <Link to = '/ShowMode'>
-      <div id="Nature_Mode" class="Nature_Mode">
+      <div id="Nature_Mode" className="Nature_Mode">
       <div id="Text_Style">
           <span>Nature Mode</span> 
           </div>
@@ -31,7 +31,7 @@ function SetModeButtons() {
 
 
       <Link to = '/UploadSounds'>
-      <div id="Creator_Mode" class="Creator_Mode">
+      <div id="Creator_Mode" className="Creator_Mode">
         <div id="Text_Style">
           <span>Creator Mode</span>
         </div>

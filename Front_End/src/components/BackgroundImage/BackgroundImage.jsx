@@ -5,7 +5,7 @@ function BackgroundImage() {
 
     return (
        
-	<div id="Labyrinth_Background" class="Labyrinth_Background">
+	<div id="Labyrinth_Background" className ="Labyrinth_Background">
 		<img id="labyrinth2" src={background} >
 		</img>
        

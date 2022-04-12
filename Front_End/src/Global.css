@@ -30,3 +30,31 @@ a:active {
   font-weight: normal;
   font-size: 50px;
 }
+
+#Text_Container{
+  padding: 20px;
+}
+
+
+
+#Headline{
+  position: relative;
+  background-color: grey;
+  padding: 20px;
+  height: 60px;
+  border-radius: 45px;
+  top: 20px;
+  left: 150px;
+  width: 700px;
+}
+
+#VolumeInput{
+  position: relative;
+  background-color: grey;
+  padding: 20px;
+  height: 60px;
+  border-radius: 45px;
+  top: 350px;
+  left: 300px;
+  width: 400px;
+}

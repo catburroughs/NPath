@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import "./Global.css";
-import BackgroundImage from "./components/BackgroundImage/BackgroundImage";
 import Taskbar from "./components/Taskbar/Taskbar";
 import GetVolume from './pages/GetVolume';
 import UploadSounds from './pages/UploadSounds';
