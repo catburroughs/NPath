@@ -2,19 +2,21 @@ import { Slider } from "@material-ui/core";
 import "./VolSlider.css";
 
 
-function valuetext(value) {
-  console.log({value});
-    return `${value}°C`;
+function valuetext(event, value) {
+  console.log(value);
+   
   }
 
-function VolSlider(){
+function VolSlider({ newvolume, setNewVolume }
+  ){
 return(
  <div id="volcontainer" className = "volcontainer">
 <Slider
 className="slider"
 aria-label="Always visible"
+value = {newvolume}
 defaultValue={.65}
-volume={valuetext}
+onChange={(event, value) => setNewVolume(value)}
 step={.05}
 marks
 min={.10}

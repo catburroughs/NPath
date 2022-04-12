@@ -29,7 +29,7 @@ if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route("/getvolume", methods = ['POST', 'GET'], strict_slashes=False)
+@app.route("/getvolume", methods = ['GET'], strict_slashes=False)
 def sendvolume():
     volume = npath.get_volume()
     return jsonify(volume)
@@ -41,10 +41,20 @@ def sendmode():
 
 
 @app.route("/addvolume", methods=["POST"], strict_slashes=False)
+@csrf.exempt
 def add_volume():
+    req = request.get_json()
     volume = request.json['volume']
-    print("volume is ", volume)
-    return npath.set_volume(volume)
+    npath.set_volume(volume)
+    print(req)
+    return jsonify({"message": "OK"})
+
+
+ #   volume = request.json['volume']
+  #  print("volume is ", volume)
+  #  npath.set_volume(volume)
+ #   return jsonify({'message', 'success'})
+
 
 
 

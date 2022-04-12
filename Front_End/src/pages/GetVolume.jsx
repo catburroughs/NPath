@@ -2,12 +2,13 @@
 import { useState, useEffect } from "react";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import SetVolumeButtons from "../components/Buttons/SetVolumeButtons/SetVolumeButtons";
-import SetVolume from "../components/Functions/SetVolume";
+import SendVolume from "../components/Functions/SendVolume";
 import ShowVolume from "../components/Functions/ShowVolume";
 import VolSlider from "../components/Slider/VolSlider";
 
 function GetVolume() {
-  const [volume, setvol] = useState([]);
+  const [currentvolume, setCurrentVolume] = useState(0);
+  const [newvolume, setNewVolume] = useState(0);
 
 
   // Modify the current state by setting the new data to
@@ -20,7 +21,7 @@ function GetVolume() {
       },
     })
       .then((response) => response.json())
-      .then((response) => setvol(response))
+      .then((response) => setCurrentVolume(response))
       .catch((error) => console.log(error));
   }, []);
 
@@ -28,14 +29,16 @@ function GetVolume() {
 
   return (
     <>
+    Test Volume {newvolume}
     <div id = "Headline" className = "Headline">
     <div id = "Text_Style">
-    Slide Toggle to Change Volume
+    Slide Toggle to Change Volume 
     </div>
     </div>
     
-    <VolSlider />
-    <SetVolumeButtons />
+    <VolSlider newvolume={newvolume} setNewVolume={setNewVolume}
+ />
+    <SetVolumeButtons onClick = { (e) =>{SendVolume(newvolume)} }/>
    
 
     <BackgroundImage />
@@ -44,7 +47,7 @@ function GetVolume() {
 <div id = "VolumeInput" className = "VolumeInput">
   <div id = "Text_Style">
     <ShowVolume
-    volume = {volume}
+    volume = {currentvolume}
     />
     </div>
 </div>
