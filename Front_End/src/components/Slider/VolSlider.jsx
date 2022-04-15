@@ -1,27 +1,26 @@
 import { Slider } from "@material-ui/core";
 import "./VolSlider.css";
+import { useState, useEffect } from "react";
 
 
-function valuetext(event, value) {
-  console.log(value);
-   
-  }
-
-function VolSlider({ newvolume, setNewVolume }
+function VolSlider({ newvolume, setNewVolume, currentvolume, setCurrentVolume}
   ){
+
+
+
 return(
  <div id="volcontainer" className = "volcontainer">
 <Slider
 className="slider"
-aria-label="Always visible"
-value = {newvolume}
-defaultValue={.65}
-onChange={(event, value) => setNewVolume(value)}
+valueLabelDisplay="auto"
+value = {currentvolume}
+defaultValue = {currentvolume}
+onChange={(event, value) => {setNewVolume(value); setCurrentVolume(newvolume)}}
 step={.05}
 marks
 min={.10}
 max={1.00}
-valueLabelDisplay="on"
+
 />
 </div>
 );

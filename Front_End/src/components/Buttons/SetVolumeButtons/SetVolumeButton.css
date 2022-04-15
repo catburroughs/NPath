@@ -12,4 +12,5 @@
 
   #SetVolumeButton:hover {
     background-color:blueviolet;
+    cursor: pointer;
   }

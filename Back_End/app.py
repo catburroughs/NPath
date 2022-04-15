@@ -50,14 +50,6 @@ def add_volume():
     return jsonify({"message": "OK"})
 
 
- #   volume = request.json['volume']
-  #  print("volume is ", volume)
-  #  npath.set_volume(volume)
- #   return jsonify({'message', 'success'})
-
-
-
-
 
 
 

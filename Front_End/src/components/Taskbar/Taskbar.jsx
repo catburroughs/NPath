@@ -3,10 +3,7 @@ import TaskbarLink from '../TaskbarLink/TaskbarLink';
 import {Link} from 'react-router-dom';
 
 function Taskbar() {
-    //const [click, setClick] = useState(false);
-    //const [button, setButton] = useState(true);
-
-    //const handleClick = () => setClick(!click);
+  
 
 
 
@@ -23,7 +20,7 @@ function Taskbar() {
                 </Link>
             </TaskbarLink>
             <TaskbarLink>
-                <Link to = '/GetVolume'>
+                <Link to = '/Volume'>
                 Volume
                 </Link>
             </TaskbarLink>
