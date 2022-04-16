@@ -1,9 +1,9 @@
 import { Slider } from "@material-ui/core";
-import "./VolSlider.css";
-import { useState, useEffect } from "react";
+import "./VolumeSlider.css";
 
 
-function VolSlider({ newvolume, setNewVolume, currentvolume, setCurrentVolume}
+
+function VolumeSlider({ newvolume, setNewVolume, currentvolume, setCurrentVolume}
   ){
 
 
@@ -26,4 +26,4 @@ max={1.00}
 );
 }
 
-export default VolSlider;
+export default VolumeSlider;

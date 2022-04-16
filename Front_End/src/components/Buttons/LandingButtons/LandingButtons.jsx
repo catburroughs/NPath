@@ -21,7 +21,7 @@ function LandingButtons() {
       </div>
       </Link>
 
-      <Link to = '/SetMode'>
+      <Link to = '/Mode'>
       <div id="Choose_Mode_Button" className="Choose_Mode_Button">
         <div id="Text_Style">
           <span>Choose Mode</span>

@@ -7,8 +7,7 @@ import {
 } from "react-router-dom";
 import SetVolumeButtons from "../components/Buttons/SetVolumeButtons/SetVolumeButtons";
 import SendVolume from "../components/Functions/SendVolume";
-import VolSlider from "../components/Slider/VolSlider";
-import GetVolumeFromFlask from "../components/Functions/GetVolumeFromFlask";
+import VolumeSlider from "../components/Slider/VolumeSlider";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import ShowVolume from "../components/Functions/ShowVolume";
 
@@ -62,7 +61,7 @@ function SetVolumePage() {
    
     <SetVolumeButtons onClick = {handleClick} />
     
-    <VolSlider newvolume={newvolume} setNewVolume={setNewVolume} setCurrentVolume={setCurrentVolume} currentvolume = {currentvolume}
+    <VolumeSlider newvolume={newvolume} setNewVolume={setNewVolume} setCurrentVolume={setCurrentVolume} currentvolume = {currentvolume}
  />
  
 

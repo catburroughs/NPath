@@ -69,16 +69,5 @@
 }
 
 
-#Assign_Touchpads {
-    left: 365px;
-    top: 580px;
-    position: absolute;
-    overflow: visible;
-    width: 420px;
-    background-color: rgb(247, 186, 74);
-    border-radius: 45px;
-    padding: 10px;
-    shape-rendering: auto;
-}
 
 

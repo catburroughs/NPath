@@ -25,7 +25,7 @@ function Taskbar() {
                 </Link>
             </TaskbarLink>
             <TaskbarLink>
-                <Link to = '/SetMode'>
+                <Link to = '/Mode'>
                 Mode
                 </Link>
             </TaskbarLink>

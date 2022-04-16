@@ -29,16 +29,29 @@ if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+@app.route("/getmode", methods = ['GET'], strict_slashes=False)
+@csrf.exempt
+def getmode():
+    mode = npath.get_mode()
+    print("The mode from get request is ", mode)
+    return jsonify(mode)
+
+@app.route("/addmode", methods = ['POST'], strict_slashes=False)
+@csrf.exempt
+def sendmode():
+    print("HHHHHHHHHEEEEEEEEEEEEEEEEEERRRRRRRRRRRREEEEEEEEEEEEEEEEEEEE")
+    req = request.get_json()
+    mode = request.json['mode']
+    print("The mode from post request is ", mode)
+    npath.set_mode(mode)
+    print(req)
+    return jsonify({"message": "OK"})
+
 @app.route("/getvolume", methods = ['GET'], strict_slashes=False)
+@csrf.exempt
 def sendvolume():
     volume = npath.get_volume()
     return jsonify(volume)
-
-@app.route('/mode', methods = ['POST', 'GET'], strict_slashes=False)
-def sendmode():
-    mode = npath.get_mode()
-    return jsonify(mode)
-
 
 @app.route("/addvolume", methods=["POST"], strict_slashes=False)
 @csrf.exempt

@@ -20,17 +20,20 @@ class NPath:
         
         
         
-    def set_mode(self, mode=1):
-         self.mode = mode
+    def set_mode(self, newmode=1):
+         self.mode = newmode
      
-        
     def get_mode(self):
-         if self.mode == 1:
-             return("NPath Sounds mode is on.")
-         if self.mode == 2:
-             return("Nature Sounds mode is on.")
-         else:
-             return("Upload files to create new mode.")
+        print(self.mode)
+        return self.mode
+       
+   # def get_mode(self):
+   #      if self.mode == 1:
+   #          return("NPath Sounds mode is on.")
+  #       if self.mode == 2:
+   #          return("Nature Sounds mode is on.")
+   #      else:
+    #         return("Upload files to create new mode.")
        
          
     def get_soundfile(self):

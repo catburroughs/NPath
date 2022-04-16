@@ -58,3 +58,16 @@ a:active {
   left: 300px;
   width: 400px;
 }
+
+#ModeInput{
+  left: 310px;
+  top: 675px;
+  position: absolute;
+  overflow: visible;
+  width: 530px;
+  background-color: rgb(247, 186, 74);
+  border-radius: 45px;
+  padding: 10px;
+  shape-rendering: auto;
+
+}
