@@ -169,10 +169,15 @@ def _get_files():
             return json.load(fh)
     return {}
 
+#def _show_page():
+#    files = _get_files()
+#    return render_template('upload.html', files=files)
+
+
 def _show_page():
     files = _get_files()
-    return render_template('upload.html', files=files)
-
+    print(files)
+    return files
 
 
 

@@ -3,12 +3,13 @@ import TouchpadMap from "../components/TouchpadMap/TouchpadMap";
 import GetTouchpads from "../components/Functions/GetTouchpads";
 
 function AssignTouchpads() {
-  const [touchpads, setTouchpads] = useState([]);
+  const soundListArray = []
+  const [touchpads, setTouchpads] = useState({});
 
   // Modify the current state by setting the new data to
   // the response from the backend
   useEffect(() => {
-    fetch("http://localhost:5000/frontend", {
+    fetch("http://localhost:5000/upload", {
       methods: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -16,10 +17,11 @@ function AssignTouchpads() {
     })
       .then((response) => response.json())
       .then((response) => setTouchpads(response))
+      .then( Object.entries(touchpads).forEach(([key, value]) => console.log(`${key}: ${value}`)))
       .catch((error) => console.log(error));
   }, []);
 
-
+  
 
   return (
     <>
@@ -31,10 +33,11 @@ function AssignTouchpads() {
     </div>
   </div>
   </div>
+  <GetTouchpads {...touchpads}/>
+  
 
-    <GetTouchpads
-    touchpads = {touchpads}
-    />
+  
+    
 
   </>
   );

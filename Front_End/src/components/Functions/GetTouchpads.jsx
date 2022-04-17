@@ -1,10 +1,15 @@
 function GetTouchpads({touchpads}) {
 
     return (
-        <div className="m-2">
-            Touchpads =  {touchpads}
-      
-          </div>
+        <>
+           
+        {
+            touchpads?.map((value,key)=>
+                <div>list = {key}</div>
+                
+            )
+        }
+     </>
             
     );
 }
