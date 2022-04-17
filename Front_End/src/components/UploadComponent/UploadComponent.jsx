@@ -1,74 +1,44 @@
-import React, { useState } from 'react';
+import React from "react";
 
-const UploadFile = () => {
-    const [files, setFiles] = useState('');
-    //state for checking file size
-    const [fileSize, setFileSize] = useState(true);
-    // for file upload progress message
-    const [fileUploadProgress, setFileUploadProgress] = useState(false);
-    //for displaying response message
-    const [fileUploadResponse, setFileUploadResponse] = useState(null);
-    //base end point url
-    const FILE_UPLOAD_BASE_ENDPOINT ="http://localhost:5000/upload";
-
-    const uploadFileHandler = (event) => {
-        setFiles(event.target.files);
-       };
-
-      const fileSubmitHandler = (event) => {
-       event.preventDefault();
-       setFileSize(true);
-       setFileUploadProgress(true);
-       setFileUploadResponse(null);
-
-        const formData = new FormData();
-
-        for (let file of this.files) {
-            if (file.size > 1024){
-                setFileSize(false);
-                setFileUploadProgress(false);
-                setFileUploadResponse(null);
-                return;
-            }
-
-            formData.append(`files[]`, files)
-        }
-
-        const requestOptions = {
-            method: 'POST',
-            body: formData
-        };
-        fetch(FILE_UPLOAD_BASE_ENDPOINT, requestOptions)
-            .then(async response => {
-                const isJson = response.headers.get('content-type')?.includes('application/json');
-                const data = isJson && await response.json();
-
-                // check for error response
-                if (!response.ok) {
-                    // get error message
-                    const error = (data && data.message) || response.status;
-                    setFileUploadResponse(data.message);
-                    return Promise.reject(error);
-                }
-
-               console.log(data.message);
-               setFileUploadResponse(data.message);
-            })
-            .catch(error => {
-                console.error('Error while uploading file!', error);
-            });
-        setFileUploadProgress(false);
+export default class UploadComponent extends React.Component  {
+    constructor(props) {
+      super(props);
+      this.state = {
       };
-      return(
-
-        <form onSubmit={fileSubmitHandler}>
-           <input type="file"  multiple onChange={uploadFileHandler}/>
-           <button type='submit'>Upload</button>
-           {!fileSize && <p style={{color:'red'}}>File size exceeded!!</p>}
-           {fileUploadProgress && <p style={{color:'red'}}>Uploading File(s)</p>}
-          {fileUploadResponse!=null && <p style={{color:'green'}}>{fileUploadResponse}</p>}
-        </form>
   
+      this.handleUpload = this.handleUpload.bind(this);
+    }
+  
+    handleUpload(ev) {
+      ev.preventDefault();
+  
+      const data = new FormData();
+      for (let i = 0; i < this.uploadInput.files.length; i++) {
+        data.append("file", this.uploadInput.files[i]);
+      }
+    
+      fetch("http://localhost:5000/upload", {
+        method: "POST",
+        body:data,
+      }).then((response) => {
+        response.json().then((res) => {
+          console.log(res);
+        });
+      });
+    }
+  
+    render() {
+      return (
+        <form onSubmit={this.handleUploadImage}>
+          <div>
+          <input ref={(ref) => {this.uploadInput = ref; }} type="file" multiple
+            />
+          </div>
+          <br />
+          <div>
+            <button>Upload</button>
+          </div>
+        </form>
       );
+    }
   }
-  export default UploadFile;

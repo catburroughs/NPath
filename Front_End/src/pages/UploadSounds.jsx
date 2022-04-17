@@ -1,15 +1,22 @@
 import "../Global.css";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import UploadFile from "../components/UploadComponent/UploadComponent";
+//import UploadComponent from "../components/UploadComponent/UploadComponent";
+import Upload2 from "../components/Functions/Upload2";
 
 
 
 function UploadSounds() {
+  <>
+  
+
+  </>
+  
 
   return (
     <>
     <BackgroundImage />
-    <UploadFile />
+    <Upload2 />
+    
     </>
   );
 

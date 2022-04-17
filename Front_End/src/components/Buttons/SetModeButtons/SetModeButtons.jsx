@@ -12,36 +12,39 @@ function SetModeButtons() {
 
   return (
     <>
-    <div id = 'Choose_Mode' className='Choose_Mode'>
-        <div id ="Text_Style">
-        <span>Choose a Mode</span>
-
-        </div>
-    </div>
-
-       
-      <div id="NPath_Mode" >
+      <div className="NPath_Mode" >
         <div id="Text_Style">
           <span>NPath Mode</span>
         </div>
       </div>
+      <div className="hide" >
+          NPath Mode has a crafted soundscape
+      </div>
       
-      
-      <div id="Nature_Mode"  >
+      <div className="Nature_Mode"  >
       <div id="Text_Style">
           <span>Nature Mode</span> 
           </div>
       </div>
      
-
-
-      <Link to = '/UploadSounds'>
-      <div id="Creator_Mode" >
-        <div id="Text_Style">
-          <span>Creator Mode</span>
-        </div>
+      <div className="hide" >
+          Nature Mode features sounds of the natural world
       </div>
-      </Link>
+
+    
+
+      <div className="Creator_Mode" >
+        <Link to = '/UploadSounds'>
+        <div id="Text_Style">
+          Creator Mode
+        </div>
+        </Link>
+      </div>
+      
+
+      <div className="hide" >
+          Click the Creator Mode Area to Upload Sounds
+      </div>
 
 
 

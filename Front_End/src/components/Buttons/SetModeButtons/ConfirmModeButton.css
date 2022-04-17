@@ -1,16 +1,32 @@
-#ConfirmModeButton {
-    width: 398px;
-    height: 77px;
-    left: 380px;
-    top: 575px;
-    border-radius: 45px;
-    padding: 5px;
-    background-color: black;
-    shape-rendering: auto;
+
+
+  .ConfirmModeButton {
+    left: 400px;
+    top: 180px;
     position: absolute;
+    overflow: visible;
+    width: 380px;
+    background-color: black;
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+  .ConfirmModeButton:hover {
+    background-color:orangered;
+    cursor: pointer;
   }
 
-  #ConfirmModeButton:hover {
-    background-color:blueviolet;
-    cursor: pointer;
+  .hide{
+    display: none;  
+}
+
+.ConfirmModeButton:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 210px;
+    left: 80px;
+    font-size: 18px;
+    color: Black;
   }

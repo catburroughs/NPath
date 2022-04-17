@@ -7,10 +7,13 @@ function ConfirmModeButton({ onClick }) {
   return (
     <>
     
-          <div id='ConfirmModeButton' role = 'button' onClick = {onClick}>
+          <div className='ConfirmModeButton' role = 'button' onClick = {onClick}>
               <div id='Text_Style'>
                   <span>Confirm Mode</span>
               </div>
+          </div>
+          <div className = 'hide'>
+            Click here after selecting your mode
           </div>
     </>
   );

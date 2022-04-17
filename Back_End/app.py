@@ -117,6 +117,8 @@ def upload():
            
 @app.route('/upload', methods=['POST'])
 @csrf.exempt
+#req = request.get_json()
+    #volume = request.json['volume']
 def upload_file():
     print("upload files are started")
     if 'file' not in request.files:
