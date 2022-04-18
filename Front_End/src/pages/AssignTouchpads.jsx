@@ -15,7 +15,7 @@ function AssignTouchpads() {
       },
     })
       .then((response) => response.json())
-      .then((response) => setTouchpads([...touchpads, (response)]))
+      .then((response) => setTouchpads(...touchpads, (response)))
       .catch((error) => console.log(error));
   },[]);
 

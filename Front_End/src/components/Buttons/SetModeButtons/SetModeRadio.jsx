@@ -6,7 +6,7 @@ import FormLabel from '@mui/material/FormLabel';
 import "./SetModeRadio.css"
 
 
-export default function ControlledRadioButtonsGroup({ newmode, setNewMode, currentmode, setCurrentMode}) {
+export default function ControlledRadioButtonsGroup({ currentmode, setCurrentMode}) {
 
 
   return (
@@ -15,9 +15,8 @@ export default function ControlledRadioButtonsGroup({ newmode, setNewMode, curre
       <FormLabel id="controlled-radio-buttons-group"></FormLabel>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
-        defaultChecked = {currentmode}
         value = {currentmode}
-        onChange={(event, value) => {setNewMode(parseInt(value)); setCurrentMode(newmode)}}
+        onChange={(event, value) => {setCurrentMode(parseInt(value))}}
         sx={{
             
             pt: 17,

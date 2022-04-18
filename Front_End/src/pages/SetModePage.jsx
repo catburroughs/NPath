@@ -16,7 +16,6 @@ import ConfirmModeButton from  "../components/Buttons/SetModeButtons/ConfirmMode
 function SetModePage() {
   let location = useLocation();
   const [currentmode, setCurrentMode] = useState(1)
-  const [newmode, setNewMode] = useState(0);
 
   useEffect(() => { 
     // do stuff
@@ -33,8 +32,7 @@ function SetModePage() {
 }, [location]);
 function handleClick(e) {
   {e.preventDefault();
-    setCurrentMode(newmode);
-    SendMode(newmode)
+    SendMode(currentmode)
   }
 }
 
@@ -49,7 +47,7 @@ function handleClick(e) {
     </div>
     </div>
 
-    <SetModeRadio newmode = {newmode} setNewMode={setNewMode} currentmode = {currentmode} setCurrentMode={setCurrentMode}/>
+    <SetModeRadio currentmode = {currentmode} setCurrentMode={setCurrentMode}/>
     <SetModeButtons />
     <ConfirmModeButton onClick = {handleClick}/>
     </>

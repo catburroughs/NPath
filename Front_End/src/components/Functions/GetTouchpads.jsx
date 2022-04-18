@@ -4,7 +4,9 @@ function GetTouchpads({touchpads}) {
     return(
         <ol>
           {touchpads.map(touchpad => (
-            <li key={touchpad}>{touchpad}</li>
+            
+            <li key={touchpad}><p>{touchpad}</p></li>
+            
           ))}
         </ol>
       );
