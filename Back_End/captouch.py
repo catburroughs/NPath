@@ -6,13 +6,13 @@ import time
 #import Creator_Sounds
 import NPath_Sounds
 import pygame
-
+#D:\Aberdeen Final Project\NPath\Creator_Sounds
 #from Back_End.playboard import playBoard
 
 class NPath: 
     def __init__(self):
         pygame.init()
-        self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:"NPath\\Creator_Sounds"}
+        self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:"NPath\Creator_Sounds"}
         self.set_mode()
         self.set_volume()
         self.soundlist = self.set_soundlist()
@@ -47,12 +47,22 @@ class NPath:
             if soundfile.endswith('.wav') or soundfile.endswith('.mp3'):
                 setsoundlist.append(pygame.mixer.Sound(sfiles + "/" + str(soundfile)))
         return setsoundlist
+    
+    def return_creator_folder(self):
+        creatorsoundlist = []
+        for creatorfiles in os.listdir('D:\\Aberdeen Final Project\\NPath\\Creator_Sounds\\'):
+            print(creatorfiles)
+            if creatorfiles.endswith('.wav') or creatorfiles.endswith('.mp3'):
+                creatorsoundlist.append(str(creatorfiles))
+        return creatorsoundlist
+            
+        
 
 
     def print_soundlist(self):
-        files = self.get_soundfile()
+        sfiles = self.get_soundfile()
         print("Here are your sounds:")
-        for soundfile in os.listdir(files):
+        for soundfile in os.listdir(sfiles):
             print(str(soundfile))
 
 

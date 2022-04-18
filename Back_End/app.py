@@ -111,9 +111,16 @@ def volume():
         return redirect('/')
     return render_template('volume.html',form=form)
 
-@app.route('/upload', methods=['GET'])
-def upload():
-    return _show_page()
+@app.route('/getsoundfiles', methods=['GET'], strict_slashes=False)
+@csrf.exempt
+def getsoundfiles():
+    return_soundlist = []
+    files_from_folder = _get_files()
+    for key,value in files_from_folder.items():
+        #print(value)
+        return_soundlist.append(value)
+    print("files from folder are ", return_soundlist)
+    return jsonify(return_soundlist)
            
 @app.route('/upload', methods=['POST'])
 @csrf.exempt
@@ -139,7 +146,7 @@ def upload_file():
         original_filename = file.filename
         extension = original_filename.rsplit('.', 1)[1].lower()
         filename = str(uuid.uuid1()) + '.' + extension
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], original_filename)) #filename))
         file_list = os.path.join(UPLOAD_FOLDER, 'files.json')
         files = _get_files()
         files[filename] = original_filename
@@ -175,9 +182,12 @@ def _get_files():
 
 
 def _show_page():
-    files = _get_files()
-    print(files)
-    return files
+    return_files = []
+    sound_files = _get_files()
+    for k,v in sound_files:
+        return_files.append(v)
+    print(return_files)
+    return jsonify(return_files)
 
 
 

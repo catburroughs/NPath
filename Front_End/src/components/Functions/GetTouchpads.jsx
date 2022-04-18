@@ -1,17 +1,15 @@
 function GetTouchpads({touchpads}) {
 
-    return (
-        <>
-           
-        {
-            touchpads?.map((value,key)=>
-                <div>list = {key}</div>
-                
-            )
-        }
-     </>
+   
+    return(
+        <ol>
+          {touchpads.map(touchpad => (
+            <li key={touchpad}>{touchpad}</li>
+          ))}
+        </ol>
+      );
             
-    );
+    
 }
 
 export default GetTouchpads;
