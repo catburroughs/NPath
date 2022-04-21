@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import TouchpadMap from "../components/TouchpadMap/TouchpadMap";
-import GetTouchpads from "../components/Functions/GetTouchpads";
+import GetTouchpads from "../components/Functions/Touchpads/GetTouchpads";
+import SetTouchpad from "../components/Functions/Touchpads/SetTouchpad";
 
 function AssignTouchpads() {
   const [touchpads, setTouchpads] = useState([]);
@@ -35,6 +36,7 @@ function AssignTouchpads() {
 
    
     <GetTouchpads touchpads = {touchpads} />
+    <SetTouchpad touchpads = {touchpads} />
     
 
   </>

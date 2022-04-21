@@ -1,11 +1,18 @@
 import "./TouchpadMap.css";
-import labmap from "./labyrinth2.jpg";
+import labmap from "./numberedtouchpads.jpg";
 
 function TouchpadMap() {
     return(
+<>
 <div id="Touchpad_Map">
-<img id = "labmap" src={labmap}/>
+    
+<img id = "labmap"  src={labmap}/>
+
+
 </div>
+
+
+</>
     )
 
 }

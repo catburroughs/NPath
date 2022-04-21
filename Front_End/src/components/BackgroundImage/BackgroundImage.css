@@ -1,5 +1,5 @@
 #Labyrinth_Background {
-    position: fixed;
+    position: absolute;
     top: -240px;
     left: -130px;
     z-index: -1;
@@ -7,5 +7,5 @@
     overflow: hidden;
     display:flex;
     background-repeat: no-repeat;
-    background-size: contain;
+    
   }
