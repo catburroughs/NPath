@@ -1,3 +1,4 @@
+from ast import While
 import json
 import os
 import sys
@@ -8,6 +9,7 @@ import NPath_Sounds
 import pygame
 #D:\Aberdeen Final Project\NPath\Creator_Sounds
 #from Back_End.playboard import playBoard
+#from Back_End.creatorboard import creatorBoard
 
 class NPath: 
     def __init__(self):
@@ -17,6 +19,12 @@ class NPath:
         self.set_volume()
         self.soundlist = self.set_soundlist()
         self.touchpads = [x for x in range(12)]
+        self.touchpad_dict = {}
+        
+        
+    def get_touchpad_dict(self, dict):
+        self.touchpad_dict = dict
+        return self.touchpad_dict
         
         
         
@@ -79,8 +87,12 @@ class NPath:
    
         
     def play_board(self):
-        while True:
-            playBoard(self.soundlist, self.volume)
+        if self.mode == 3:
+            while True:
+                playCreatorBoard(self.soundlist, self.volume, self.touchpad_dict)
+        elif self.mode == 1 or self.mode == 2:
+            while True:
+                playBoard(self.soundlist, self.volume)
 
 
 

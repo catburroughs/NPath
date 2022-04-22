@@ -35,9 +35,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "1": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -57,9 +55,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "2": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -79,9 +75,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "3": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -101,9 +95,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "4": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -123,9 +115,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "5": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -145,9 +135,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "6": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -167,9 +155,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "7": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -189,9 +175,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "8": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -211,9 +195,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "9": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -233,9 +215,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "10": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -255,9 +235,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "11": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>
@@ -277,9 +255,7 @@ export default function SetTouchpad({touchpads}) {
           onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "12": event.target.value }))}}
           autoWidth
           label="Touchpads"
-        ><MenuItem value="">
-        <em>None</em>
-      </MenuItem>
+        >
           {touchpads?.map(touchpad => (
             <MenuItem value={touchpad}
             key = {touchpad}>

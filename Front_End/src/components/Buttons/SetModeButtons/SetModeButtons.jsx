@@ -18,7 +18,7 @@ function SetModeButtons() {
         </div>
       </div>
       <div className="hide" >
-          NPath Mode has a crafted soundscape
+          NPath Mode has a crafted soundscape.
       </div>
       
       <div className="Nature_Mode"  >
@@ -28,23 +28,31 @@ function SetModeButtons() {
       </div>
      
       <div className="hide" >
-          Nature Mode features sounds of the natural world
+          Nature Mode features sounds of the natural world.
       </div>
 
     
 
       <div className="Creator_Mode" >
-        <Link to = '/UploadSounds'>
         <div id="Text_Style">
           Creator Mode
         </div>
-        </Link>
       </div>
       
 
       <div className="hide" >
-          Click the Creator Mode Area to Upload Sounds
+          Click Uploader to Upload Sounds.
       </div>
+
+
+      <Link to = '/UploadSounds'>
+      <div className="Upload_Button">
+      <div id="Upload_Style">
+          UPLOADER
+          </div>
+          </div>
+        </Link>
+      
 
 
 

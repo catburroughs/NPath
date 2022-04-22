@@ -5,7 +5,17 @@
     font-family: Century;
     font-style: normal;
     font-weight: normal;
-    font-size: 50px;
+    font-size: 45px;
+}
+
+#Upload_Style{
+    color: rgba(255,255,255,1);
+    white-space: nowrap;
+    text-align: center;
+    font-family: Century;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
 }
 
 #Question_Button {
@@ -77,6 +87,7 @@
     top: 480px;
     position: absolute;
     overflow: visible;
+    z-index: 2;
     width: 320px;
     background-color: rgba(213,53,160,1);
     border-radius: 45px;
@@ -97,6 +108,19 @@
     font-size: 18px;
     color: rgba(213,53,160,1);
   }
+
+.Upload_Button {
+    left: 290px;
+    top: 498px;
+    position: absolute;
+    overflow: visible;
+    width: 103px;
+    background-color: rgba(213,53,160,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+    z-index: 2;
+}
 
 
 

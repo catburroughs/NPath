@@ -40,8 +40,10 @@ class SoundFileUploader extends React.Component {
        
         <br />
         <div>
-          <button>Upload</button>
-        </div>
+          <button>
+          Upload
+          </button>
+          </div>
       </form>
     );
   }

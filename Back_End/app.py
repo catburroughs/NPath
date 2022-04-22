@@ -69,6 +69,7 @@ def get_touchpads():
     #npath.set_volume(volume)
     print(req)
     print(touchpads)
+    npath.get_touchpad_dict(touchpads)
     return jsonify({"message": "OK"})
 
 
