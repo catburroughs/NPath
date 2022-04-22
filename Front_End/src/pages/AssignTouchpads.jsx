@@ -1,12 +1,21 @@
-import { useState, useEffect } from "react";
 import TouchpadMap from "../components/TouchpadMap/TouchpadMap";
-import GetTouchpads from "../components/Functions/Touchpads/GetTouchpads";
 import SetTouchpad from "../components/Functions/Touchpads/SetTouchpad";
+import { useState, useEffect } from "react";
 
 function AssignTouchpads() {
+  const [touchpads, setTouchpads] = useState([]);
 
-
-  
+  useEffect(() => {
+    fetch("http://localhost:5000/getsoundfiles", {
+      methods: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => setTouchpads(response))
+      .catch((error) => console.log(error));
+  },[]);
 
 
   return (
@@ -22,7 +31,8 @@ function AssignTouchpads() {
 
    
     
-    <SetTouchpad />
+    <SetTouchpad touchpads = {touchpads} />
+   
     
 
   </>

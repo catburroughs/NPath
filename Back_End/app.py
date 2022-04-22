@@ -61,6 +61,16 @@ def add_volume():
     print(req)
     return jsonify({"message": "OK"})
 
+@app.route("/gettouchpads", methods=["POST"], strict_slashes=False)
+@csrf.exempt
+def get_touchpads():
+    req = request.get_json()
+    touchpads = request.json['touchpads']
+    #npath.set_volume(volume)
+    print(req)
+    print(touchpads)
+    return jsonify({"message": "OK"})
+
 
 
 

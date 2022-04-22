@@ -1,0 +1,32 @@
+
+
+  .SetTouchpadButton {
+    left: 400px;
+    top: 180px;
+    position: absolute;
+    overflow: visible;
+    width: 380px;
+    background-color: black;
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+  .SetTouchpadButton:hover {
+    background-color:orangered;
+    cursor: pointer;
+  }
+
+  .hide{
+    display: none;  
+}
+
+.SetTouchpadButton:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 210px;
+    left: 80px;
+    font-size: 18px;
+    color: Black;
+  }
