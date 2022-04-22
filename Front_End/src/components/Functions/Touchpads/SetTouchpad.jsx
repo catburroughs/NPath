@@ -7,12 +7,13 @@ import SendTouchpads from "./SendTouchpads";
 import SetTouchpadButton from "../../Buttons/SetTouchpadButton/SetTouchpadButton";
 
 export default function SetTouchpad({touchpads}) {
-  const [assignedtouchpad, setAssignedTouchpad] = useState({"number":"","title":""});
+  const [assignedtouchpad, setAssignedTouchpad] = useState({});
 
 
 
   function handleClick(e) {
     {e.preventDefault();
+        console.log(assignedtouchpad);
       SendTouchpads(assignedtouchpad);
        
     }
@@ -31,7 +32,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection One"
           defaultValue={""}
           value={assignedtouchpad["1"]}   
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "1", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "1": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -53,7 +54,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Two"
           defaultValue={""}
           value={assignedtouchpad["2"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "2", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "2": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -75,7 +76,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Three"
           defaultValue={""}
           value={assignedtouchpad["3"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "3", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "3": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -97,7 +98,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Four"
           defaultValue={""}
           value={assignedtouchpad["4"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "4", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "4": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -119,7 +120,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Five"
           defaultValue={""}
           value={assignedtouchpad["5"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "5", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "5": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -141,7 +142,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Six"
           defaultValue={""}
           value={assignedtouchpad["6"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "6", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "6": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -163,7 +164,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Seven"
           defaultValue={""}
           value={assignedtouchpad["7"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "7", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "7": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -185,7 +186,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Eight"
           defaultValue={""}
           value={assignedtouchpad["8"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "8", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "8": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -207,7 +208,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Nine"
           defaultValue={""}
           value={assignedtouchpad["9"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "9", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "9": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -229,7 +230,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Ten"
           defaultValue={""}
           value={assignedtouchpad["10"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "10", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "10": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -251,7 +252,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Eleven"
           defaultValue={""}
           value={assignedtouchpad["11"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "11", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "11": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
@@ -273,7 +274,7 @@ export default function SetTouchpad({touchpads}) {
           labelId="Touchpad Selection Twelve"
           defaultValue={""}
           value={assignedtouchpad["12"]}   //setPersonInfo(prev => {...prev, firstName: 'SOME_NAME'}) 
-          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, number: "12", title: event.target.value }))}}
+          onChange={(event) => {setAssignedTouchpad(prev => ({...prev, "12": event.target.value }))}}
           autoWidth
           label="Touchpads"
         ><MenuItem value="">
