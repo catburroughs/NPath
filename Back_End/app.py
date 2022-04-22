@@ -39,7 +39,6 @@ def getmode():
 @app.route("/addmode", methods = ['POST'], strict_slashes=False)
 @csrf.exempt
 def sendmode():
-    print("HHHHHHHHHEEEEEEEEEEEEEEEEEERRRRRRRRRRRREEEEEEEEEEEEEEEEEEEE")
     req = request.get_json()
     mode = request.json['mode']
     print("The mode from post request is ", mode)

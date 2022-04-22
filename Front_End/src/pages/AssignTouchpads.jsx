@@ -4,21 +4,7 @@ import GetTouchpads from "../components/Functions/Touchpads/GetTouchpads";
 import SetTouchpad from "../components/Functions/Touchpads/SetTouchpad";
 
 function AssignTouchpads() {
-  const [touchpads, setTouchpads] = useState([]);
 
-  // Modify the current state by setting the new data to
-  // the response from the backend
-  useEffect(() => {
-    fetch("http://localhost:5000/getsoundfiles", {
-      methods: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => setTouchpads(...touchpads, (response)))
-      .catch((error) => console.log(error));
-  },[]);
 
   
 
@@ -35,8 +21,8 @@ function AssignTouchpads() {
   </div>
 
    
-    <GetTouchpads touchpads = {touchpads} />
-    <SetTouchpad touchpads = {touchpads} />
+    
+    <SetTouchpad />
     
 
   </>
