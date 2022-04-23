@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import "./Global.css";
+import Taskbar from "./components/Taskbar/Taskbar";
+import UploadSounds from './pages/UploadSoundsPage';
+import LandingPage from './pages/LandingPage';
+import ActivateBoard from './pages/ActivateBoardPage';
+import AssignTouchpads from './pages/AssignTouchpads';
+import SetModePage from './pages/SetModePage';
+import SetVolumePage from './pages/SetVolumePage';
+import AboutNpathPage from './pages/AboutNPathPage';
 
-function App() {
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+    <Taskbar />
+    <Routes>
+    <Route exact path='/' element ={<LandingPage/>} />
+    <Route exact path='/mode' element ={<SetModePage/>} />
+    <Route exact path='/volume' element ={<SetVolumePage/>} />
+    <Route exact path='/aboutnpath' element ={<AboutNpathPage/>} />
+    <Route exact path='/uploadsounds' element ={<UploadSounds/>} />
+    <Route exact path='/activateboard' element ={<ActivateBoard/>} />
+    <Route exact path='/assigntouchpads' element ={<AssignTouchpads/>} />
+
+    </Routes>
+    </Router>
+    </>
   );
+
+ 
 }
 
 export default App;

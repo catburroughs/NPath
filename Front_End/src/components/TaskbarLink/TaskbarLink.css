@@ -1,0 +1,13 @@
+.taskbar_link {
+    display: inline-block;
+    font-family: Century;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    color: rgb(247, 245, 245);
+    margin-top: 30px;
+    margin-left: 139px;
+    text-decoration: none;
+}
+
+  

@@ -1,0 +1,147 @@
+.Upload_Style{
+    color: rgba(255,255,255,1);
+    white-space: nowrap;
+    text-align: center;
+    font-family: Century;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+.NPath_Mode {
+    left: 415px;
+    top: 288px;
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    height:50px;
+    border-radius: 45px;
+    padding: 10px;
+    background-color:  rgba(145,60,241,1);
+    shape-rendering: auto;
+}
+
+.hide{
+    display: none;  
+}
+
+.NPath_Mode:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 310px;
+    left: 70px;
+    font-size: 18px;
+    color: rgba(145,60,241,1);
+  }
+
+.Nature_Mode {
+    left: 415px;
+    top: 388px;
+    position: absolute;
+    overflow: visible;
+    width: 320px;
+    height:50px;
+    background-color: rgba(137,190,31,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+.hide{
+    display: none;  
+}
+
+.Nature_Mode:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 410px;
+    left: 10px;
+    font-size: 18px;
+    color:rgba(137,190,31,1);
+  }
+
+.Creator_Mode {
+    left: 415px;
+    top: 488px;
+    position: absolute;
+    overflow: visible;
+    z-index: 2;
+    width: 320px;
+    height:50px;
+    background-color: rgba(213,53,160,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+}
+
+.hide{
+    display: none;  
+}
+
+.Creator_Mode:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 505px;
+    left: 15px;
+    font-size: 18px;
+    color: rgba(213,53,160,1);
+  }
+
+.Upload_Button {
+    left: 290px;
+    top: 498px;
+    position: absolute;
+    overflow: visible;
+    width: 103px;
+    background-color: rgba(213,53,160,1);
+    border-radius: 45px;
+    padding: 10px;
+    shape-rendering: auto;
+    z-index: 2;
+}
+
+.Upload_Button:hover{
+    background-color:rgb(242, 169, 12);
+    cursor: pointer;
+
+}
+
+.ConfirmModeButton {
+    left: 340px;
+    top: 585px;
+    position: absolute;
+    overflow: visible;
+    width: 480px;
+    height:50px;
+    background-color: black;
+    border-radius: 45px;
+    padding: 15px;
+    shape-rendering: auto;
+}
+
+.ConfirmModeButton:hover {
+    background-color:rgb(242, 169, 12);
+    cursor: pointer;
+}
+
+.hide{
+    display: none;  
+}
+
+.ConfirmModeButton:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 620px;
+    left: 35px;
+    font-size: 18px;
+    color: Black;
+  }
+
+
+
+

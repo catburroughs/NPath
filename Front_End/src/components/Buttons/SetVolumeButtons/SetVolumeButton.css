@@ -1,0 +1,16 @@
+.SetVolumeButton {
+    width: 398px;
+    height: 77px;
+    left: 310px;
+    top: 469px;
+    border-radius: 45px;
+    padding: 10px;
+    background-color: black;
+    shape-rendering: auto;
+    position: absolute;
+  }
+
+  .SetVolumeButton:hover {
+    background-color:blueviolet;
+    cursor: pointer;
+  }
