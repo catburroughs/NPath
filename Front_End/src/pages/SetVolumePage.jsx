@@ -1,4 +1,4 @@
-
+import "../Global.css";
 import { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -45,13 +45,13 @@ function SetVolumePage() {
   return (
     <>
     <BackgroundImage />
-    <div id = "Headline" className = "Headline">
-    <div id = "Text_Style">
+    <div className = "Headline">
+    <div className = "Text_Style">
     Slide Toggle to Change Volume 
     </div>
     </div>
-    <div id = "VolumeInput" className = "VolumeInput">
-    <div id = "Text_Style">
+    <div className = "VolumeInput">
+    <div className = "Text_Style">
     <ShowVolume
     volume = {currentvolume}
     />

@@ -5,15 +5,11 @@ import { Link } from 'react-router-dom';
 
 function SetModeButtons() {
 
-
-
-
-  
-
   return (
     <>
-      <div className="NPath_Mode" >
-        <div id="Text_Style">
+   
+      <div className="NPath_Mode">
+        <div className="Text_Style">
           <span>NPath Mode</span>
         </div>
       </div>
@@ -21,8 +17,8 @@ function SetModeButtons() {
           NPath Mode has a crafted soundscape.
       </div>
       
-      <div className="Nature_Mode"  >
-      <div id="Text_Style">
+      <div className="Nature_Mode">
+      <div className="Text_Style">
           <span>Nature Mode</span> 
           </div>
       </div>
@@ -34,7 +30,7 @@ function SetModeButtons() {
     
 
       <div className="Creator_Mode" >
-        <div id="Text_Style">
+        <div className="Text_Style">
           Creator Mode
         </div>
       </div>
@@ -46,12 +42,13 @@ function SetModeButtons() {
 
 
       <Link to = '/UploadSounds'>
-      <div className="Upload_Button">
-      <div id="Upload_Style">
+      <div className="Upload_Button" role = "button">
+      <div className="Upload_Style">
           UPLOADER
           </div>
           </div>
         </Link>
+     
       
 
 

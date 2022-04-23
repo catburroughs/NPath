@@ -15,7 +15,7 @@ function UploadSounds() {
   return (
     <>
     <BackgroundImage />
-    <div id = "SoundfileBox">
+    <div className = "SoundfileBox">
     <SoundFileUploader />
     </div>
     <UploadSoundButton />

@@ -1,4 +1,4 @@
-#SetVolumeButton {
+.SetVolumeButton {
     width: 398px;
     height: 77px;
     left: 310px;
@@ -10,7 +10,7 @@
     position: absolute;
   }
 
-  #SetVolumeButton:hover {
+  .SetVolumeButton:hover {
     background-color:blueviolet;
     cursor: pointer;
   }

@@ -1,4 +1,5 @@
 import "../Global.css";
+
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import SetModeButtons from "../components/Buttons/SetModeButtons/SetModeButtons";
 import SendMode from "../components/Functions/SendMode";
@@ -39,8 +40,8 @@ function handleClick(e) {
   return (
     <>
     <BackgroundImage />
-    <div id = "ModeInput">
-    <div id = "Text_Style">
+    <div className = "ModeInput">
+    <div className = "Text_Style">
     <GetMode
     mode = {currentmode}
     />

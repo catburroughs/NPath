@@ -17,9 +17,17 @@ class NPath:
         self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:"NPath\Creator_Sounds"}
         self.set_mode()
         self.set_volume()
+        self.set_activation()
         self.soundlist = self.set_soundlist()
         self.touchpads = [x for x in range(12)]
         self.touchpad_dict = {}
+        self.board_status = self.get_activation()
+        
+    def get_activation(self):
+        return self.board_status
+    
+    def set_activation(self, status = False):
+        self.board_status = status
         
         
     def get_touchpad_dict(self, dict):
@@ -87,12 +95,10 @@ class NPath:
    
         
     def play_board(self):
-        if self.mode == 3:
-            while True:
-                playCreatorBoard(self.soundlist, self.volume, self.touchpad_dict)
-        elif self.mode == 1 or self.mode == 2:
-            while True:
-                playBoard(self.soundlist, self.volume)
+        if self.mode == 3 and self.activation:
+            playCreatorBoard(self.soundlist, self.volume, self.touchpad_dict)
+        elif (self.mode == 1 or self.mode == 2) and self.activation:
+            playBoard(self.soundlist, self.volume)
 
 
 

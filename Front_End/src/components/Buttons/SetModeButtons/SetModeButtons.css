@@ -1,14 +1,4 @@
-#Text_Style{
-    color: rgba(255,255,255,1);
-    white-space: nowrap;
-    text-align: center;
-    font-family: Century;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 45px;
-}
-
-#Upload_Style{
+.Upload_Style{
     color: rgba(255,255,255,1);
     white-space: nowrap;
     text-align: center;
@@ -18,24 +8,14 @@
     font-size: 18px;
 }
 
-#Question_Button {
-    background-color: rgba(255,170,0,1);
-    position: absolute;
-    shape-rendering: auto;
-    width: 50px;
-    height: 50px;
-    left: 0px;
-    top: 4px;
-    padding: 3px;
-}
-
 
 .NPath_Mode {
     left: 415px;
-    top: 280px;
+    top: 288px;
     position: absolute;
     overflow: visible;
     width: 320px;
+    height:50px;
     border-radius: 45px;
     padding: 10px;
     background-color:  rgba(145,60,241,1);
@@ -58,10 +38,11 @@
 
 .Nature_Mode {
     left: 415px;
-    top: 380px;
+    top: 388px;
     position: absolute;
     overflow: visible;
     width: 320px;
+    height:50px;
     background-color: rgba(137,190,31,1);
     border-radius: 45px;
     padding: 10px;
@@ -84,11 +65,12 @@
 
 .Creator_Mode {
     left: 415px;
-    top: 480px;
+    top: 488px;
     position: absolute;
     overflow: visible;
     z-index: 2;
     width: 320px;
+    height:50px;
     background-color: rgba(213,53,160,1);
     border-radius: 45px;
     padding: 10px;
@@ -103,7 +85,7 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 510px;
+    top: 505px;
     left: 15px;
     font-size: 18px;
     color: rgba(213,53,160,1);
@@ -121,6 +103,44 @@
     shape-rendering: auto;
     z-index: 2;
 }
+
+.Upload_Button:hover{
+    background-color:rgb(242, 169, 12);
+    cursor: pointer;
+
+}
+
+.ConfirmModeButton {
+    left: 340px;
+    top: 585px;
+    position: absolute;
+    overflow: visible;
+    width: 480px;
+    height:50px;
+    background-color: black;
+    border-radius: 45px;
+    padding: 15px;
+    shape-rendering: auto;
+}
+
+.ConfirmModeButton:hover {
+    background-color:rgb(242, 169, 12);
+    cursor: pointer;
+}
+
+.hide{
+    display: none;  
+}
+
+.ConfirmModeButton:hover + .hide{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 620px;
+    left: 35px;
+    font-size: 18px;
+    color: Black;
+  }
 
 
 

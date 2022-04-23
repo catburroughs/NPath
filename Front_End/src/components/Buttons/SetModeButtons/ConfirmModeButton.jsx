@@ -1,4 +1,4 @@
-import "./ConfirmModeButton.css";
+import "./SetModeButtons.css";
 
 
 
@@ -8,7 +8,7 @@ function ConfirmModeButton({ onClick }) {
     <>
     
           <div className='ConfirmModeButton' role = 'button' onClick = {onClick}>
-              <div id='Text_Style'>
+              <div className='Text_Style'>
                   <span>Confirm New Mode</span>
               </div>
           </div>

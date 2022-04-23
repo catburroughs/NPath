@@ -1,15 +1,4 @@
-#Text_Style{
-    color: rgba(255,255,255,1);
-    white-space: nowrap;
-    text-align: center;
-    font-family: Century;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 50px;
-}
-
-
-#Activate_Board_Button {
+.Activate_Board_Button {
     position: absolute;
     width: 597px;
     height: 77px;
@@ -22,11 +11,11 @@
     shape-rendering: auto;
   }
 
-  #Activate_Board_Button:hover {
+  .Activate_Board_Button:hover {
     background-color:grey;
   }
 
-  #Set_Volume_Button {
+  .Set_Volume_Button {
     width: 398px;
     height: 77px;
     left: 139px;
@@ -38,11 +27,11 @@
     position: absolute;
   }
 
-  #Set_Volume_Button:hover {
+  .Set_Volume_Button:hover {
     background-color:grey;
   }
 
-  #Choose_Mode_Button {
+  .Choose_Mode_Button {
     position: absolute;
     width: 398px;
     height: 77px;
@@ -55,6 +44,6 @@
     background-color: black;
   }
 
-  #Choose_Mode_Button:hover {
+  .Choose_Mode_Button:hover {
     background-color:grey;
   }

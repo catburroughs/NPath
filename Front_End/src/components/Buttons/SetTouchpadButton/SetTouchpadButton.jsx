@@ -13,7 +13,7 @@ function SetTouchpadButton({ onClick }) {
               </div>
           </div>
           <div className = 'hide'>
-            Click here after selecting your touchpads
+            Click here after selecting your touchpads.
           </div>
          
     </>

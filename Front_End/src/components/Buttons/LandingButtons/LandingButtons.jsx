@@ -6,16 +6,16 @@ function LandingButtons() {
   return (
     <>
         <Link to = '/ActivateBoard'>
-      <div id="Activate_Board_Button" className="Activate_Board_Button">
-        <div id="Text_Style">
+      <div className="Activate_Board_Button" role = "button">
+        <div className="Text_Style">
           <span>Activate NPath Board</span>
         </div>
       </div>
       </Link>
 
       <Link to = '/Volume'>
-      <div id="Set_Volume_Button" className="Set_Volume_Button">
-      <div id="Text_Style">
+      <div className="Set_Volume_Button" role = "button">
+      <div className="Text_Style">
           <span>Set Volume</span> 
           </div>
       </div>
@@ -23,7 +23,7 @@ function LandingButtons() {
 
       <Link to = '/Mode'>
       <div id="Choose_Mode_Button" className="Choose_Mode_Button">
-        <div id="Text_Style">
+        <div className="Text_Style">
           <span>Choose Mode</span>
         </div>
       </div>

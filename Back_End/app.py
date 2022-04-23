@@ -61,6 +61,26 @@ def add_volume():
     print(req)
     return jsonify({"message": "OK"})
 
+@app.route("/setactivation", methods=["POST"], strict_slashes=False)
+@csrf.exempt
+def activate_board():
+    req = request.get_json()
+    activation = request.json['activation']
+    npath.set_activation(True)
+    print(req)
+    print(activation)
+    return jsonify({"message": "OK"})
+
+@app.route("/getactivation", methods=["GET"], strict_slashes=False)
+@csrf.exempt
+def get_board_status():
+    print("Activation is ", npath.get_activation())
+    status =  npath.get_activation()
+    if status:
+        return jsonify("on")
+    else:
+        return jsonify("off")
+
 @app.route("/gettouchpads", methods=["POST"], strict_slashes=False)
 @csrf.exempt
 def get_touchpads():

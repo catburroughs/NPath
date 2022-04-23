@@ -21,7 +21,7 @@ a:active {
   text-decoration: none;
  }
 
- #Text_Style{
+ .Text_Style{
   color: rgba(255,255,255,1);
   white-space: nowrap;
   text-align: center;
@@ -29,15 +29,19 @@ a:active {
   font-style: normal;
   font-weight: normal;
   font-size: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#Text_Container{
+.Text_Container{
   padding: 20px;
 }
 
 
 
-#Headline{
+.Headline{
   position: relative;
   background-color: grey;
   padding: 20px;
@@ -48,7 +52,7 @@ a:active {
   width: 700px;
 }
 
-#VolumeInput{
+.VolumeInput{
   position: relative;
   background-color: grey;
   padding: 20px;
@@ -59,7 +63,7 @@ a:active {
   width: 400px;
 }
 
-#ModeInput{
+.ModeInput{
   left: 280px;
   top: 165px;
   height: 60px;
@@ -97,8 +101,8 @@ a:active {
   width: 700px;
  
 }
-
-.Choose_Files {
+/*todo remove these if can't find use */
+.Choose_Files { 
   cursor: pointer;
   left: 415px;
   top: 280px;

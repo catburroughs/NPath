@@ -8,7 +8,6 @@ return fetch("http://localhost:5000/addvolume", {
     body:JSON.stringify({volume:newvolume})
 })
     .then((response) => response.json())
-    //.then((response) => setCurrentVolume(response))
     .catch((error) => console.log(error));
 }
 

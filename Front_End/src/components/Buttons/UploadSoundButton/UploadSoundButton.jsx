@@ -14,9 +14,9 @@ function UploadSoundButton() {
     <>
 
       <Link to = '/AssignTouchpads'>
-      <div className="Touchpad_Button">
-      <div id="Text_Style">
-          Assign Touchpads to Your Sounds
+      <div className="Touchpad_Button" role = "button">
+      <div className="Text_Style">
+          Assign Touchpads to Your Sounds.
           </div>
           </div>
         </Link>
