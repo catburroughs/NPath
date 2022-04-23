@@ -24,18 +24,36 @@ function ActivateBoard() {
     .catch((error) => console.log(error));
     
 }, [location]); 
-function handleClick() {
+
+const refreshPage = ()=>{
+  window.location.reload();
+}
+
+function handleClickON() {
   const boardStatus = "on"
   {
     SendActivation(boardStatus);
     console.log(boardStatus);
+    refreshPage();
+  }
+}
+function handleClickOFF() {
+  const boardStatus = "off"
+  {
+    SendActivation(boardStatus);
+    console.log(boardStatus);
+    refreshPage();
   }
 }
   return (
     <>
     <BackgroundImage />
+    <div className = "ModeInput">
+    <div className = "Text_Style">
     <GetActivationStatus boardstatus={currentboardstatus} />
-    <ActivateBoardButton onClick={handleClick} />
+    </div>
+    </div>
+    <ActivateBoardButton onClick1={handleClickON} onClick2={handleClickOFF} />
     
     
     </>

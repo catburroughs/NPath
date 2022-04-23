@@ -1,0 +1,16 @@
+.AboutNpathButton {
+    position: absolute;
+    width: 597px;
+    height: 77px;
+    left: 120px;
+    top: 470px;
+    border-radius: 45px;
+    padding: 10px;
+    background-color: black;
+    overflow: visible;
+    shape-rendering: auto;
+  }
+
+  .AboutNpathButton:hover {
+    background-color:grey;
+  }

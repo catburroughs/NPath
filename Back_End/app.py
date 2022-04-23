@@ -66,7 +66,10 @@ def add_volume():
 def activate_board():
     req = request.get_json()
     activation = request.json['activation']
-    npath.set_activation(True)
+    if activation == "on":
+        npath.set_activation(True)
+    else:
+        npath.set_activation(False)
     print(req)
     print(activation)
     return jsonify({"message": "OK"})

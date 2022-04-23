@@ -95,9 +95,9 @@ class NPath:
    
         
     def play_board(self):
-        if self.mode == 3 and self.activation:
+        if self.mode == 3 and self.board_status:
             playCreatorBoard(self.soundlist, self.volume, self.touchpad_dict)
-        elif (self.mode == 1 or self.mode == 2) and self.activation:
+        elif (self.mode == 1 or self.mode == 2) and self.board_status:
             playBoard(self.soundlist, self.volume)
 
 
