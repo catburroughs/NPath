@@ -68,6 +68,10 @@ def activate_board():
     activation = request.json['activation']
     if activation == "on":
         npath.set_activation(True)
+        if npath.get_mode() == 3:
+            npath.play_board(npath.creator_touchpad())
+        else:
+            npath.play_board(npath.default_touchpad())
     else:
         npath.set_activation(False)
     print(req)
@@ -89,10 +93,9 @@ def get_board_status():
 def get_touchpads():
     req = request.get_json()
     touchpads = request.json['touchpads']
-    #npath.set_volume(volume)
     print(req)
     print(touchpads)
-    npath.get_touchpad_dict(touchpads)
+    npath.set_touchpad_dict(touchpads)
     return jsonify({"message": "OK"})
 
 

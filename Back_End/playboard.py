@@ -6,7 +6,7 @@ import pygame
 import Adafruit_MPR121.MPR121 as MPR121
 
 
-def playBoard(soundList, volume):
+def playBoard(volume, soundDict):
     print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
     # Create MPR121 instance.
@@ -21,8 +21,8 @@ def playBoard(soundList, volume):
     cap.set_thresholds(6, 6)
 
 
-    for x in soundList:
-        x.set_volume(volume)
+    for k,v in soundDict.items():
+        v.set_volume(volume)
 
 
 
@@ -38,12 +38,17 @@ def playBoard(soundList, volume):
             # First check if transitioned from not touched to touched.
             if current_touched & pin_bit and not last_touched & pin_bit:
                 print('{0} touched!'.format(i))
-                if (soundList[i]):
-                    soundList[i].play()
+                if i in soundDict:
+                    soundDict[i].play()
+                    print('{0} played!'.format(i))
             # Next check if transitioned from touched to not touched.
             if not current_touched & pin_bit and last_touched & pin_bit:
                 print('{0} released!'.format(i))
         # Update last state and wait a short period before repeating.
         last_touched = current_touched
         time.sleep(0.1)
+        
+        
+             #   if (soundList[i]):
+              #      soundList[i].play()
 
