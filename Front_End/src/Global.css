@@ -77,7 +77,7 @@ a:active {
 
 }
 
-#TouchpadBox{
+.TouchpadBox{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,7 +89,7 @@ a:active {
   width: 700px;
 }
 
-#SoundfileBox{
+.SoundfileBox{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;

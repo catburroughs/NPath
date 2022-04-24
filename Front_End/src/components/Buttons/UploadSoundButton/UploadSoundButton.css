@@ -4,7 +4,8 @@
     position: absolute;
     overflow: visible;
     z-index: 2;
-    width: 720px;
+    width: 780px;
+    height: 80px;
     background-color: rgba(213,53,160,1);
     border-radius: 45px;
     padding: 10px;

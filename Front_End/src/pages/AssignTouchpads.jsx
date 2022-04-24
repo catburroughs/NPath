@@ -2,6 +2,7 @@ import TouchpadMap from "../components/TouchpadMap/TouchpadMap";
 import SetTouchpad from "../components/Functions/Touchpads/SetTouchpad";
 import { useState, useEffect } from "react";
 import GoBackButton from "../components/Buttons/SetTouchpadButton/GoBackButton";
+import "../Global.css";
 
 function AssignTouchpads() {
   const [touchpads, setTouchpads] = useState([]);
@@ -22,7 +23,7 @@ function AssignTouchpads() {
   return (
     <>
     <TouchpadMap />
-<div id = "TouchpadBox">
+<div className = "TouchpadBox">
     <SetTouchpad touchpads = {touchpads} />
     </div>
     <GoBackButton />

@@ -19,5 +19,5 @@ function GetMode({mode}) {
             
     );
 }
-module.exports = GetMode
+//module.exports = GetMode
 export default GetMode;

@@ -7,14 +7,14 @@ function SetTouchpadButton({ onClick }) {
   return (
     <>
     
-          <div className='SetTouchpadButton' role = 'button' onClick = {onClick}>
-              <div id='Text_Style'>
-                  <span>Confirm Touchpad Assignments</span>
-              </div>
-          </div>
-          <div className = 'hide'>
-            Click here after selecting your touchpads.
-          </div>
+    <div className='SetTouchpadButton' role = 'button' onClick = {onClick}>
+        <div className='Text_Style'>
+            <span>Confirm Touchpad Assignments</span>
+        </div>
+    </div>
+    <div className = 'hide'>
+      Click here after selecting your touchpads.
+    </div>
          
     </>
   );
