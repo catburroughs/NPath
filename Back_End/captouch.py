@@ -15,7 +15,8 @@ import pygame
 class NPath: 
     def __init__(self):
         pygame.init()
-        self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:"NPath\Creator_Sounds"}
+        self.creatorpath = "D:\\Aberdeen Final Project\\NPath\\Creator_Sounds"
+        self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:self.creatorpath}
         self.set_mode()
         self.set_volume()
         self.set_activation()
@@ -29,6 +30,7 @@ class NPath:
         self.board_status = status
         
     def set_touchpad_dict(self, dict):
+        print("new touchpad dict is", dict)
         self.touchpad_dict = dict
         
     def get_touchpad_dict(self):
@@ -72,6 +74,7 @@ class NPath:
         return default_dict
         
     def creator_touchpad(self):
+        print("creator touchpad running")
         sounddict = self.get_touchpad_dict()
         mode = self.get_mode()
         final_dict = {}
@@ -86,6 +89,7 @@ class NPath:
     def play_board(self, sound_dict):
         if self.board_status:
             print(sound_dict)
+            print("BOARD IS ON")
             #playBoard(self.volume, sound_dict)
         else:
             print("Error Board Not On")
