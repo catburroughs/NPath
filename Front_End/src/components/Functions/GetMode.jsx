@@ -12,12 +12,12 @@ function GetMode({mode}) {
     }
 
     return (
-        <div className="m-2">
+       <>
             Mode =  {ReturnMode()}
       
-          </div>
+            </>
             
     );
 }
-//module.exports = GetMode
+
 export default GetMode;
