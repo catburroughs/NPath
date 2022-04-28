@@ -37,3 +37,4 @@ export default function ControlledRadioButtonsGroup({ currentmode, setCurrentMod
   
   );
 }
+//todo: make test for radio buttons
