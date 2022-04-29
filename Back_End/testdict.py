@@ -11,9 +11,13 @@ import Adafruit_MPR121.MPR121 as MPR121
 #import Creator_Sounds
 import random
 pygame.init()
-sounddict = {'1': 'LabelledFile4.wav', '2': 'LabelledFile15.wav', '3': 'LabelledFile16.wav', '4': 'LabelledFile2.wav', '5': 'LabelledFile3.wav', '6': 'LabelledFile20.wav', '7': 'LabelledFile15.wav', '8': 'LabelledFile2.wav', '9': 'LabelledFile14.wav', '10': 'LabelledFile3.wav', '11': 'LabelledFile15.wav', '12': 'LabelledFile16.wav'}
+NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
+Creator_Sounds = "/home/git/NPath/Creator_Sounds"
+Nature_Sounds = "/home/git/NPath/Back_End/Nature_Sounds"
 
-mode_dict = {1:"NPath_Sounds",2:"Nature_Sounds",3:"Creator_Sounds"}
+sounddict = {'1': 'rain.mp3', '2': 'night2.mp3', '3': 'forest.mp3', '4': 'waves.mp3', '5': 'sea.mp3', '6': 'seagulls.mp3', '7': 'rain3.mp3', '8': 'rain2.mp3', '9': 'forest2.mp3', '10': 'birds2.mp3', '11': 'crickets.mp3', '12': 'waves.mp3'}
+
+mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
 
 
 def get_touchpad_dict():
@@ -68,15 +72,14 @@ def boardplayer(soundict, numbertouched):
             print("Input {} touched!".format(tp))
         
     
-creatorpath = "/home/git/NPath/Creator_Sounds"
-mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:creatorpath}
+
 touchpad_dict = {}
    
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 #print(touchpad_randomizer())
 #newsounddict = creator_touchpad(3, mode_dict, sounddict)
-randomsounddict = default_touchpad(3, mode_dict)
+randomsounddict = default_touchpad(2, mode_dict)
 #boardplayer(newsounddict, 1)
 #boardplayer(randomsounddict, 5)
 # Create MPR121 instance.
@@ -135,8 +138,9 @@ while True:
         if current_touched & pin_bit and not last_touched & pin_bit:
             print('{0} touched!'.format(i))
             if i in randomsounddict:
-                    randomsounddict[i].play()
-                    print('{0} played!'.format(i))
+                sound = randomsounddict.get(i)
+                sound.play()
+                print('{0} played!'.format(i))
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
             print('{0} released!'.format(i))
