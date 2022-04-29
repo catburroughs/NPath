@@ -7,8 +7,8 @@ import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
 import Nature_Sounds
-import NPath_Sounds
-import Creator_Sounds
+NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
+creatorsounds = "/home/git/NPath/Creator_Sounds"
 pygame.init()
 
 def get_files():
@@ -28,9 +28,9 @@ def creator_soundlist():
 
 def set_soundlist():
 	setsoundlist = []
-	for soundfile in os.listdir('NPath_Sounds'):
+	for soundfile in os.listdir(NPath_Sounds):
 		if soundfile.endswith('.wav')or soundfile.endswith('.mp3'):
-			setsoundlist.append(pygame.mixer.Sound("files/" + str(soundfile)))
+			setsoundlist.append(pygame.mixer.Sound(str("NPath_Sounds/" + str(soundfile))))
 	return setsoundlist
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
@@ -65,13 +65,13 @@ cap.set_thresholds(6, 4)
 
 #soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
 soundList = set_soundlist()
-soundList2 = creator_soundlist()
+#soundList2 = creator_soundlist()
 
 for x in soundList:
     x.set_volume(.65)
 
 print("Soundlist length is ", len(soundList))
-print("Creator soundlist length is ", len(soundList2))
+#print("Creator soundlist length is ", len(soundList2))
 #while True:
  #   for i in range(len(soundList)):
 #        if cap[i].value:

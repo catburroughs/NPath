@@ -68,7 +68,7 @@ def boardplayer(soundict, numbertouched):
             print("Input {} touched!".format(tp))
         
     
-creatorpath = "D:\\Aberdeen Final Project\\NPath\\Creator_Sounds"
+creatorpath = "/home/git/NPath/Creator_Sounds"
 mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:creatorpath}
 touchpad_dict = {}
    
