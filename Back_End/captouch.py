@@ -4,19 +4,19 @@ import os
 import sys
 import time
 import random
-#import Nature_Sounds
-#import Creator_Sounds
-import NPath_Sounds
 import pygame
-#D:\Aberdeen Final Project\NPath\Creator_Sounds
-#from Back_End.playboard import playBoard
 
+from Back_End.playboard import playBoard
+NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
+Creator_Sounds = "/home/git/NPath/Creator_Sounds"
+Nature_Sounds = "/home/git/NPath/Back_End/Nature_Sounds"
 
 class NPath: 
     def __init__(self):
         pygame.init()
+        pygame.mixer.pre_init(44100, 16, 2, 4096)
         self.creatorpath = "D:\\Aberdeen Final Project\\NPath\\Creator_Sounds"
-        self.mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:self.creatorpath}
+        self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
         self.set_mode()
         self.set_volume()
         self.set_activation()
@@ -67,7 +67,7 @@ class NPath:
         tplist = self.touchpad_randomizer()
         default_dict = {}
         for soundfile in os.listdir(self.mode_dict[mode]):
-            if soundfile.endswith('.wav')or soundfile.endswith('.mp3'):
+            while tplist and soundfile.endswith('.wav'):  
                 k = tplist.pop()
                 v = pygame.mixer.Sound(str(self.mode_dict[mode])+ "/" + str(soundfile))
                 default_dict.update([(k,v)])
@@ -90,7 +90,7 @@ class NPath:
         if self.board_status:
             print(sound_dict)
             print("BOARD IS ON")
-            #playBoard(self.volume, sound_dict)
+            playBoard(self.volume, sound_dict)
         else:
             print("Error Board Not On")
 
