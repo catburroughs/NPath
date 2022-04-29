@@ -1,20 +1,27 @@
 import time
 import sys
-#import board
-#import busio
+import board
+import busio
 import pygame
 import os
 import json
-#import Adafruit_MPR121.MPR121 as MPR121
+import Adafruit_MPR121.MPR121 as MPR121
 #import Nature_Sounds
 #import NPath_Sounds
 #import Creator_Sounds
 import random
 pygame.init()
-sounddict = {'1': 'LabelledFile4.wav', '2': 'LabelledFile15.wav', '3': 'LabelledFile16.wav', '4': 'LabelledFile2.wav', '5': 
-'LabelledFile3.wav', '6': 'LabelledFile20.wav', '7': 'LabelledFile15.wav', '8': 'LabelledFile2.wav', '9': 'LabelledFile14.wav', '10': 'LabelledFile3.wav', '11': 'LabelledFile15.wav', '12': 'LabelledFile16.wav'}
+sounddict = {'1': 'LabelledFile4.wav', '2': 'LabelledFile15.wav', '3': 'LabelledFile16.wav', '4': 'LabelledFile2.wav', '5': 'LabelledFile3.wav', '6': 'LabelledFile20.wav', '7': 'LabelledFile15.wav', '8': 'LabelledFile2.wav', '9': 'LabelledFile14.wav', '10': 'LabelledFile3.wav', '11': 'LabelledFile15.wav', '12': 'LabelledFile16.wav'}
 
 mode_dict = {1:"NPath_Sounds",2:"Nature_Sounds",3:"Creator_Sounds"}
+
+
+def get_touchpad_dict():
+    return touchpad_dict
+    
+    
+def get_soundfile(mode):
+    return mode_dict[mode]
 
 def touchpad_randomizer():
     used_list = []
@@ -61,28 +68,31 @@ def boardplayer(soundict, numbertouched):
             print("Input {} touched!".format(tp))
         
     
-    
+creatorpath = "D:\\Aberdeen Final Project\\NPath\\Creator_Sounds"
+mode_dict = {1:"Back_End\\NPath_Sounds",2:"Back_End\\Nature_Sounds",3:creatorpath}
+touchpad_dict = {}
+   
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 #print(touchpad_randomizer())
 #newsounddict = creator_touchpad(3, mode_dict, sounddict)
 randomsounddict = default_touchpad(3, mode_dict)
 #boardplayer(newsounddict, 1)
-boardplayer(randomsounddict, 5)
+#boardplayer(randomsounddict, 5)
 # Create MPR121 instance.
-#cap = MPR121.MPR121()
+cap = MPR121.MPR121()
 
 # Initialize communication with MPR121 using default I2C bus of device, and
 # default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
-#if not cap.begin():
-#    print('Error initializing MPR121.  Check your wiring!')
-#    sys.exit(1)
-#i2c = busio.I2C(board.SCL, board.SDA)
+if not cap.begin():
+   print('Error initializing MPR121.  Check your wiring!')
+   sys.exit(1)
+i2c = busio.I2C(board.SCL, board.SDA)
 
 
-#pygame.init()
-#cap.begin()
-#cap.set_thresholds(6, 4)
+pygame.init()
+cap.begin()
+cap.set_thresholds(6, 4)
 
 # clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
 # hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
@@ -98,8 +108,7 @@ boardplayer(randomsounddict, 5)
 # tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
 
 #soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
-#soundList = set_soundlist()
-#soundList2 = creator_soundlist()
+
 
 #for x in soundList:
     #x.set_volume(.65)
@@ -113,28 +122,29 @@ boardplayer(randomsounddict, 5)
  #           print("Input {} touched!".format(i))
 
 
-# print('Press Ctrl-C to quit.')
-# last_touched = cap.touched()
-# while True:
-#     current_touched = cap.touched()
-#     # Check each pin's last and current state to see if it was pressed or released.
-#     for i in range(12):
-#         # Each pin is represented by a bit in the touched value.  A value of 1
-#         # means the pin is being touched, and 0 means it is not being touched.
-#         pin_bit = 1 << i
-#         # First check if transitioned from not touched to touched.
-#         if current_touched & pin_bit and not last_touched & pin_bit:
-#             print('{0} touched!'.format(i))
-#             if (soundList[i]):
-#                 soundList[i].play()
-#         # Next check if transitioned from touched to not touched.
-#         if not current_touched & pin_bit and last_touched & pin_bit:
-#             print('{0} released!'.format(i))
-#     # Update last state and wait a short period before repeating.
-#     last_touched = current_touched
-#     time.sleep(0.1)
+print('Press Ctrl-C to quit.')
+last_touched = cap.touched()
+while True:
+    current_touched = cap.touched()
+    # Check each pin's last and current state to see if it was pressed or released.
+    for i in range(12):
+        # Each pin is represented by a bit in the touched value.  A value of 1
+        # means the pin is being touched, and 0 means it is not being touched.
+        pin_bit = 1 << i
+        # First check if transitioned from not touched to touched.
+        if current_touched & pin_bit and not last_touched & pin_bit:
+            print('{0} touched!'.format(i))
+            if i in randomsounddict:
+                    randomsounddict[i].play()
+                    print('{0} played!'.format(i))
+        # Next check if transitioned from touched to not touched.
+        if not current_touched & pin_bit and last_touched & pin_bit:
+            print('{0} released!'.format(i))
+    # Update last state and wait a short period before repeating.
+    last_touched = current_touched
+    time.sleep(0.1)
 
-#print("Hello World")
+
 
 
 
