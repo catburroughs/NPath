@@ -11,6 +11,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 #import Creator_Sounds
 import random
 pygame.init()
+pygame.mixer.pre_init(44100, 16, 2, 4096)
 NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
 Creator_Sounds = "/home/git/NPath/Creator_Sounds"
 Nature_Sounds = "/home/git/NPath/Back_End/Nature_Sounds"
@@ -32,7 +33,7 @@ def touchpad_randomizer():
     while len(used_list) < 12:
         tp = random.randint(1,12)
         if tp not in used_list:
-            used_list.append(tp)
+            used_list.append(str(tp))
     return used_list
            
 
@@ -40,11 +41,12 @@ def default_touchpad(mode, mode_dict):
     tplist = touchpad_randomizer()
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
-        if soundfile.endswith('.wav')or soundfile.endswith('.mp3'):
+        while tplist and (soundfile.endswith('.wav')or soundfile.endswith('.mp3')):  
             k = tplist.pop()
             v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
             default_dict.update([(k,v)])
     return default_dict
+
 
 
 
@@ -54,7 +56,7 @@ def creator_touchpad(mode, mode_dict, sounddict):
         for k,v in sounddict.items():
             if soundfile == v and (soundfile.endswith('.wav')or soundfile.endswith('.mp3')):
                 v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
-                final_dict.update([(int(k),v)])
+                final_dict.update([int(k),v])
                 
     return final_dict
 
@@ -73,18 +75,19 @@ def boardplayer(soundict, numbertouched):
         
     
 
-touchpad_dict = {}
+#touchpad_dict = {}
    
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 #print(touchpad_randomizer())
 #newsounddict = creator_touchpad(3, mode_dict, sounddict)
-randomsounddict = default_touchpad(2, mode_dict)
+randomsounddict = default_touchpad(1, mode_dict)
 #boardplayer(newsounddict, 1)
 #boardplayer(randomsounddict, 5)
 # Create MPR121 instance.
 cap = MPR121.MPR121()
-
+cap.begin()
+cap.set_thresholds(6, 4)
 # Initialize communication with MPR121 using default I2C bus of device, and
 # default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
 if not cap.begin():
@@ -93,9 +96,6 @@ if not cap.begin():
 i2c = busio.I2C(board.SCL, board.SDA)
 
 
-pygame.init()
-cap.begin()
-cap.set_thresholds(6, 4)
 
 # clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
 # hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
