@@ -7,9 +7,9 @@ import random
 import pygame
 
 from playboard import playBoard
-NPath_Sounds = "/home/NPath/Back_End/NPath_Sounds"
-Creator_Sounds = "/home/NPath/Creator_Sounds"
-Nature_Sounds = "/home/NPath/Back_End/Nature_Sounds"
+NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
+Creator_Sounds = "/home/pi/NPath/Creator_Sounds"
+Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
 
 class NPath: 
     def __init__(self):

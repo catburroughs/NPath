@@ -12,9 +12,9 @@ import Adafruit_MPR121.MPR121 as MPR121
 import random
 pygame.init()
 pygame.mixer.pre_init(44100, 16, 2, 4096)
-NPath_Sounds = "/home/NPath/Back_End/NPath_Sounds"
-Creator_Sounds = "/home/NPath/Creator_Sounds"
-Nature_Sounds = "/home/NPath/Back_End/Nature_Sounds"
+NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
+Creator_Sounds = "/home/pi/NPath/Creator_Sounds"
+Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
 
 sounddict = {'1': 'rain.mp3', '2': 'night2.mp3', '3': 'forest.mp3', '4': 'waves.mp3', '5': 'sea.mp3', '6': 'seagulls.mp3', '7': 'rain3.mp3', '8': 'rain2.mp3', '9': 'forest2.mp3', '10': 'birds2.mp3', '11': 'crickets.mp3', '12': 'waves.mp3'}
 
