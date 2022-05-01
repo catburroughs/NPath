@@ -23,6 +23,7 @@ class SoundFileUploader extends React.Component {
 
     fetch('http://192.168.1.84:5000/upload', {
       method: 'POST',
+      headers: new Headers({'content-type': 'application/json'}),
       body: data,
     }).then((response) => {
       response.json().then((body) => {
@@ -35,7 +36,7 @@ class SoundFileUploader extends React.Component {
     return (
       <form onSubmit={this.handleUpload}>
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" multiple="true" />
+          <input ref={(ref) => { this.uploadInput = ref; }} type="file" multiple={true} />
         </div>
        
         <br />
