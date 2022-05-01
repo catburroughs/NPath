@@ -6,10 +6,10 @@ import time
 import random
 import pygame
 
-from Back_End.playboard import playBoard
-NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
-Creator_Sounds = "/home/git/NPath/Creator_Sounds"
-Nature_Sounds = "/home/git/NPath/Back_End/Nature_Sounds"
+from playboard import playBoard
+NPath_Sounds = "/home/NPath/Back_End/NPath_Sounds"
+Creator_Sounds = "/home/NPath/Creator_Sounds"
+Nature_Sounds = "/home/NPath/Back_End/Nature_Sounds"
 
 class NPath: 
     def __init__(self):

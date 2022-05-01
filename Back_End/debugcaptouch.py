@@ -7,8 +7,8 @@ import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
 import Nature_Sounds
-NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
-creatorsounds = "/home/git/NPath/Creator_Sounds"
+NPath_Sounds = "/home/NPath/Back_End/NPath_Sounds"
+creatorsounds = "/home/NPath/Creator_Sounds"
 pygame.init()
 
 def get_files():
