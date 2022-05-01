@@ -2,7 +2,7 @@
 
 function SendVolume(newvolume){
 
-return fetch("http://localhost:5000/addvolume", {
+return fetch("http://192.168.1.84:5000/addvolume", {
     method: "POST",
     headers: new Headers({'content-type': 'application/json'}),
     body:JSON.stringify({volume:newvolume})

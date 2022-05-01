@@ -13,9 +13,10 @@ function ActivateBoard() {
   let location = useLocation();
   const [currentboardstatus, setCurrentBoardStatus] = useState('off')
   useEffect(() => { 
-    fetch("http://localhost:5000/getactivation", {
+    fetch("http://192.168.1.84:5000/getactivation", {
     methods: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
   })

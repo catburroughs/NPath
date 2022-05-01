@@ -20,9 +20,10 @@ function SetModePage() {
 
   useEffect(() => { 
     // do stuff
-  fetch("http://localhost:5000/getmode", {
+  fetch("http://192.168.1.84:5000/getmode", {
     methods: "GET",
     headers: {
+      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
   })
