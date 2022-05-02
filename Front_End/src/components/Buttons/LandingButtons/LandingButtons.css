@@ -1,4 +1,4 @@
-.Activate_Board_Button {
+.About_NPath {
     position: absolute;
     width: 597px;
     height: 77px;
@@ -11,7 +11,7 @@
     shape-rendering: auto;
   }
 
-  .Activate_Board_Button:hover {
+  .About_NPath:hover {
     background-color:grey;
   }
 

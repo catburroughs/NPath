@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 function LandingButtons() {
   return (
     <>
-        <Link to = '/ActivateBoard'>
-      <div className="Activate_Board_Button" role = "button">
-        <div className="Text_Style" aria-label= "activatetextLabel">
-          Activate NPath Board
+        <Link to = '/AboutNPath'>
+      <div className="About_NPath" role = "button">
+        <div className="Text_Style" aria-label= "aboutLabel">
+          About NPath Board
         </div>
       </div>
       </Link>

@@ -42,23 +42,25 @@ a:active {
 
 
 .Headline{
-  position: relative;
+  position: absolute;
   background-color: grey;
   padding: 20px;
   height: 60px;
   border-radius: 45px;
-  top: 20px;
+  top: 200px;
   left: 150px;
   width: 700px;
 }
 
+
+
 .VolumeInput{
-  position: relative;
+  position: absolute;
   background-color: grey;
   padding: 20px;
   height: 60px;
   border-radius: 45px;
-  top: 350px;
+  top: 630px;
   left: 300px;
   width: 400px;
 }

@@ -15,8 +15,8 @@ function Taskbar() {
                 </Link>
             </TaskbarLink>
             <TaskbarLink>
-                <Link to = '/AboutNPath'>
-                About NPath
+                <Link to = '/ActivateBoard'>
+                Activate NPath
                 </Link>
             </TaskbarLink>
             <TaskbarLink>

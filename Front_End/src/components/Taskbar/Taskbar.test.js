@@ -9,8 +9,8 @@ describe("Taskbar", () => {
         expect(link).toHaveAttribute('href',"/")
         expect((link).textContent).toEqual("Home")
         let link2 = screen.getAllByRole('link')[1]
-        expect(link2).toHaveAttribute('href','/AboutNPath')
-        expect((link2).textContent).toEqual("About NPath")
+        expect(link2).toHaveAttribute('href','/ActivateBoard')
+        expect((link2).textContent).toEqual("Activate NPath")
         let link3 = screen.getAllByRole('link')[2]
         expect(link3).toHaveAttribute('href','/Volume')
         expect((link3).textContent).toEqual("Volume")
