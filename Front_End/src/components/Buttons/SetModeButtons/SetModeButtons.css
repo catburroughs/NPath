@@ -11,7 +11,7 @@
 
 .NPath_Mode {
     left: 415px;
-    top: 288px;
+    top: 298px;
     position: absolute;
     overflow: visible;
     width: 320px;
@@ -30,7 +30,7 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 310px;
+    top: 320px;
     left: 70px;
     font-size: 18px;
     color: rgba(145,60,241,1);
@@ -38,7 +38,7 @@
 
 .Nature_Mode {
     left: 415px;
-    top: 388px;
+    top: 398px;
     position: absolute;
     overflow: visible;
     width: 320px;
@@ -57,7 +57,7 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 410px;
+    top: 420px;
     left: 10px;
     font-size: 18px;
     color:rgba(137,190,31,1);
@@ -65,7 +65,7 @@
 
 .Creator_Mode {
     left: 415px;
-    top: 488px;
+    top: 498px;
     position: absolute;
     overflow: visible;
     z-index: 2;
@@ -85,7 +85,7 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 505px;
+    top: 515px;
     left: 15px;
     font-size: 18px;
     color: rgba(213,53,160,1);
@@ -93,7 +93,7 @@
 
 .Upload_Button {
     left: 290px;
-    top: 498px;
+    top: 508px;
     position: absolute;
     overflow: visible;
     width: 103px;
@@ -112,7 +112,7 @@
 
 .ConfirmModeButton {
     left: 340px;
-    top: 585px;
+    top: 595px;
     position: absolute;
     overflow: visible;
     width: 480px;
@@ -136,7 +136,7 @@
     display: block;
     position: absolute;
     z-index: 2;
-    top: 620px;
+    top: 630px;
     left: 35px;
     font-size: 18px;
     color: Black;

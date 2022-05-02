@@ -39,7 +39,12 @@ a:active {
   padding: 20px;
 }
 
-
+.RadioContainer{
+  position:absolute;
+  padding: auto;
+  top: 275px;
+  left: 800px;
+}
 
 .Headline{
   position: absolute;
@@ -67,7 +72,7 @@ a:active {
 
 .ModeInput{
   left: 280px;
-  top: 165px;
+  top: 190px;
   height: 60px;
   position: absolute;
   overflow: visible;

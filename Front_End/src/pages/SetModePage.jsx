@@ -1,5 +1,5 @@
 import "../Global.css";
-
+import Alert from '@mui/material/Alert';
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import SetModeButtons from "../components/Buttons/SetModeButtons/SetModeButtons";
 import SendMode from "../components/Functions/SendMode";
@@ -17,6 +17,8 @@ import ConfirmModeButton from  "../components/Buttons/SetModeButtons/ConfirmMode
 function SetModePage() {
   let location = useLocation();
   const [currentmode, setCurrentMode] = useState(1)
+  const [alert, setAlert] = useState(false);
+
 
   useEffect(() => { 
     // do stuff
@@ -35,12 +37,15 @@ function SetModePage() {
 function handleClick(e) {
   {e.preventDefault();
     SendMode(currentmode)
+    setAlert(true);
   }
 }
 
   return (
     <>
     <BackgroundImage />
+    {alert ? <Alert  role="alert" severity = "success">New Mode Set</Alert>: <></>}
+
     <div className = "ModeInput">
     <div className = "Text_Style">
     <GetMode
@@ -48,8 +53,9 @@ function handleClick(e) {
     />
     </div>
     </div>
-
+    <div className="RadioContainer">
     <SetModeRadio currentmode = {currentmode} setCurrentMode={setCurrentMode}/>
+    </div>
     <SetModeButtons />
     <ConfirmModeButton onClick = {handleClick}/>
     </>
