@@ -43,10 +43,8 @@ def default_touchpad(mode, mode_dict):
     tplist = touchpad_randomizer()
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
-        while tplist and (soundfile.endswith('.wav')):  
-            k = tplist.pop()
-            v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
-            default_dict.update([(k,v)])
+        while tplist:
+            default_dict[tplist.pop()] =  pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile)) 
     return default_dict
 
 
@@ -154,3 +152,12 @@ while True:
 #print(touchpad_randomizer())
 #newsounddict = creator_touchpad(3, mode_dict, sounddict)
 #sounddict = {'1': 'rain.mp3', '2': 'night2.mp3', '3': 'forest.mp3', '4': 'waves.mp3', '5': 'sea.mp3', '6': 'seagulls.mp3', '7': 'rain3.mp3', '8': 'rain2.mp3', '9': 'forest2.mp3', '10': 'birds2.mp3', '11': 'crickets.mp3', '12': 'waves.mp3'}
+# def default_touchpad(mode, mode_dict):
+#     tplist = touchpad_randomizer()
+#     default_dict = {}
+#     for soundfile in os.listdir(mode_dict[mode]):
+#         while tplist and (soundfile.endswith('.wav')):  
+#             k = tplist.pop()
+#             v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
+#             default_dict.update([(k,v)])
+#     return default_dict
