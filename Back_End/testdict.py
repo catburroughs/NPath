@@ -41,6 +41,7 @@ def touchpad_randomizer():
 
 def default_touchpad(mode, mode_dict):
     tplist = touchpad_randomizer()
+    print("tplist is ", tplist)
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
         while tplist:
@@ -83,7 +84,7 @@ print("random sound dictionary is ",randomsounddict)
 
 
 for k,v in randomsounddict.items():
-    v.set_volume(1)
+    randomsounddict[k].set_volume(1)
 
 
 
@@ -100,7 +101,7 @@ while True:
         # First check if transitioned from not touched to touched.
         if current_touched & pin_bit and not last_touched & pin_bit:
             print('{0} touched!'.format(i))
-            if i in randomsounddict:
+            if (randomsounddict[i]):
                 randomsounddict[i].play()
                 print('{0} played!'.format(i))
                 while pygame.mixer.get_busy():
