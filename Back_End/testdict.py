@@ -16,7 +16,16 @@ Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
 
 mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
 
-    
+# Create MPR121 instance.
+cap = MPR121.MPR121()
+cap.begin()
+cap.set_thresholds(6, 4)
+pygame.mixer.init() #turn all of pygame on.
+# Initialize communication with MPR121 using default I2C bus of device, and
+
+if not cap.begin():
+   print('Error initializing MPR121.  Check your wiring!')
+   sys.exit(1)   
     
 def get_soundfile(mode):
     return mode_dict[mode]
@@ -70,16 +79,7 @@ print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
 randomsounddict = default_touchpad(1, mode_dict)
 
-# Create MPR121 instance.
-cap = MPR121.MPR121()
-cap.begin()
-cap.set_thresholds(6, 4)
-pygame.mixer.init() #turn all of pygame on.
-# Initialize communication with MPR121 using default I2C bus of device, and
 
-if not cap.begin():
-   print('Error initializing MPR121.  Check your wiring!')
-   sys.exit(1)
 
 
 for k,v in randomsounddict.items():
