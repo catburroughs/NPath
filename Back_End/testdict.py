@@ -93,6 +93,11 @@ for k,v in randomsounddict.items():
     randomsounddict[k].set_volume(1)
     #randomsounddict[k].play()
 
+print("Starting testsound now")
+testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/NPath_Sounds/b0d4caf8-a147-11ec-82d8-f875a4851378.wav')
+testsound.set_volume(1)
+testsound.play()
+print(testsound)
 
 
 
@@ -111,9 +116,9 @@ while True:
             if (randomsounddict[i]):
                 randomsounddict[i].play()
                 print('{0} played!'.format(i))
-               # while pygame.mixer.get_busy():
+                #while pygame.mixer.get_busy():
                 #    print("playing")
-                 #   pygame.time.delay(100)
+                   # pygame.time.delay(50)
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
             print('{0} released!'.format(i))
