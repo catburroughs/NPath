@@ -9,7 +9,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 import Nature_Sounds
 NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
 creatorsounds = "/home/pi/NPath/Creator_Sounds"
-pygame.init()
+
 
 def get_files():
     path = os.getcwd()
@@ -29,7 +29,7 @@ def creator_soundlist():
 def set_soundlist():
 	setsoundlist = []
 	for soundfile in os.listdir(NPath_Sounds):
-		if soundfile.endswith('.wav')or soundfile.endswith('.mp3'):
+		if soundfile.endswith('.wav'):
 			setsoundlist.append(pygame.mixer.Sound(str("NPath_Sounds/" + str(soundfile))))
 	return setsoundlist
 
@@ -37,7 +37,8 @@ print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
 # Create MPR121 instance.
 cap = MPR121.MPR121()
-
+pygame.mixer.pre_init(44100, -16, 12, 512)
+pygame.init()
 # Initialize communication with MPR121 using default I2C bus of device, and
 # default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
 if not cap.begin():
@@ -68,7 +69,7 @@ soundList = set_soundlist()
 #soundList2 = creator_soundlist()
 
 for x in soundList:
-    x.set_volume(.65)
+    x.set_volume(.95)
 
 print("Soundlist length is ", len(soundList))
 #print("Creator soundlist length is ", len(soundList2))
