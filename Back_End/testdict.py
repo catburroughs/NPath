@@ -6,23 +6,16 @@ import pygame
 import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
-#import Nature_Sounds
-#import NPath_Sounds
-#import Creator_Sounds
 import random
-pygame.init()
-pygame.mixer.pre_init(44100, 16, 2, 4096)
+#pygame.init()
+#pygame.mixer.pre_init(44100, 16, 2, 4096)
 NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
 Creator_Sounds = "/home/pi/NPath/Creator_Sounds"
 Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
 
-sounddict = {'1': 'rain.mp3', '2': 'night2.mp3', '3': 'forest.mp3', '4': 'waves.mp3', '5': 'sea.mp3', '6': 'seagulls.mp3', '7': 'rain3.mp3', '8': 'rain2.mp3', '9': 'forest2.mp3', '10': 'birds2.mp3', '11': 'crickets.mp3', '12': 'waves.mp3'}
 
 mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
 
-
-def get_touchpad_dict():
-    return touchpad_dict
     
     
 def get_soundfile(mode):
@@ -49,7 +42,6 @@ def default_touchpad(mode, mode_dict):
 
 
 
-
 def creator_touchpad(mode, mode_dict, sounddict):
     final_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
@@ -73,56 +65,27 @@ def boardplayer(soundict, numbertouched):
             soundict[tp].play()
             print("Input {} touched!".format(tp))
         
-    
-
-#touchpad_dict = {}
-   
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
-#print(touchpad_randomizer())
-#newsounddict = creator_touchpad(3, mode_dict, sounddict)
+
 randomsounddict = default_touchpad(1, mode_dict)
-#boardplayer(newsounddict, 1)
-#boardplayer(randomsounddict, 5)
+
 # Create MPR121 instance.
 cap = MPR121.MPR121()
 cap.begin()
 cap.set_thresholds(6, 4)
+pygame.mixer.init() #turn all of pygame on.
 # Initialize communication with MPR121 using default I2C bus of device, and
-# default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
+
 if not cap.begin():
    print('Error initializing MPR121.  Check your wiring!')
    sys.exit(1)
-i2c = busio.I2C(board.SCL, board.SDA)
 
 
-
-# clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
-# hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
-# shaker = pygame.mixer.Sound('samples/1 shaker-analog.wav')
-# snare1 = pygame.mixer.Sound('samples/1 snare-acoustic01.wav')
-# tom1 = pygame.mixer.Sound('samples/1 tom-808.wav')
-# clap2 = pygame.mixer.Sound('samples/2 clap-808.wav')
-# cow = pygame.mixer.Sound('samples/2 cowbell-808.wav')
-# openhat = pygame.mixer.Sound('samples/2 openhat-slick.wav')
-# crash = pygame.mixer.Sound('samples/3 crash-noise.wav')
-# hihat = pygame.mixer.Sound('samples/3 hihat-digital.wav')
-# snare2 = pygame.mixer.Sound('samples/3 snare-electro.wav')
-# tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
-
-#soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
+for k,v in randomsounddict.items():
+    v.set_volume(1)
 
 
-#for x in soundList:
-    #x.set_volume(.65)
-
-#print("Soundlist length is ", len(soundList))
-#print("Creator soundlist length is ", len(soundList2))
-#while True:
- #   for i in range(len(soundList)):
-#        if cap[i].value:
-#            soundList[i].play()
- #           print("Input {} touched!".format(i))
 
 
 print('Press Ctrl-C to quit.')
@@ -154,3 +117,36 @@ while True:
 
 
 
+
+#boardplayer(newsounddict, 1)
+#boardplayer(randomsounddict, 5)
+#print("Soundlist length is ", len(soundList))
+#print("Creator soundlist length is ", len(soundList2))
+#while True:
+ #   for i in range(len(soundList)):
+#        if cap[i].value:
+#            soundList[i].play()
+ #           print("Input {} touched!".format(i))
+#for x in soundList:
+    #x.set_volume(.65)
+#i2c = busio.I2C(board.SCL, board.SDA)
+
+
+
+# clap1 = pygame.mixer.Sound('samples/1 clap-analog.wav')
+# hat1 = pygame.mixer.Sound('samples/1 openhat-acoustic01.wav')
+# shaker = pygame.mixer.Sound('samples/1 shaker-analog.wav')
+# snare1 = pygame.mixer.Sound('samples/1 snare-acoustic01.wav')
+# tom1 = pygame.mixer.Sound('samples/1 tom-808.wav')
+# clap2 = pygame.mixer.Sound('samples/2 clap-808.wav')
+# cow = pygame.mixer.Sound('samples/2 cowbell-808.wav')
+# openhat = pygame.mixer.Sound('samples/2 openhat-slick.wav')
+# crash = pygame.mixer.Sound('samples/3 crash-noise.wav')
+# hihat = pygame.mixer.Sound('samples/3 hihat-digital.wav')
+# snare2 = pygame.mixer.Sound('samples/3 snare-electro.wav')
+# tom2 = pygame.mixer.Sound('samples/3 tom-chiptune.wav')
+
+#soundList = [clap1, hat1, shaker, snare1, tom1, clap2, cow, openhat, crash, hihat, snare2, tom2]
+#print(touchpad_randomizer())
+#newsounddict = creator_touchpad(3, mode_dict, sounddict)
+#sounddict = {'1': 'rain.mp3', '2': 'night2.mp3', '3': 'forest.mp3', '4': 'waves.mp3', '5': 'sea.mp3', '6': 'seagulls.mp3', '7': 'rain3.mp3', '8': 'rain2.mp3', '9': 'forest2.mp3', '10': 'birds2.mp3', '11': 'crickets.mp3', '12': 'waves.mp3'}
