@@ -43,7 +43,7 @@ def default_touchpad(mode, mode_dict):
     tplist = touchpad_randomizer()
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
-        while tplist and (soundfile.endswith('.wav')or soundfile.endswith('.mp3')):  
+        while tplist and (soundfile.endswith('.wav')):  
             k = tplist.pop()
             v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
             default_dict.update([(k,v)])
@@ -78,6 +78,8 @@ def boardplayer(soundict, numbertouched):
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
 randomsounddict = default_touchpad(1, mode_dict)
+
+print("random sound dictionary is ",randomsounddict)
 
 
 
