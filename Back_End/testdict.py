@@ -9,9 +9,9 @@ import Adafruit_MPR121.MPR121 as MPR121
 import random
 #pygame.init()
 #pygame.mixer.pre_init(44100, 16, 2, 4096)
-NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
-Creator_Sounds = "/home/pi/NPath/Creator_Sounds"
-Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
+NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds/"
+Creator_Sounds = "/home/pi/NPath/Creator_Sounds/"
+Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds/"
 
 
 mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
@@ -42,7 +42,9 @@ def default_touchpad(mode, mode_dict):
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
         while tplist:
-            default_dict[tplist.pop()] =  pygame.mixer.Sound(mode_dict[mode]+ "/" + str(soundfile)) 
+            path = mode_dict[mode]+ "/" + str(soundfile)
+            print("sound path is ", path)
+            default_dict[tplist.pop()] =  pygame.mixer.Sound(mode_dict[mode] + str(soundfile)) 
     return default_dict
 
 
@@ -52,7 +54,7 @@ def creator_touchpad(mode, mode_dict, sounddict):
     for soundfile in os.listdir(mode_dict[mode]):
         for k,v in sounddict.items():
             if soundfile == v and (soundfile.endswith('.wav')or soundfile.endswith('.mp3')):
-                v = pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile))
+                v = pygame.mixer.Sound(str(mode_dict[mode]) + str(soundfile))
                 final_dict.update([int(k),v])
                 
     return final_dict
