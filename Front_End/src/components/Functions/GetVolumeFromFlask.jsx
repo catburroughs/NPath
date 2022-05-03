@@ -13,7 +13,7 @@ function GetVolumeFromFlask() {
 
   useEffect(() => {
     
-    fetch("http://192.168.1.84:5000/getvolume", {
+    fetch("http://192.168.1.179:5000/getvolume", {
       methods: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
