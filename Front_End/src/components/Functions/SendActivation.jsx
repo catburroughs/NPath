@@ -2,7 +2,7 @@
 
 function SendActivation(boardStatus){
     
-    return fetch("http://192.168.1.179:5000/setactivation", {
+    return fetch("http://192.168.148.150:5000/setactivation", {
         method: "POST",
         headers: new Headers({'content-type': 'application/json'}),
         body:JSON.stringify({activation:boardStatus})

@@ -8,7 +8,7 @@ function AssignTouchpads() {
   const [touchpads, setTouchpads] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.1.179:5000/getsoundfiles", {
+    fetch("http://192.168.148.150:5000/getsoundfiles", {
       methods: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
