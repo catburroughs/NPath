@@ -34,17 +34,24 @@ def touchpad_randomizer():
     tplist = list(range(12))
     random.shuffle(tplist)
     return tplist
+
+def set_soundlist(mode, mode_dict):
+    setsoundlist = []
+    for soundfile in os.listdir(mode_dict[mode]):
+        if soundfile.endswith('.wav'):
+            path = mode_dict[mode] + str(soundfile)
+            print("sound path is ", path)
+            setsoundlist.append(pygame.mixer.Sound(path))
+    random.shuffle(setsoundlist)
+    return setsoundlist[:12]
            
 
 def default_touchpad(mode, mode_dict):
-    tplist = touchpad_randomizer()
+    tplist = set_soundlist(mode, mode_dict)
     print("tplist is ", tplist)
     default_dict = {}
     for x in tplist:
-        for soundfile in os.listdir(mode_dict[mode]):
-            path = mode_dict[mode] + str(soundfile)
-            print("sound path is ", path)
-            default_dict[x] =  pygame.mixer.Sound(path) 
+        default_dict[tplist.index(x)] =  x
     return default_dict
 
 
