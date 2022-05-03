@@ -42,7 +42,7 @@ def default_touchpad(mode, mode_dict):
     default_dict = {}
     for soundfile in os.listdir(mode_dict[mode]):
         while tplist:
-            default_dict[tplist.pop()] =  pygame.mixer.Sound(str(mode_dict[mode])+ "/" + str(soundfile)) 
+            default_dict[tplist.pop()] =  pygame.mixer.Sound(mode_dict[mode]+ "/" + str(soundfile)) 
     return default_dict
 
 
@@ -82,7 +82,7 @@ print("random sound dictionary is ",randomsounddict)
 
 for k,v in randomsounddict.items():
     randomsounddict[k].set_volume(1)
-    randomsounddict[k].play()
+    #randomsounddict[k].play()
 
 
 
