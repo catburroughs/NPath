@@ -31,12 +31,9 @@ def get_soundfile(mode):
     return mode_dict[mode]
 
 def touchpad_randomizer():
-    used_list = []
-    while len(used_list) < 12:
-        tp = random.randint(1,12)
-        if tp not in used_list:
-            used_list.append(str(tp))
-    return used_list
+    tplist = list(range(12))
+    random.shuffle(tplist)
+    return tplist
            
 
 def default_touchpad(mode, mode_dict):
