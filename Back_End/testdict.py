@@ -105,6 +105,7 @@ while True:
                 sound.play()
                 print('{0} played!'.format(i))
                 while pygame.mixer.get_busy():
+                    print("playing")
                     pygame.time.delay(100)
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
