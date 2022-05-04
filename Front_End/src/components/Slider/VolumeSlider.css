@@ -16,26 +16,31 @@
     top:15px;
     height: 60px;
     width:60px;
-    color: blueviolet;
+    color:  black;
 }
 
 .slider .MuiSlider-valueLabel{
     top:-60px;
     left: 15px;
     font-size:large;
-    background: blueviolet;
+    background:  rgba(145,60,241,1);
 }
 
 .slider .MuiSlider-rail{
     height: 50px;
     width: 860px;
+    color:  rgba(145,60,241,1);
 }
 
 .slider .MuiSlider-track{
     height: 50px;
     width: 880px;
+    background:  rgba(213,53,160,1);
+    
 }
 
 .slider .MuiSlider-mark{
     height: 50px;
+    color: rgba(255,255,255,1);
+    
 }

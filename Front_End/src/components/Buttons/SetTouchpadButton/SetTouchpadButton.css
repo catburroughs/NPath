@@ -1,7 +1,7 @@
 
 .SetTouchpadButton {
   left: 50px;
-  top: 640px;
+  top: 650px;
   position: absolute;
   overflow: visible;
   height: 80px;
@@ -21,7 +21,7 @@
 
 .Back_to_Upload_Button{
   left: 50px;
-  top: 180px;
+  top: 190px;
   position: absolute;
   overflow: visible;
   z-index: 2;

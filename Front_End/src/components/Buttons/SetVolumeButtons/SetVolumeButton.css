@@ -11,6 +11,6 @@
   }
 
   .SetVolumeButton:hover {
-    background-color:blueviolet;
+    background-color:rgb(242, 169, 12);
     cursor: pointer;
   }

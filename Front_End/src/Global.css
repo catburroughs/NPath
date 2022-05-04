@@ -48,7 +48,7 @@ a:active {
 
 .Headline{
   position: absolute;
-  background-color: grey;
+  background-color: black;
   padding: 20px;
   height: 60px;
   border-radius: 45px;
@@ -61,7 +61,7 @@ a:active {
 
 .VolumeInput{
   position: absolute;
-  background-color: grey;
+  background-color: rgba(137,190,31,1);
   padding: 20px;
   height: 60px;
   border-radius: 45px;
@@ -93,7 +93,7 @@ a:active {
   align-items: flex-start;
   height: auto;
   left: 80px;
-  top: 280px;
+  top: 290px;
   width: 700px;
 }
 
