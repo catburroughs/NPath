@@ -1,9 +1,10 @@
 .About_NPath {
     position: absolute;
-    width: 597px;
+    width: 600px;
     height: 77px;
     left: 139px;
-    top: 586px;
+    top: 352px;
+    
     border-radius: 45px;
     padding: 10px;
     background-color: black;
@@ -12,11 +13,11 @@
   }
 
   .About_NPath:hover {
-    background-color:grey;
+    background-color: rgba(213,53,160,1);
   }
 
   .Set_Volume_Button {
-    width: 398px;
+    width: 600px;
     height: 77px;
     left: 139px;
     top: 469px;
@@ -28,15 +29,15 @@
   }
 
   .Set_Volume_Button:hover {
-    background-color:grey;
+    background-color: rgba(137,190,31,1);
   }
 
   .Choose_Mode_Button {
     position: absolute;
-    width: 398px;
+    width: 600px;
     height: 77px;
     left: 139px;
-    top: 352px;
+    top: 586px;
     overflow: visible;
     shape-rendering: auto;
     border-radius: 45px;
@@ -45,5 +46,5 @@
   }
 
   .Choose_Mode_Button:hover {
-    background-color:grey;
+    background-color:  rgba(145,60,241,1);
   }

@@ -12,9 +12,7 @@ function SetTouchpadButton({ onClick }) {
             <span>Confirm Touchpad Assignments</span>
         </div>
     </div>
-    <div className = 'hide' aria-label= "hideMode">
-      Click here after selecting your touchpads.
-    </div>
+  
          
     </>
   );

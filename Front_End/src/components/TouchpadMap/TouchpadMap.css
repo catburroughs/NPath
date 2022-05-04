@@ -10,44 +10,9 @@
   }
 
   #labmap{
+    position: fixed;
     max-width: 85%;
     max-height: 85%;
   }
-
-.Maze_Box1{
-  height: 70px;
-  width: 60px;
-  top: 220px;
-  left: 1105px;
-  z-index: 1;
-  background-color: coral;
-  opacity: .75;
-  position: absolute;
-  
-}
-
-.Maze_Box2{
-  height: 80px;
-  width: 60px;
-  top: 245px;
-  left: 930px;
-  z-index: 1;
-  background-color: coral;
-  opacity: .75;
-  position: absolute;
-  
-}
-
-.Maze_Box3{
-  height: 80px;
-  width: 75px;
-  top: 275px;
-  left: 1285px;
-  z-index: 1;
-  background-color: coral;
-  opacity: .75;
-  position: absolute;
-  
-}
 
 

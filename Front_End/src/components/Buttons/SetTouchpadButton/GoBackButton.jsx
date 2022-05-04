@@ -11,7 +11,7 @@ function GoBackButton() {
     <Link to = '/UploadSounds'>
     <div className="Back_to_Upload_Button" role = "button">
     <div className="Text_Style">
-        Go Back to Upload Sounds Page
+        Back to Upload Sounds
         </div>
         </div>
     </Link>
