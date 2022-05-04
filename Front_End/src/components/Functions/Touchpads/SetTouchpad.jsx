@@ -11,7 +11,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
   return (
   <>
   <div>
-    <FormControl sx={{ m: 2, minWidth: 200 }}>
+    <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 1</InputLabel>
       <Select
         labelId="Touchpad Selection One"
@@ -31,7 +31,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
     </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 2</InputLabel>
       <Select
         labelId="Touchpad Selection Two"
@@ -51,7 +51,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 3</InputLabel>
       <Select
         labelId="Touchpad Selection Three"
@@ -71,7 +71,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 4</InputLabel>
       <Select
         labelId="Touchpad Selection Four"
@@ -91,7 +91,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 5</InputLabel>
       <Select
         labelId="Touchpad Selection Five"
@@ -111,7 +111,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 6</InputLabel>
       <Select
         labelId="Touchpad Selection Six"
@@ -131,7 +131,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 7</InputLabel>
       <Select
         labelId="Touchpad Selection Seven"
@@ -151,7 +151,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 8</InputLabel>
       <Select
         labelId="Touchpad Selection Eight"
@@ -171,7 +171,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 9</InputLabel>
       <Select
         labelId="Touchpad Selection Nine"
@@ -191,7 +191,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 10</InputLabel>
       <Select
         labelId="Touchpad Selection Ten"
@@ -211,7 +211,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 11</InputLabel>
       <Select
         labelId="Touchpad Selection Eleven"
@@ -231,7 +231,7 @@ export default function SetTouchpad({touchpads, assignedtouchpad, setAssignedTou
       </FormControl>
   </div>
   <div>
-      <FormControl sx={{ m: 2, minWidth: 200 }}>
+      <FormControl sx={{ m: 2, minWidth: 200 }} required>
       <InputLabel id="Touchpad Selection">Touchpad 12</InputLabel>
       <Select
         labelId="Touchpad Selection Twelve"

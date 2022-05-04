@@ -49,7 +49,7 @@ function handleClickOFF() {
   return (
     <>
     <BackgroundImage />
-    <div className = "ModeInput">
+    <div className = "StatusInput">
     <div className = "Text_Style">
     <GetActivationStatus boardstatus={currentboardstatus} />
     </div>
