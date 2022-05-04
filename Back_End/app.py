@@ -10,11 +10,8 @@ from flask_cors import CORS
 
 
 npath = NPath()
-
 npath.set_volume()
 npath.set_mode()
-#npath.set_soundlist()
-#npath.play_board()
 csrf = CSRFProtect()
 cors = CORS()
 app=Flask(__name__)

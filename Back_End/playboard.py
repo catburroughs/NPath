@@ -44,10 +44,12 @@ def playBoard(volume, sound_dict):
             # First check if transitioned from not touched to touched.
             if current_touched & pin_bit and not last_touched & pin_bit:
                 print('{0} touched!'.format(i))
-                if i in sound_dict:
-                    sound = sound_dict.get(i)
-                    sound.play()
+                if sound_dict[i]:
+                    sound_dict[i].play()
                     print('{0} played!'.format(i))
+                    #while pygame.mixer.get_busy():
+                        #print("playing")
+                        #pygame.time.delay(50)
             # Next check if transitioned from touched to not touched.
             if not current_touched & pin_bit and last_touched & pin_bit:
                 print('{0} released!'.format(i))

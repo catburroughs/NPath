@@ -7,21 +7,21 @@ import random
 import pygame
 
 from playboard import playBoard
-NPath_Sounds = "/home/pi/NPath/Back_End/NPath_Sounds"
-Creator_Sounds = "/home/pi/NPath/Creator_Sounds"
-Nature_Sounds = "/home/pi/NPath/Back_End/Nature_Sounds"
+
 
 class NPath: 
     def __init__(self):
         pygame.init()
-        pygame.mixer.pre_init(44100, 16, 2, 4096)
-        self.creatorpath = "D:\\Aberdeen Final Project\\NPath\\Creator_Sounds"
-        self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
+        pygame.mixer.pre_init(44100, 16, 2, 4096)   
         self.set_mode()
         self.set_volume()
         self.set_activation()
         self.touchpad_dict = {}
         self.board_status = self.get_activation()
+        NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
+        Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
+        Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
+        self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
         
     def get_activation(self):
         return self.board_status
@@ -35,7 +35,6 @@ class NPath:
         
     def get_touchpad_dict(self):
         return self.touchpad_dict
-    
         
     def get_mode(self):
         return self.mode
@@ -54,23 +53,24 @@ class NPath:
     def get_soundfile(self):
         return self.mode_dict[self.mode]
     
-    def touchpad_randomizer(self):
-        used_list = []
-        while len(used_list) < 12:
-            tp = random.randint(1,12)
-            if tp not in used_list:
-                used_list.append(tp)
-        return used_list
+    
+    def set_soundlist(self):
+        mode = self.get_mode()
+        setsoundlist = []
+        for soundfile in os.listdir(self.mode_dict[mode]):
+            if soundfile.endswith('.wav'):
+                path = self.mode_dict[mode] + str(soundfile)
+                #print("sound path is ", path)
+                setsoundlist.append(pygame.mixer.Sound(path))
+        random.shuffle(setsoundlist)
+        return setsoundlist[:12]
     
     def default_touchpad(self):
-        mode = self.get_mode()
-        tplist = self.touchpad_randomizer()
+        tplist = self.set_soundlist()
+        print("tplist is ", tplist)
         default_dict = {}
-        for soundfile in os.listdir(self.mode_dict[mode]):
-            while tplist and soundfile.endswith('.wav'):  
-                k = tplist.pop()
-                v = pygame.mixer.Sound(str(self.mode_dict[mode])+ "/" + str(soundfile))
-                default_dict.update([(k,v)])
+        for x in tplist:
+            default_dict[tplist.index(x)] =  x
         return default_dict
         
     def creator_touchpad(self):
@@ -80,8 +80,8 @@ class NPath:
         final_dict = {}
         for soundfile in os.listdir(self.mode_dict[mode]):
             for k,v in sounddict.items():
-                if soundfile == v and (soundfile.endswith('.wav')or soundfile.endswith('.mp3')):
-                    v = pygame.mixer.Sound(str(self.mode_dict[mode])+ "/" + str(soundfile))
+                if soundfile == v and (soundfile.endswith('.wav')):
+                    v = pygame.mixer.Sound(self.mode_dict[mode]+ "/" + str(soundfile))
                     final_dict.update([(int(k),v)])            
         return final_dict       
  
