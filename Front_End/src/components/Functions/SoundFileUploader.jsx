@@ -1,20 +1,30 @@
+import React, {useEffect, useState} from 'react';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-import React from 'react';
+
 
 class SoundFileUploader extends React.Component {
   constructor(props) {
     super(props);
-
+    this.setIsLoading = {
+      isLoading: false
+    };
+    this.uploaded = {
+      isUploaded: false
+    }
     this.state = {
       URL: '',
     };
-
     this.handleUpload = this.handleUpload.bind(this);
   }
+
+
+  
 
   handleUpload(ev) {
     ev.preventDefault();
     const data = new FormData();
+    
     for (let i = 0; i < this.uploadInput.files.length; i++) {
         data.append("file", this.uploadInput.files[i]);
       }
@@ -30,6 +40,14 @@ class SoundFileUploader extends React.Component {
         this.setState({ URL: `http://192.168.148.150:5000/${body.file}` });
       });
     })
+
+
+    .then((res)=> {
+      setTimeout(()=> {
+        this.setIsLoading.isLoading(true)
+      }, 2000)
+    })
+    .then(this.uploaded.isUploaded(true))
     .catch((error) => console.log(error));
   }
 
@@ -39,10 +57,11 @@ class SoundFileUploader extends React.Component {
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
         </div>
-       
+        {this.isLoading && <CircularProgress color="secondary" />} 
+        {!this.isLoading && this.isUploaded && <h3>Successfully Loaded Files</h3>}
         <br />
         <div>
-          <button>
+          <button >
           Upload
           </button>
           </div>

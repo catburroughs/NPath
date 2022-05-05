@@ -4,19 +4,18 @@ import SoundFileUploader from "../components/Functions/SoundFileUploader";
 import UploadSoundButton from "../components/Buttons/UploadSoundButton/UploadSoundButton";
 
 
-
 function UploadSounds() {
-  <>
+  
   
 
-  </>
+  
   
 
   return (
     <>
     <BackgroundImage />
     <div className = "SoundfileBox">
-    <SoundFileUploader />
+    <SoundFileUploader  />
     </div>
     <UploadSoundButton />
     

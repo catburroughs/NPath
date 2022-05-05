@@ -186,7 +186,8 @@ def upload_file():
         with open(file_list, 'w') as fh:
             json.dump(files, fh)
 
-    flash('Upload succeeded')
+    #flash('Upload succeeded')
+    #return jsonify({"message": "OK"})
     return redirect(url_for('upload_file'))
 
    

@@ -1,15 +1,12 @@
 #Labyrinth_Background {
-    position: absolute;
-    top: -240px;
-    left: -130px;
-    z-index: -1;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    z-index: 2;
+    width: 100vw;
+    height: 81vh;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    display:flex;
-    background-repeat: no-repeat;
+
   
     /* todo:ask al for advice on background image*/
   }
