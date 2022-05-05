@@ -23,13 +23,14 @@ class SoundFileUploader extends React.Component {
 
     fetch('http://192.168.148.150:5000/upload', {
       method: 'POST',
-      headers: new Headers({'content-type': 'application/json'}),
+      //headers: new Headers({'content-type': 'application/json'}),
       body: data,
     }).then((response) => {
       response.json().then((body) => {
         this.setState({ URL: `http://192.168.148.150:5000/${body.file}` });
       });
-    });
+    })
+    .catch((error) => console.log(error));
   }
 
   render() {
