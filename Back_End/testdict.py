@@ -82,7 +82,7 @@ def boardplayer(soundict, numbertouched):
 
 print('Adafruit MPR121 Capacitive Touch Sensor Test')
 
-randomsounddict = default_touchpad(1, mode_dict)
+randomsounddict = default_touchpad(2, mode_dict)
 
 print("random sound dictionary is ",randomsounddict)
 
@@ -94,7 +94,7 @@ for k,v in randomsounddict.items():
     #randomsounddict[k].play()
 
 print("Starting testsound now")
-testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/NPath_Sounds/b0d4caf8-a147-11ec-82d8-f875a4851378.wav')
+testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain1.wav')
 testsound.set_volume(1)
 testsound.play()
 print(testsound)
