@@ -21,7 +21,7 @@ csrf.init_app(app)
 cors.init_app(app)
 
 path = os.getcwd()
-UPLOAD_FOLDER = os.path.join(path, 'Creator_Sounds')
+UPLOAD_FOLDER = os.path.join(path, '/home/pi/NPath/Creator_Sounds')
 if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
