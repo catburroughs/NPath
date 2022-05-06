@@ -88,13 +88,13 @@ class NPath:
             print("v before is ", v)
             final_dict[k] =  self.set_creator_sound(v)
             print("v after is ", final_dict[k])
+            print("final dict ", final_dict)
         print("final dict for creator touchpad is ", final_dict)
         return final_dict      
  
              
     def play_board(self, sound_dict):
         if self.board_status:
-            print("sound dict for playboard is", sound_dict)
             print("BOARD IS ON")
             playBoard(self.volume, sound_dict)
         else:
