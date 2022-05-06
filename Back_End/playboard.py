@@ -11,7 +11,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 
 def playBoard(volume, sound_dict):
-    print('Adafruit MPR121 Capacitive Touch Sensor Test')
+    print('Capacitive Touch Hat Initialising')
     #pygame.init()
     #pygame.mixer.pre_init(44100, 16, 2, 4096)
     # Create MPR121 instance.
@@ -19,16 +19,15 @@ def playBoard(volume, sound_dict):
     cap.begin()
     cap.set_thresholds(6, 4)
    
-    # Initialize communication with MPR121 using default I2C bus of device, and
-    # default I2C address (0x5A).  On BeagleBone Black will default to I2C bus 0.
+    
     if not cap.begin():
-        print('Error initializing MPR121.  Check your wiring!')
+        print('Error initializing MPR121.')
         sys.exit(1)
-    #i2c = busio.I2C(board.SCL, board.SDA)
 
 
     for k,v in sound_dict.items():
         v.set_volume(volume)
+        print("volume setting here ", volume)
 
 
 
