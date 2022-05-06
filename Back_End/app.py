@@ -91,7 +91,7 @@ def get_touchpads():
     req = request.get_json()
     touchpads = request.json['touchpads']
     print(req)
-    print(touchpads)
+    print("touchpads received are", touchpads)
     npath.set_touchpad_dict(touchpads)
     return jsonify({"message": "OK"})
 
