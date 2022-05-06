@@ -86,10 +86,11 @@ class NPath:
         final_dict = {}
         sounddict = self.get_touchpad_dict()
         for k,v in sounddict.items():
+            key = int(k)
             #if v in os.listdir(self.mode_dict[mode]):
             print("v before is ", v)
-            final_dict[k] =  self.set_creator_sound(v)
-            print("v after is ", final_dict[k])
+            final_dict[key] =  self.set_creator_sound(v)
+            print("v after is ", final_dict[key])
             print("final dict ", final_dict)
         print("final dict for creator touchpad is ", final_dict)
         return final_dict      
