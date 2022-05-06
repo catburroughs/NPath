@@ -186,7 +186,7 @@ def upload_file():
         files[filename] = filename
         with open(file_list, 'w') as fh:
             json.dump(files, fh)
-        return redirect(url_for('upload_file'))
+    return redirect(url_for('upload_file'))
 
    
 
