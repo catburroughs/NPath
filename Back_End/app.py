@@ -166,10 +166,10 @@ def upload_file():
         flash('No file part')
         return redirect(request.url)
   
-    app.logger.info(request.files)
+    #app.logger.info(request.files)
     upload_files = request.files.getlist('file')
     print("upload files ---->", str(upload_files))
-    app.logger.info(upload_files)
+    #app.logger.info(upload_files)
   
     if not upload_files:
         print("2: file not in upload files")
@@ -179,19 +179,13 @@ def upload_file():
         filename = file.filename
         #extension = original_filename.rsplit('.', 1)[1].lower()
         #filename = str(uuid.uuid1()) + '.' + extension
-        print("file saving is", filename)
-        file.save(os.path.join(UPLOAD_FOLDER, file)) #filename))
+        file.save(os.path.join(UPLOAD_FOLDER, filename)) #filename))
         file_list = os.path.join(UPLOAD_FOLDER, 'files.json')
         files = _get_files()
         files[filename] = filename
         with open(file_list, 'w') as fh:
-            print("jason list dump now")
             json.dump(files, fh)
-
-    #flash('Upload succeeded')
-    #return jsonify({"message": "OK"})
-    print("upload completed")
-    return jsonify({"message": "OK"})
+        return redirect(url_for('upload_file'))
 
    
 
@@ -211,8 +205,6 @@ def _get_files():
     if os.path.exists(file_list):
         with open(file_list) as fh:
             return json.load(fh)
-    else:
-        print("no path exists")
     return {}
 
 #def _show_page():
