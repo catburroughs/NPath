@@ -66,6 +66,7 @@ def activate_board():
     if activation == "on":
         npath.set_activation(True)
         if npath.get_mode() == 3:
+            print("creator mode is ", npath.get_mode())
             npath.play_board(npath.creator_touchpad())
         else:
             npath.play_board(npath.default_touchpad())
