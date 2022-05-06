@@ -66,9 +66,9 @@ class NPath:
     def set_creator_sound(self, soundfile):
         mode = self.get_mode()
         #for soundfile in os.listdir(self.mode_dict[mode]):
-        if soundfile.endswith('.wav'):
-            path = self.mode_dict[mode] + str(soundfile)
-            return pygame.mixer.Sound(path)
+        #if soundfile.endswith('.wav'):
+        path = self.mode_dict[mode] + str(soundfile)
+        return pygame.mixer.Sound(path)
         
     
     def default_touchpad(self):
@@ -82,12 +82,12 @@ class NPath:
     def creator_touchpad(self):
         print("creator touchpad running")
         final_dict = {}
-        mode = self.get_mode()
         sounddict = self.get_touchpad_dict()
         for k,v in sounddict.items():
-            if v in os.listdir(self.mode_dict[mode]):
-                print("v is creator touchpad is ", v)
-                final_dict[k] =  self.set_creator_sound(v)
+            #if v in os.listdir(self.mode_dict[mode]):
+            print("v before is ", v)
+            final_dict[k] =  self.set_creator_sound(v)
+            print("v after is ", final_dict[k])
         print("final dict for creator touchpad is ", final_dict)
         return final_dict      
  
