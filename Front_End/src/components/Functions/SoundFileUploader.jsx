@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import ShowSpinner from './UploadSpinner';
 
 
 class SoundFileUploader extends React.Component {
@@ -8,15 +7,11 @@ class SoundFileUploader extends React.Component {
     super(props);
     this.state = {
       URL: '',
+      loading: false
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-  handleChange(e){
-    <ShowSpinner status = {true} />
-
-  }
 
 
   
@@ -37,7 +32,7 @@ class SoundFileUploader extends React.Component {
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ URL: `http://192.168.148.150:5000/${body.file}` });
+        this.setState({ URL: `http://192.168.148.150:5000/${body.file}` , loading: true});
       });
     })
     .catch((error) => console.log(error));
@@ -47,9 +42,9 @@ class SoundFileUploader extends React.Component {
     return (
       <form onSubmit={this.handleUpload}>
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} onChange={this.handleChange} />
+          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
         </div>
-        <ShowSpinner status = {false}/>
+        {loading && <CircularProgress color="secondary"size={50}/>}
         <br />
         <div>
           <button >
