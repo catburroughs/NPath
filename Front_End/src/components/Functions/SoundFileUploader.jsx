@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Alert from '@mui/material/Alert';
 
 
 class SoundFileUploader extends React.Component {
@@ -7,7 +8,8 @@ class SoundFileUploader extends React.Component {
     super(props);
     this.state = {
       URL: '',
-      loading: false
+      loading: false,
+      alert: false
     };
     this.handleUpload = this.handleUpload.bind(this);
   }
@@ -23,28 +25,30 @@ class SoundFileUploader extends React.Component {
     for (let i = 0; i < this.uploadInput.files.length; i++) {
         data.append("file", this.uploadInput.files[i]);
       }
-    //data.append('file', this.uploadInput.files[0]);
-    //data.append('filename', this.fileName.value);
 
     fetch('http://192.168.148.150:5000/upload', {
       method: 'POST',
-      //headers: new Headers({'content-type': 'application/json'}),
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ URL: `http://192.168.148.150:5000/${body.file}` , loading: true});
+        this.setState({ URL: `http://192.168.148.150:5000/${body.file}`});
       });
     })
+    .then(this.setState({loading: true}))
+    .then(setTimeout(()=>{this.setState({loading: false})},20000))
+    .then(setTimeout(()=>{this.setState({alert: true})},20000))
     .catch((error) => console.log(error));
   }
 
   render() {
     return (
+      <>
+      {this.state.alert && <Alert  role="alert" severity = "success">File Uploaded</Alert>}
+      {this.state.loading && <CircularProgress color="secondary"/>}
       <form onSubmit={this.handleUpload}>
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
         </div>
-        {loading && <CircularProgress color="secondary"size={50}/>}
         <br />
         <div>
           <button >
@@ -52,6 +56,7 @@ class SoundFileUploader extends React.Component {
           </button>
           </div>
       </form>
+      </>
     );
   }
 }
