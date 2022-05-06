@@ -68,6 +68,7 @@ class NPath:
         #for soundfile in os.listdir(self.mode_dict[mode]):
         #if soundfile.endswith('.wav'):
         path = self.mode_dict[mode] + str(soundfile)
+        print("set creator sound path is", path)
         return pygame.mixer.Sound(path)
         
     
@@ -77,6 +78,7 @@ class NPath:
         default_dict = {}
         for x in tplist:
             default_dict[tplist.index(x)] =  x
+        print("default dict is ", default_dict)
         return default_dict
         
     def creator_touchpad(self):
@@ -86,7 +88,7 @@ class NPath:
         for k,v in sounddict.items():
             #if v in os.listdir(self.mode_dict[mode]):
             print("v before is ", v)
-            final_dict[int(k)] =  self.set_creator_sound(v)
+            final_dict[k] =  self.set_creator_sound(v)
             print("v after is ", final_dict[k])
             print("final dict ", final_dict)
         print("final dict for creator touchpad is ", final_dict)
