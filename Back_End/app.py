@@ -176,19 +176,22 @@ def upload_file():
         flash('No selected file')
         return redirect(request.url)
     for file in upload_files:
-        original_filename = file.filename
-        extension = original_filename.rsplit('.', 1)[1].lower()
-        filename = str(uuid.uuid1()) + '.' + extension
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], original_filename)) #filename))
+        filename = file.filename
+        #extension = original_filename.rsplit('.', 1)[1].lower()
+        #filename = str(uuid.uuid1()) + '.' + extension
+        print("file saving is", filename)
+        file.save(os.path.join(UPLOAD_FOLDER, file)) #filename))
         file_list = os.path.join(UPLOAD_FOLDER, 'files.json')
         files = _get_files()
-        files[filename] = original_filename
+        files[filename] = filename
         with open(file_list, 'w') as fh:
+            print("jason list dump now")
             json.dump(files, fh)
 
     #flash('Upload succeeded')
     #return jsonify({"message": "OK"})
-    return redirect(url_for('upload_file'))
+    print("upload completed")
+    return jsonify({"message": "OK"})
 
    
 
@@ -208,6 +211,8 @@ def _get_files():
     if os.path.exists(file_list):
         with open(file_list) as fh:
             return json.load(fh)
+    else:
+        print("no path exists")
     return {}
 
 #def _show_page():

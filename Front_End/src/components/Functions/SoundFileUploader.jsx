@@ -35,8 +35,8 @@ class SoundFileUploader extends React.Component {
       });
     })
     .then(this.setState({loading: true}))
-    .then(setTimeout(()=>{this.setState({loading: false})},20000))
-    .then(setTimeout(()=>{this.setState({alert: true})},20000))
+    .then(setTimeout(()=>{this.setState({loading: false})},30000))
+    .then(setTimeout(()=>{this.setState({alert: true})},30000))
     .catch((error) => console.log(error));
   }
 
@@ -47,7 +47,7 @@ class SoundFileUploader extends React.Component {
       {this.state.loading && <CircularProgress color="secondary"/>}
       <form onSubmit={this.handleUpload}>
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
+          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple="true" />
         </div>
         <br />
         <div>
