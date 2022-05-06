@@ -40,8 +40,6 @@ class SoundFileUploader extends React.Component {
         this.setState({ URL: `http://192.168.148.150:5000/${body.file}` });
       });
     })
-
-
     .then((res)=> {
       setTimeout(()=> {
         this.setIsLoading.isLoading(true)

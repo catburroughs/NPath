@@ -42,7 +42,7 @@ a:active {
 .RadioContainer{
   position:absolute;
   padding: auto;
-  top: 275px;
+  top: 288px;
   left: 800px;
 }
 
@@ -111,14 +111,15 @@ a:active {
 }
 
 .SoundfileBox{
+  position: absolute;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+  left: 200px;
+  top: 300px;
   height: auto;
-  padding-left: 100px;
-  padding-top: 100px;
   width: 700px;
  
 }

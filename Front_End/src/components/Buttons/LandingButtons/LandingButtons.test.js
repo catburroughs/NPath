@@ -17,7 +17,7 @@ describe("LandingButtons", () => {
 
     test('buttons have the correct text',() =>{
         render(<LandingButtons/>,{wrapper: BrowserRouter})
-        expect(screen.getByLabelText("aboutLabel").textContent).toEqual("About NPath Board")
+        expect(screen.getByLabelText("aboutLabel").textContent).toEqual("About the NPath Board")
         expect(screen.getByLabelText("volumetextLabel").textContent).toEqual("Set Volume")
         expect(screen.getByLabelText("modetextLabel").textContent).toEqual("Choose Mode")
     })

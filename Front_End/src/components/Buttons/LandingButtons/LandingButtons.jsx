@@ -8,7 +8,7 @@ function LandingButtons() {
         <Link to = '/AboutNPath'>
       <div className="About_NPath" role = "button">
         <div className="Text_Style" aria-label= "aboutLabel">
-          About NPath Board
+          About the NPath Board
         </div>
       </div>
       </Link>
