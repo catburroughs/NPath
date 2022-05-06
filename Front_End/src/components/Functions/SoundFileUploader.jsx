@@ -15,7 +15,13 @@ class SoundFileUploader extends React.Component {
     this.state = {
       URL: '',
     };
+    this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+  }
+
+  handleChange(e){
+    this.setIsLoading.isLoading(true)
+
   }
 
 
@@ -40,11 +46,6 @@ class SoundFileUploader extends React.Component {
         this.setState({ URL: `http://192.168.148.150:5000/${body.file}` });
       });
     })
-    .then((res)=> {
-      setTimeout(()=> {
-        this.setIsLoading.isLoading(true)
-      }, 2000)
-    })
     .then(this.uploaded.isUploaded(true))
     .catch((error) => console.log(error));
   }
@@ -53,7 +54,7 @@ class SoundFileUploader extends React.Component {
     return (
       <form onSubmit={this.handleUpload}>
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
+          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} onChange={this.handleChange} />
         </div>
         {this.isLoading && <CircularProgress color="secondary" />} 
         {!this.isLoading && this.isUploaded && <h3>Successfully Loaded Files</h3>}
