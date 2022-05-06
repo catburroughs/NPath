@@ -30,7 +30,6 @@ class NPath:
         self.board_status = status
         
     def set_touchpad_dict(self, dict):
-        print("new touchpad dict is", dict)
         self.touchpad_dict = dict
         
     def get_touchpad_dict(self):
@@ -60,7 +59,6 @@ class NPath:
         for soundfile in os.listdir(self.mode_dict[mode]):
             if soundfile.endswith('.wav'):
                 path = self.mode_dict[mode] + str(soundfile)
-                #print("sound path is ", path)
                 setsoundlist.append(pygame.mixer.Sound(path))
         random.shuffle(setsoundlist)
         return setsoundlist[:12]
@@ -88,7 +86,9 @@ class NPath:
         sounddict = self.get_touchpad_dict()
         for k,v in sounddict.items():
             if v in os.listdir(self.mode_dict[mode]):
+                print("v is creator touchpad is ", v)
                 final_dict[k] =  self.set_creator_sound(v)
+        print("final dict for creator touchpad is ", final_dict)
         return final_dict      
  
              
