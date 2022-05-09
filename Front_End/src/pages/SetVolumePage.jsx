@@ -56,7 +56,9 @@ function SetVolumePage() {
     <BackgroundImage />
    
    
+    <div className="AlertContainer">
     {alert ? <Alert role="alert" severity = "success">New Volume Set</Alert>: <></>}
+    </div>
   
    
     <div className = "Headline">
@@ -64,6 +66,7 @@ function SetVolumePage() {
     Slide Toggle to Change Volume 
     </div>
     </div>
+   
     <VolumeSlider newvolume={newvolume} setNewVolume={setNewVolume} setCurrentVolume={setCurrentVolume} currentvolume = {currentvolume}/>
     <div className = "VolumeInput">
     <div className = "Text_Style">

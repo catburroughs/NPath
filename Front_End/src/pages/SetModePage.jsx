@@ -44,8 +44,9 @@ function handleClick(e) {
   return (
     <>
     <BackgroundImage />
+    <div className="AlertContainer">
     {alert ? <Alert  role="alert" severity = "success">New Mode Set</Alert>: <></>}
-
+    </div>
     <div className = "ModeInput">
     <div className = "Text_Style">
     <GetMode

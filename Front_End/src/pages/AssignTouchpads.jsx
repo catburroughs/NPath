@@ -38,7 +38,9 @@ function AssignTouchpads() {
 
   return (
     <>
+    <div className="AlertContainer">
     {alert ? <Alert  role="alert" severity = "success">Touchpads Set</Alert>: <></>}
+    </div>
     <TouchpadMap />
     <div className = "TouchpadBox">
     <SetTouchpad touchpads = {touchpads} assignedtouchpad = {assignedtouchpad} setAssignedTouchpad = {setAssignedTouchpad} />

@@ -87,8 +87,9 @@ class NPath:
  
              
     def play_board(self, sound_dict):
+        mode = self.get_mode
         if self.board_status:
-            print("BOARD IS ON")
+            print("BOARD IS ON in ", mode)
             playBoard(self.volume, sound_dict)
         else:
             print("Error Board Not On")
