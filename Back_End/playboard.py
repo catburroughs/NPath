@@ -5,29 +5,26 @@ import busio
 import pygame
 import random
 import Adafruit_MPR121.MPR121 as MPR121
-#NPath_Sounds = "/home/git/NPath/Back_End/NPath_Sounds"
-#Creator_Sounds = "/home/git/NPath/Creator_Sounds"
-#Nature_Sounds = "/home/git/NPath/Back_End/Nature_Sounds"
+
 
 
 def playBoard(volume, sound_dict):
     print('Capacitive Touch Hat Initialising')
-    #pygame.init()
     #pygame.mixer.pre_init(44100, 16, 2, 4096)
-    # Create MPR121 instance.
+    # Creating MPR121 instance.
     cap = MPR121.MPR121()
     cap.begin()
     cap.set_thresholds(6, 4)
    
     
     if not cap.begin():
-        print('Error initializing MPR121.')
+        print('MPR121 encountered error and shut down.')
         sys.exit(1)
 
 
     for k,v in sound_dict.items():
         v.set_volume(volume)
-        print("volume setting here ", volume)
+
 
 
 

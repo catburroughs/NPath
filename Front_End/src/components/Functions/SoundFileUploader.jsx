@@ -47,7 +47,7 @@ class SoundFileUploader extends React.Component {
       {this.state.loading && <CircularProgress color="secondary"/>}
       <form onSubmit={this.handleUpload}>
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file"  multiple={true} />
+          <input ref={(ref) => { this.uploadInput = ref; }} type="file" accept='.wav'  multiple={true} />
         </div>
         <br />
         <div>
