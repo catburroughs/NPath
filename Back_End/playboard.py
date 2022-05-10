@@ -10,6 +10,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, touchpads = False):
+        pygame.mixer.music.unload()
         freq = 44100    # audio CD quality
         bitsize = 16   # signed 16 bit
         channels = 2    # 1 is mono, 2 is stereo
