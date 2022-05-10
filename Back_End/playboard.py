@@ -25,6 +25,7 @@ class Board:
     
     
     def set_soundlist(self):
+        print("set soundlist starting")
         #mode = self.get_mode()
         setsoundlist = []
         for soundfile in os.listdir(self.mode_dict[self.mode]):
@@ -35,6 +36,7 @@ class Board:
         return setsoundlist[:12]    
     
     def default_touchpad(self):
+        print("default touchpad starting")
         tplist = self.set_soundlist()
         default_dict = {}
         for x in tplist:
@@ -68,6 +70,7 @@ class Board:
         if self.mode == 3:
             self.sound_dict = self.creator_touchpad()
         else:
+            print("default touchpad initialising")
             self.sound_dict = self.default_touchpad()
             
         cap = MPR121.MPR121()
@@ -79,7 +82,7 @@ class Board:
             
         
 
-
+        print("volume setting starting")
         for k,v in self.sound_dict.items():
             v.set_volume(self.volume)
             
