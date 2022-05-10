@@ -10,8 +10,13 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, sound_dict = False):
-        pygame.mixer.init()
-        pygame.init()
+        freq = 44100    # audio CD quality
+        bitsize = 16   # signed 16 bit
+        channels = 2    # 1 is mono, 2 is stereo
+        buffer = 2048   # number of samples (experiment to get right sound)
+        pygame.mixer.init(freq, bitsize, channels, buffer)
+        #pygame.mixer.init()
+        #pygame.init()
         self.volume = volume
         self.mode = mode
         self.sound_dict = sound_dict
