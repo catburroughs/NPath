@@ -90,10 +90,12 @@ class NPath:
     def play_board(self):
         mode = self.get_mode()
         if self.board_status:
+            print("has a board been created?", self.board_created)
             print("BOARD IS ON in ", mode)
             #print("captouch into playboard sound dict is ", self.sound_dict)
             newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             if self.board_created:
+                print("quit command here")
                 newBoard.quit_playing()
             newBoard.playBoard()
             self.board_created = True
