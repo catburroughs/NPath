@@ -68,9 +68,10 @@ class Playboard:
                 # First check if transitioned from not touched to touched.
                 if current_touched & pin_bit and not last_touched & pin_bit:
                     print('{0} touched!'.format(i))
-                    if self.sound_dict[i]:
-                        self.sound_dict[i].play()
-                        print("This is being played --->", sound_dict[i])
+                    if i in self.sound_dict:
+                        sound = self.sound_dict.get(i)
+                        sound.play()
+                        print("This is being played --->", sound)
                         print('{0} played!'.format(i))
                         if pygame.mixer.get_busy():
                             print("playing here")
