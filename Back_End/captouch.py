@@ -35,6 +35,12 @@ class NPath:
         
     def get_touchpad_dict(self):
         return self.touchpad_dict
+    
+    def set_board_created(self, status):
+        self.board_created = status
+        
+    def get_board_created(self):
+        return self.board_created
         
     def get_mode(self):
         return self.mode
@@ -98,8 +104,6 @@ class NPath:
                 print("quit command here")
                 newBoard.quit_playing()
             newBoard.playBoard()
-            self.board_created = True
-            return self.board_created
         else:
             print("Error Board Not On")
         

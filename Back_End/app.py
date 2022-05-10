@@ -73,6 +73,7 @@ def activate_board():
         #     npath.play_board(npath.default_touchpad())
     else:
         npath.set_activation(False)
+        npath.set_board_created(True)
         
     print(req)
     print(activation)
