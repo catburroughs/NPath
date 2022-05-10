@@ -27,7 +27,7 @@ class Board:
         setsoundlist = []
         for soundfile in os.listdir(self.mode_dict[self.mode]):
             if soundfile.endswith('.wav'):
-                path = self.mode_dict[mode] + str(soundfile)
+                path = self.mode_dict[self.mode] + str(soundfile)
                 setsoundlist.append(pygame.mixer.Sound(path))
         random.shuffle(setsoundlist)
         return setsoundlist[:12]    
@@ -49,7 +49,7 @@ class Board:
     def creator_touchpad(self):
         final_dict = {}
         #sounddict = self.get_touchpad_dict()
-        for k,v in self.sounddict.items():
+        for k,v in self.sound_dict.items():
             key = int(k)
             final_dict[key] =  self.set_creator_sound(v)
         return final_dict
