@@ -25,6 +25,7 @@ class Playboard:
         
     def run(self):
         print('Capacitive Touch Hat Initialising')
+        
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
         
@@ -75,6 +76,7 @@ class Playboard:
                         print('{0} played!'.format(i))
                         if pygame.mixer.get_busy():
                             print("playing here")
+                            print("Current volume is ", self.volume)
                             #pygame.time.delay(50)
                 # Next check if transitioned from touched to not touched.
                 if not current_touched & pin_bit and last_touched & pin_bit:
