@@ -80,7 +80,8 @@ class Board:
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
-        pygame.mixer.music.unload()
+        pygame.mixer.Sound.stop()
+      
         sound_dict = {}
         if sound_dict:
             print("clearing the sounddict here")
