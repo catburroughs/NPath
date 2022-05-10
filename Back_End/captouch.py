@@ -4,43 +4,50 @@ import os
 import sys
 import time
 import random
-#import pygame
+import pygame
 
-from playboard import Board
+from playboard import Playboard
 
 
 class NPath: 
     def __init__(self):
            
         self.set_mode()
-        self.set_volume()
+        freq = 44100    # audio CD quality
+        bitsize = 16   # signed 16 bit
+        channels = 2    # 1 is mono, 2 is stereo
+        buffer = 4096   # number of samples (experiment to get right sound)
+        pygame.mixer.init(freq, bitsize, channels, buffer)
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         #pygame.init()
+        self.set_mode()
+        self.set_activation()
         self.touchpad_dict = {}
-        self.board_status = False
-        self.board_created = False
-        # NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
-        # Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
-        # Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
-        # self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
+        self.board_status = self.get_activation()
+        self.play_board = Playboard()
+        NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
+        Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
+        Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
+        self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
         
     def get_activation(self):
         return self.board_status
     
-    def set_activation(self, status):
+    def set_activation(self, status=False):
         self.board_status = status
         
     def set_touchpad_dict(self, dict):
+        print("new touchpad dict is", dict)
         self.touchpad_dict = dict
         
     def get_touchpad_dict(self):
         return self.touchpad_dict
     
-    def set_board_created(self, status):
-        self.board_created = status
+    # def set_board_created(self, status):
+    #     self.board_created = status
         
-    def get_board_created(self):
-        return self.board_created
+    # def get_board_created(self):
+    #     return self.board_created
         
     def get_mode(self):
         return self.mode
@@ -50,65 +57,68 @@ class NPath:
          self.mode = newmode
          
     def get_volume(self):
-        return self.volume     
+        return self.play_board.volume    
      
     def set_volume(self, vol=.65):
-        self.volume = vol
+        self.play_board.volume = vol
+        
+    def set_playboard_sounds(self, sound_dict):
+        self.play_board.sound_dict = sound_dict
   
         
-    # def get_soundfile(self):
-    #     return self.mode_dict[self.mode]
+    def get_soundfile(self):
+        return self.mode_dict[self.mode]
     
     
-    # def set_soundlist(self):
-    #     mode = self.get_mode()
-    #     setsoundlist = []
-    #     for soundfile in os.listdir(self.mode_dict[mode]):
-    #         if soundfile.endswith('.wav'):
-    #             path = self.mode_dict[mode] + str(soundfile)
-    #             setsoundlist.append(pygame.mixer.Sound(path))
-    #     random.shuffle(setsoundlist)
-    #     return setsoundlist[:12]    
+    def set_soundlist(self):
+        mode = self.get_mode()
+        setsoundlist = []
+        for soundfile in os.listdir(self.mode_dict[mode]):
+            if soundfile.endswith('.wav'):
+                path = self.mode_dict[mode] + str(soundfile)
+                setsoundlist.append(pygame.mixer.Sound(path))
+        random.shuffle(setsoundlist)
+        return setsoundlist[:12]    
     
-    # def default_touchpad(self):
-    #     tplist = self.set_soundlist()
-    #     default_dict = {}
-    #     for x in tplist:
-    #         default_dict[tplist.index(x)] =  x
-    #     return default_dict
+    def default_touchpad(self):
+        tplist = self.set_soundlist()
+        default_dict = {}
+        for x in tplist:
+            default_dict[tplist.index(x)] =  x
+        return default_dict
     
     
-    # def set_creator_sound(self, soundfile):
-    #     mode = self.get_mode()
-    #     if soundfile.endswith('.wav'):
-    #         path = self.mode_dict[mode] + str(soundfile)
-    #     return pygame.mixer.Sound(path)
+    def set_creator_sound(self, soundfile):
+        mode = self.get_mode()
+        if soundfile.endswith('.wav'):
+            path = self.mode_dict[mode] + str(soundfile)
+        return pygame.mixer.Sound(path)
         
-    # def creator_touchpad(self):
-    #     final_dict = {}
-    #     sounddict = self.get_touchpad_dict()
-    #     for k,v in sounddict.items():
-    #         key = int(k)
-    #         final_dict[key] =  self.set_creator_sound(v)
-    #     return final_dict      
+    def creator_touchpad(self):
+        final_dict = {}
+        sounddict = self.get_touchpad_dict()
+        for k,v in sounddict.items():
+            key = int(k)
+            final_dict[key] =  self.set_creator_sound(v)
+        return final_dict      
  
              
-    def play_board(self):
-        mode = self.get_mode()
-        if self.board_status:
-            print("has a board been created?", self.board_created)
-            print("BOARD IS ON in ", mode)
-            #print("captouch into playboard sound dict is ", self.sound_dict)
-            newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
-            if self.board_created:
-                print("quit command here")
-                self.set_board_created(False)
-                newBoard.quit_playing()
-                #newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
-                #newBoard.playBoard()
-            newBoard.playBoard()
-        else:
-            print("Error Board Not On")
+    # def play_board(self):
+    #     mode = self.get_mode()
+    #     if self.board_status:
+    #         print("has a board been created?", self.board_created)
+    #         print("BOARD IS ON in ", mode)
+    #         #print("captouch into playboard sound dict is ", self.sound_dict)
+    #         newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
+    #         if self.board_created:
+    #             print("quit command here")
+    #             self.set_board_created(False)
+    #             newBoard.quit_playing()
+    #             #newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
+    #             #newBoard.playBoard()
+    #         newBoard.playBoard()
+    #     else:
+    #         print("Error Board Not On")
         
     
 

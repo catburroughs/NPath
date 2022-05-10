@@ -65,15 +65,15 @@ def activate_board():
     activation = request.json['activation']
     if activation == "on":
         npath.set_activation(True)
-        npath.play_board()
-        # if npath.get_mode() == 3:
-        #     print("creator mode is ", npath.get_mode())
-        #     npath.play_board(npath.creator_touchpad())
-        # else:
-        #     npath.play_board(npath.default_touchpad())
+        #npath.play_board()
+        if npath.get_mode() == 3:
+            print("creator mode is ", npath.get_mode())
+            npath.set_playboard_sounds(npath.creator_touchpad())
+        else:
+            npath.set_playboard_sounds(npath.default_touchpad())
     else:
         npath.set_activation(False)
-        npath.set_board_created(True)
+        #npath.set_board_created(True)
         
     print(req)
     print(activation)
