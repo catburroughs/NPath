@@ -17,6 +17,8 @@ class Board:
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
+        pygame.mixer.pre_init(44100, 16, 2, 4096)
+        pygame.init()
         cap = MPR121.MPR121()
         cap.begin()
         cap.set_thresholds(6, 4)
@@ -50,15 +52,16 @@ class Board:
                         self.sound_dict[i].play()
                         print("This is being played --->", self.sound_dict[i])
                         print('{0} played!'.format(i))
-                        #while pygame.mixer.get_busy():
-                            #print("playing")
+                        if pygame.mixer.get_busy():
+                            print("playing here")
                             #pygame.time.delay(50)
                 # Next check if transitioned from touched to not touched.
                 if not current_touched & pin_bit and last_touched & pin_bit:
                     print('{0} released!'.format(i))
             # Update last state and wait a short period before repeating.
             last_touched = current_touched
-            time.sleep(0.3)
+            time.sleep(0.1)
+    pygame.quit()
         
         
             

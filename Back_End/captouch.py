@@ -26,9 +26,6 @@ class NPath:
     def get_activation(self):
         return self.board_status
     
-    def quit_sound(self):
-        pygame.quit()
-    
     def set_activation(self, status):
         self.board_status = status
         
