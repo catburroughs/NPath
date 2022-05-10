@@ -33,6 +33,9 @@ class Board:
             v.set_volume(self.volume)
             
         print("playboard sound dict is ", self.sound_dict)
+        testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain1.wav')
+        testsound.set_volume(1)
+        testsound.play()
 
 
 
