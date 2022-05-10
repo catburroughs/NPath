@@ -10,7 +10,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, touchpads = False):
-        pygame.mixer.music.unload()
+        
         freq = 44100    # audio CD quality
         bitsize = 16   # signed 16 bit
         channels = 2    # 1 is mono, 2 is stereo
@@ -80,6 +80,7 @@ class Board:
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
+        pygame.mixer.music.unload()
         sound_dict = {}
         if sound_dict:
             print("clearing the sounddict here")
