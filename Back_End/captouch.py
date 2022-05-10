@@ -4,7 +4,7 @@ import os
 import sys
 import time
 import random
-import pygame
+#import pygame
 
 from playboard import Board
 
@@ -14,14 +14,14 @@ class NPath:
            
         self.set_mode()
         self.set_volume()
-        pygame.mixer.pre_init(44100, 16, 2, 4096)
-        pygame.init()
+        #pygame.mixer.pre_init(44100, 16, 2, 4096)
+        #pygame.init()
         self.touchpad_dict = {}
         self.board_status = False
-        NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
-        Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
-        Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
-        self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
+        # NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
+        # Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
+        # Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
+        # self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
         
     def get_activation(self):
         return self.board_status
@@ -49,49 +49,49 @@ class NPath:
         self.volume = vol
   
         
-    def get_soundfile(self):
-        return self.mode_dict[self.mode]
+    # def get_soundfile(self):
+    #     return self.mode_dict[self.mode]
     
     
-    def set_soundlist(self):
-        mode = self.get_mode()
-        setsoundlist = []
-        for soundfile in os.listdir(self.mode_dict[mode]):
-            if soundfile.endswith('.wav'):
-                path = self.mode_dict[mode] + str(soundfile)
-                setsoundlist.append(pygame.mixer.Sound(path))
-        random.shuffle(setsoundlist)
-        return setsoundlist[:12]    
+    # def set_soundlist(self):
+    #     mode = self.get_mode()
+    #     setsoundlist = []
+    #     for soundfile in os.listdir(self.mode_dict[mode]):
+    #         if soundfile.endswith('.wav'):
+    #             path = self.mode_dict[mode] + str(soundfile)
+    #             setsoundlist.append(pygame.mixer.Sound(path))
+    #     random.shuffle(setsoundlist)
+    #     return setsoundlist[:12]    
     
-    def default_touchpad(self):
-        tplist = self.set_soundlist()
-        default_dict = {}
-        for x in tplist:
-            default_dict[tplist.index(x)] =  x
-        return default_dict
+    # def default_touchpad(self):
+    #     tplist = self.set_soundlist()
+    #     default_dict = {}
+    #     for x in tplist:
+    #         default_dict[tplist.index(x)] =  x
+    #     return default_dict
     
     
-    def set_creator_sound(self, soundfile):
-        mode = self.get_mode()
-        if soundfile.endswith('.wav'):
-            path = self.mode_dict[mode] + str(soundfile)
-        return pygame.mixer.Sound(path)
+    # def set_creator_sound(self, soundfile):
+    #     mode = self.get_mode()
+    #     if soundfile.endswith('.wav'):
+    #         path = self.mode_dict[mode] + str(soundfile)
+    #     return pygame.mixer.Sound(path)
         
-    def creator_touchpad(self):
-        final_dict = {}
-        sounddict = self.get_touchpad_dict()
-        for k,v in sounddict.items():
-            key = int(k)
-            final_dict[key] =  self.set_creator_sound(v)
-        return final_dict      
+    # def creator_touchpad(self):
+    #     final_dict = {}
+    #     sounddict = self.get_touchpad_dict()
+    #     for k,v in sounddict.items():
+    #         key = int(k)
+    #         final_dict[key] =  self.set_creator_sound(v)
+    #     return final_dict      
  
              
-    def play_board(self, sound_dict):
+    def play_board(self):
         mode = self.get_mode()
         if self.board_status:
             print("BOARD IS ON in ", mode)
-            print("captouch into playboard sound dict is ", sound_dict)
-            newBoard = Board(self.volume, sound_dict)
+            print("captouch into playboard sound dict is ", self.sound_dict)
+            newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             newBoard.playBoard()
         else:
             print("Error Board Not On")
