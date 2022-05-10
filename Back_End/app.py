@@ -72,7 +72,9 @@ def activate_board():
         # else:
         #     npath.play_board(npath.default_touchpad())
     else:
+        npath.play_board(quit = True)
         npath.set_activation(False)
+        
     print(req)
     print(activation)
     return jsonify({"message": "OK"})

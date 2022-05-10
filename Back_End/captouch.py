@@ -86,14 +86,14 @@ class NPath:
     #     return final_dict      
  
              
-    def play_board(self):
+    def play_board(self, quit = False):
         mode = self.get_mode()
         if self.board_status:
             print("BOARD IS ON in ", mode)
             #print("captouch into playboard sound dict is ", self.sound_dict)
             newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             newBoard.playBoard()
-            if not self.board_status:
+            if quit:
                 newBoard.quit_playing()
         else:
             print("Error Board Not On")
