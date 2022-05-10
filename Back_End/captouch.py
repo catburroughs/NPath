@@ -87,7 +87,7 @@ class NPath:
     #     return final_dict      
  
              
-    def play_board(self, quit = False):
+    def play_board(self):
         mode = self.get_mode()
         if self.board_status:
             print("BOARD IS ON in ", mode)
@@ -97,10 +97,9 @@ class NPath:
                 newBoard.quit_playing()
             newBoard.playBoard()
             self.board_created = True
-            if quit:
-                newBoard.quit_playing()
         else:
             print("Error Board Not On")
+        return self.board_created
     
 
 
