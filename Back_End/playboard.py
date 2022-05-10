@@ -67,7 +67,9 @@ class Board:
         return final_dict
     
     def quit_playing(self):
-        pygame.quit() 
+        print("pygame is quitting here")
+        pygame.quit()
+        sys.exit() 
         
 
     def playBoard(self):
