@@ -9,18 +9,17 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 
 class Board:
-    def __init__(self, volume, mode, sound_dict = False):
+    def __init__(self, volume, mode, touchpads = False):
         freq = 44100    # audio CD quality
         bitsize = 16   # signed 16 bit
         channels = 2    # 1 is mono, 2 is stereo
         buffer = 4096   # number of samples (experiment to get right sound)
         pygame.mixer.init(freq, bitsize, channels, buffer)
-        self.sound_dict = {}
         #pygame.mixer.init()
         #pygame.init()
         self.volume = volume
         self.mode = mode
-        self.sound_dict = sound_dict
+        self.touchpads = touchpads
         NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
         Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
         Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
@@ -62,7 +61,7 @@ class Board:
     def creator_touchpad(self):
         final_dict = {}
         #sounddict = self.get_touchpad_dict()
-        for k,v in self.sound_dict.items():
+        for k,v in self.touchpads.items():
             key = int(k)
             final_dict[key] =  self.set_creator_sound(v)
         return final_dict
@@ -71,18 +70,24 @@ class Board:
         print("pygame is quitting here")
         pygame.quit()
         sys.exit() 
+    
+    def reset(self):
+        self.sound_dict = {}
         
 
     def playBoard(self):
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
+        sound_dict = {}
+        if sound_dict:
+            sound_dict.clear()
 
         if self.mode == 3:
-            self.sound_dict = self.creator_touchpad()
+            sound_dict = self.creator_touchpad()
         else:
             print("default touchpad initialising")
-            self.sound_dict = self.default_touchpad()
+            sound_dict = self.default_touchpad()
             
         cap = MPR121.MPR121()
         cap.begin()
@@ -116,9 +121,9 @@ class Board:
                 # First check if transitioned from not touched to touched.
                 if current_touched & pin_bit and not last_touched & pin_bit:
                     print('{0} touched!'.format(i))
-                    if self.sound_dict[i]:
-                        self.sound_dict[i].play()
-                        print("This is being played --->", self.sound_dict[i])
+                    if sound_dict[i]:
+                        sound_dict[i].play()
+                        print("This is being played --->", sound_dict[i])
                         print('{0} played!'.format(i))
                         if pygame.mixer.get_busy():
                             print("playing here")
