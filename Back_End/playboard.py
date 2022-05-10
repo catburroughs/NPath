@@ -10,7 +10,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, touchpads = False):
-        #pygame.mixer.init()
+        pygame.mixer.init()
         self.volume = volume
         self.mode = mode
         self.touchpads = touchpads
