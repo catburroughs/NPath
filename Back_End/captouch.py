@@ -18,6 +18,7 @@ class NPath:
         #pygame.init()
         self.touchpad_dict = {}
         self.board_status = False
+        self.board_created = False
         # NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
         # Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
         # Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
@@ -92,7 +93,10 @@ class NPath:
             print("BOARD IS ON in ", mode)
             #print("captouch into playboard sound dict is ", self.sound_dict)
             newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
+            if self.board_created:
+                newBoard.quit_playing()
             newBoard.playBoard()
+            self.board_created = True
             if quit:
                 newBoard.quit_playing()
         else:

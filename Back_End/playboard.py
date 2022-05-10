@@ -13,7 +13,7 @@ class Board:
         freq = 44100    # audio CD quality
         bitsize = 16   # signed 16 bit
         channels = 2    # 1 is mono, 2 is stereo
-        buffer = 2048   # number of samples (experiment to get right sound)
+        buffer = 4096   # number of samples (experiment to get right sound)
         pygame.mixer.init(freq, bitsize, channels, buffer)
         #pygame.mixer.init()
         #pygame.init()
