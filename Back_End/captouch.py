@@ -90,7 +90,7 @@ class NPath:
         mode = self.get_mode()
         if self.board_status:
             print("BOARD IS ON in ", mode)
-            print("captouch into playboard sound dict is ", self.sound_dict)
+            #print("captouch into playboard sound dict is ", self.sound_dict)
             newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             newBoard.playBoard()
         else:
