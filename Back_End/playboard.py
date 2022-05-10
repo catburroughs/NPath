@@ -10,6 +10,8 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, sound_dict = False):
+        pygame.mixer.init()
+        pygame.init()
         self.volume = volume
         self.mode = mode
         self.sound_dict = sound_dict
@@ -62,8 +64,12 @@ class Board:
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
-        pygame.mixer.init()
-        pygame.init()
+
+        if self.mode == 3:
+            self.sound_dict = self.creator_touchpad()
+        else:
+            self.sound_dict = self.default_touchpad()
+            
         cap = MPR121.MPR121()
         cap.begin()
         cap.set_thresholds(6, 4)
@@ -71,19 +77,16 @@ class Board:
             print('MPR121 encountered error and shut down.')
             sys.exit(1)
             
-        if self.mode == 3:
-            self.sound_dict = self.creator_touchpad()
-        else:
-            self.sound_dict = self.default_touchpad()
+        
 
 
         for k,v in self.sound_dict.items():
             v.set_volume(self.volume)
             
         print("playboard sound dict is ", self.sound_dict)
-        testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain2.wav')
-        testsound.set_volume(1)
-        testsound.play()
+        #testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain2.wav')
+        #testsound.set_volume(1)
+        #testsound.play()
 
 
 
