@@ -15,6 +15,7 @@ class Board:
         channels = 2    # 1 is mono, 2 is stereo
         buffer = 4096   # number of samples (experiment to get right sound)
         pygame.mixer.init(freq, bitsize, channels, buffer)
+        self.sound_dict = {}
         #pygame.mixer.init()
         #pygame.init()
         self.volume = volume
