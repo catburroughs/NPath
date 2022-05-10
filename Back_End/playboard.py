@@ -81,6 +81,7 @@ class Board:
         # Creating MPR121 instance.
         sound_dict = {}
         if sound_dict:
+            print("clearing the sounddict here")
             sound_dict.clear()
 
         if self.mode == 3:
@@ -102,7 +103,7 @@ class Board:
         for k,v in sound_dict.items():
             v.set_volume(self.volume)
             
-        print("playboard sound dict is ", self.sound_dict)
+        print("playboard sound dict is ", sound_dict)
         #testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain2.wav')
         #testsound.set_volume(1)
         #testsound.play()
