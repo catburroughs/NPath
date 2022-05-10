@@ -103,6 +103,7 @@ class NPath:
             if self.board_created:
                 print("quit command here")
                 newBoard.quit_playing()
+                newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             newBoard.playBoard()
         else:
             print("Error Board Not On")
