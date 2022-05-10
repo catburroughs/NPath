@@ -10,14 +10,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, touchpads = False):
-        
-        freq = 44100    # audio CD quality
-        bitsize = 16   # signed 16 bit
-        channels = 2    # 1 is mono, 2 is stereo
-        buffer = 4096   # number of samples (experiment to get right sound)
-        pygame.mixer.init(freq, bitsize, channels, buffer)
         #pygame.mixer.init()
-        #pygame.init()
         self.volume = volume
         self.mode = mode
         self.touchpads = touchpads
@@ -81,11 +74,11 @@ class Board:
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
         pygame.mixer.stop()
-      
-        sound_dict = {}
-        if sound_dict:
-            print("clearing the sounddict here")
-            sound_dict.clear()
+        freq = 44100    # audio CD quality
+        bitsize = 16   # signed 16 bit
+        channels = 2    # 1 is mono, 2 is stereo
+        buffer = 4096   # number of samples (experiment to get right sound)
+        pygame.mixer.init(freq, bitsize, channels, buffer)
 
         if self.mode == 3:
             sound_dict = self.creator_touchpad()
