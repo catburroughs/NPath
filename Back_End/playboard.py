@@ -31,8 +31,11 @@ class Board:
         for soundfile in os.listdir(self.mode_dict[self.mode]):
             if soundfile.endswith('.wav'):
                 path = self.mode_dict[self.mode] + str(soundfile)
+                print("path to soundfile is ", path)
                 setsoundlist.append(pygame.mixer.Sound(path))
+        print("setsoundlist before random is here ",setsoundlist)
         random.shuffle(setsoundlist)
+        print("setsoundlist is here ",setsoundlist)
         return setsoundlist[:12]    
     
     def default_touchpad(self):
