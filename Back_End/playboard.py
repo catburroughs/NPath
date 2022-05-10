@@ -10,7 +10,6 @@ import Adafruit_MPR121.MPR121 as MPR121
 
 class Board:
     def __init__(self, volume, mode, touchpads = False):
-        pygame.mixer.init()
         self.volume = volume
         self.mode = mode
         self.touchpads = touchpads
@@ -62,6 +61,7 @@ class Board:
     
     def quit_playing(self):
         print("pygame is quitting here")
+        pygame.mixer.stop()
         pygame.quit()
         sys.exit(1) 
     
@@ -73,7 +73,7 @@ class Board:
         print('Capacitive Touch Hat Initialising')
         #pygame.mixer.pre_init(44100, 16, 2, 4096)
         # Creating MPR121 instance.
-        pygame.mixer.stop()
+        
         freq = 44100    # audio CD quality
         bitsize = 16   # signed 16 bit
         channels = 2    # 1 is mono, 2 is stereo
