@@ -6,7 +6,7 @@ import time
 import random
 import pygame
 
-from playboard import playBoard
+from playboard import Board
 
 
 class NPath: 
@@ -14,6 +14,8 @@ class NPath:
            
         self.set_mode()
         self.set_volume()
+        pygame.mixer.pre_init(44100, 16, 2, 4096)
+        pygame.init()
         self.touchpad_dict = {}
         self.board_status = False
         NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
@@ -24,12 +26,10 @@ class NPath:
     def get_activation(self):
         return self.board_status
     
+    def quit_sound(self):
+        pygame.quit()
+    
     def set_activation(self, status):
-        if status:
-            pygame.mixer.pre_init(44100, 16, 2, 4096)
-            pygame.init()
-        else:
-            pygame.quit()
         self.board_status = status
         
     def set_touchpad_dict(self, dict):
@@ -93,7 +93,9 @@ class NPath:
         mode = self.get_mode()
         if self.board_status:
             print("BOARD IS ON in ", mode)
-            playBoard(self.volume, sound_dict)
+            print("captouch into playboard sound dict is ", sound_dict)
+            newBoard = Board(self.volume, sound_dict)
+            newBoard.playBoard()
         else:
             print("Error Board Not On")
 
