@@ -93,8 +93,11 @@ class NPath:
             #print("captouch into playboard sound dict is ", self.sound_dict)
             newBoard = Board(self.get_volume(), self.get_mode(), self.get_touchpad_dict())
             newBoard.playBoard()
+            if not self.board_status:
+                newBoard.quit_playing()
         else:
             print("Error Board Not On")
+    
 
 
 
