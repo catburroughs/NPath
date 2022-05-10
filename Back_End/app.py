@@ -70,6 +70,7 @@ def activate_board():
             print("creator mode is ", npath.get_mode())
             npath.set_playboard_sounds(npath.creator_touchpad())
         else:
+            print("the current mode is ", npath.get_mode())
             npath.set_playboard_sounds(npath.default_touchpad())
     else:
         npath.set_activation(False)

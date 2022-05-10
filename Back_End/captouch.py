@@ -63,6 +63,7 @@ class NPath:
         self.play_board.volume = vol
         
     def set_playboard_sounds(self, sound_dict):
+        print("new sound dict is", sound_dict)
         self.play_board.sound_dict = sound_dict
   
         
