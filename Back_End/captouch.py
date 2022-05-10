@@ -99,9 +99,10 @@ class NPath:
                 newBoard.quit_playing()
             newBoard.playBoard()
             self.board_created = True
+            return self.board_created
         else:
             print("Error Board Not On")
-        return self.board_created
+        
     
 
 
