@@ -99,7 +99,7 @@ class Board:
         
 
         print("volume setting starting")
-        for k,v in self.sound_dict.items():
+        for k,v in sound_dict.items():
             v.set_volume(self.volume)
             
         print("playboard sound dict is ", self.sound_dict)
