@@ -11,13 +11,11 @@ from playboard import playBoard
 
 class NPath: 
     def __init__(self):
-        pygame.init()
-        pygame.mixer.pre_init(44100, 16, 2, 4096)   
+           
         self.set_mode()
         self.set_volume()
-        self.set_activation()
         self.touchpad_dict = {}
-        self.board_status = self.get_activation()
+        self.board_status = False
         NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
         Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
         Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
@@ -26,7 +24,12 @@ class NPath:
     def get_activation(self):
         return self.board_status
     
-    def set_activation(self, status = False):
+    def set_activation(self, status):
+        if status:
+            pygame.mixer.pre_init(44100, 16, 2, 4096)
+            pygame.init()
+        else:
+            pygame.quit()
         self.board_status = status
         
     def set_touchpad_dict(self, dict):

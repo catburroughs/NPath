@@ -24,7 +24,8 @@ def playBoard(volume, sound_dict):
 
     for k,v in sound_dict.items():
         v.set_volume(volume)
-
+        
+    print("sound dict is ", sound_dict)
 
 
 
@@ -42,6 +43,7 @@ def playBoard(volume, sound_dict):
                 print('{0} touched!'.format(i))
                 if sound_dict[i]:
                     sound_dict[i].play()
+                    print("This is being played --->", sound_dict[i])
                     print('{0} played!'.format(i))
                     #while pygame.mixer.get_busy():
                         #print("playing")
@@ -51,7 +53,7 @@ def playBoard(volume, sound_dict):
                 print('{0} released!'.format(i))
         # Update last state and wait a short period before repeating.
         last_touched = current_touched
-        time.sleep(0.1)
+        time.sleep(0.3)
         
         
             
