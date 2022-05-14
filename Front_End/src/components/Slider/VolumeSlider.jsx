@@ -7,7 +7,6 @@ function VolumeSlider({ newvolume, setNewVolume, currentvolume, setCurrentVolume
   ){
 
 
-
 return(
  <div id="volcontainer" className = "volcontainer">
 <Slider

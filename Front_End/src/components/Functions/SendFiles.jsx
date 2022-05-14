@@ -6,7 +6,6 @@ function SendFiles(newfile){
         body:JSON.stringify({soundfile:newfile})
     })
         .then((response) => response.json())
-        //.then((response) => setCurrentVolume(response))
         .catch((error) => console.log(error));
     }
     

@@ -14,29 +14,10 @@ class Playboard:
         self.sound_dict = {}
         self.volume = .65
         threading.Thread(target=lambda: self.run()).start()  
-        # self.volume = volume
-        # self.mode = mode
-        # self.touchpads = touchpads
-        # NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
-        # Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
-        # Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
-        # self.mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
-        # threading.Thread(target=lambda: self.run()).start()  
+ 
         
     def run(self):
-        print('Capacitive Touch Hat Initialising')
-        
-        #pygame.mixer.pre_init(44100, 16, 2, 4096)
-        # Creating MPR121 instance.
-        
-        
-
-        # if self.mode == 3:
-        #     sound_dict = self.creator_touchpad()
-        # else:
-        #     print("default touchpad initialising")
-        #     sound_dict = self.default_touchpad()
-            
+        print('Capacitive Touch Hat Initialising')            
         cap = MPR121.MPR121()
         cap.begin()
         cap.set_thresholds(6, 4)
@@ -50,10 +31,6 @@ class Playboard:
         for k,v in self.sound_dict.items():
             v.set_volume(self.volume)
             
-        #print("playboard sound dict is ", sound_dict)
-        #testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain2.wav')
-        #testsound.set_volume(1)
-        #testsound.play()
 
 
 

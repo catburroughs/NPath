@@ -7,8 +7,7 @@ import os
 import json
 import Adafruit_MPR121.MPR121 as MPR121
 import random
-#pygame.init()
-#pygame.mixer.pre_init(44100, 16, 2, 4096)
+
 NPath_Sounds = '/home/pi/NPath/Back_End/NPath_Sounds/'
 Creator_Sounds = '/home/pi/NPath/Creator_Sounds/'
 Nature_Sounds = '/home/pi/NPath/Back_End/Nature_Sounds/'
@@ -20,8 +19,7 @@ mode_dict = {1:NPath_Sounds,2:Nature_Sounds,3:Creator_Sounds}
 cap = MPR121.MPR121()
 cap.begin()
 cap.set_thresholds(6, 4)
-pygame.mixer.init() #turn all of pygame on.
-# Initialize communication with MPR121 using default I2C bus of device, and
+pygame.mixer.init() 
 
 if not cap.begin():
    print('Error initializing MPR121.  Check your wiring!')
@@ -86,12 +84,9 @@ randomsounddict = default_touchpad(2, mode_dict)
 
 print("random sound dictionary is ",randomsounddict)
 
-
-
-
 for k,v in randomsounddict.items():
     randomsounddict[k].set_volume(1)
-    #randomsounddict[k].play()
+
 
 print("Starting testsound now")
 testsound = pygame.mixer.Sound('/home/pi/NPath/Back_End/Nature_Sounds/rain1.wav')
@@ -116,9 +111,6 @@ while True:
             if (randomsounddict[i]):
                 randomsounddict[i].play()
                 print('{0} played!'.format(i))
-                #while pygame.mixer.get_busy():
-                #    print("playing")
-                   # pygame.time.delay(50)
         # Next check if transitioned from touched to not touched.
         if not current_touched & pin_bit and last_touched & pin_bit:
             print('{0} released!'.format(i))

@@ -6,7 +6,6 @@ function SendMode(newmode){
         body:JSON.stringify({mode:newmode})
     })
         .then((response) => response.json())
-        //.then((response) => setCurrentVolume(response))
         .catch((error) => console.log(error));
     }
     

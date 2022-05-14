@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 
 function UploadSoundButton() {
 
-
-
-
-  
-
   return (
     <>
 
@@ -21,10 +16,6 @@ function UploadSoundButton() {
           </div>
         </Link>
       
-
-
-
-
     </>
   );
 }

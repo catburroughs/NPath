@@ -21,7 +21,6 @@ function SetModePage() {
 
 
   useEffect(() => { 
-    // do stuff
   fetch("http://192.168.148.150:5000/getmode", {
     methods: "GET",
     headers: {

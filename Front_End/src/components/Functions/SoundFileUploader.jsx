@@ -14,10 +14,6 @@ class SoundFileUploader extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
   }
 
-
-
-  
-
   handleUpload(ev) {
     ev.preventDefault();
     const data = new FormData();

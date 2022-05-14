@@ -7,4 +7,4 @@ describe("Renders Set Touchpad Button and check text", () => {
         render(<SetTouchpadButton/>, {wrapper: BrowserRouter})
         expect(screen.getByLabelText("confirmMode").textContent).toEqual("Confirm Touchpad Assignments")          
     });
-})//todo: make more tests to test onclick
+})

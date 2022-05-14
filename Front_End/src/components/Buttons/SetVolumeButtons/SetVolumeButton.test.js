@@ -8,4 +8,4 @@ describe("Renders Set Volume Button and check text", () => {
         expect(screen.getByRole("button").textContent).toEqual("Set New Volume")
           
     });
-})//todo: make more tests to test onclick
+})

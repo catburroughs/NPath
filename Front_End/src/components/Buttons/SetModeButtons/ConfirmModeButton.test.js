@@ -10,5 +10,5 @@ describe("ConfirmModeButton", () => {
     })
 })
 
-//todo: add onclick check
+
 

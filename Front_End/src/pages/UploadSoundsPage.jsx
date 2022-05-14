@@ -8,9 +8,6 @@ function UploadSounds() {
   
   
 
-  
-  
-
   return (
     <>
     <BackgroundImage />

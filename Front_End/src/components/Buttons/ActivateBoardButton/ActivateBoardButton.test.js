@@ -10,4 +10,4 @@ describe("Renders Activate Board Buttons and check text", () => {
         expect(screen.getByLabelText("textLabeldeactivate").textContent).toEqual("DeActivate Board")
           
     });
-})//todo: make more tests to test onclick
+})
