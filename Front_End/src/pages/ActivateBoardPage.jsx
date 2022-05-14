@@ -9,11 +9,16 @@ import {
 import { useState, useEffect } from "react";
 import GetActivationStatus from "../components/Functions/GetActivationStatus";
 
+//receives activation status from Flask API
+//updates current board status when triggered by user clicking activate or deactivate buttons
+//automatically refreshes page to update new status
+//change IP address to reflect user's configuration or use localhost if running without hardware
+
 function ActivateBoard() {
   let location = useLocation();
   const [currentboardstatus, setCurrentBoardStatus] = useState('off')
   useEffect(() => { 
-    fetch("http://192.168.148.150:5000/getactivation", {
+    fetch("http://localhost:5000/getactivation", {
     methods: "GET",
     headers: {
       "Access-Control-Allow-Origin": "*",

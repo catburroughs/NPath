@@ -1,7 +1,7 @@
 import "./SetModeButtons.css";
 import { Link } from 'react-router-dom';
 
-
+//creates all mode components on Mode Page with hover text
 
 function SetModeButtons() {
 

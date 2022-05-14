@@ -1,6 +1,7 @@
 import "./SetVolumeButton.css";
 
-
+//creates Set Volume button on Volume page with onclick functionality
+//onclick new volume is sent to Back End via fetch command
 
 function SetVolumeButtons({ onClick }) {
 

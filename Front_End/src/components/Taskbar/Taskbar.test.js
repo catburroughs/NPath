@@ -2,6 +2,8 @@ import Taskbar from "./Taskbar";
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+//test to confirm that taskbar links render with correct text and links
+
 describe("Taskbar", () => {
     test('taskbar text renders and link renders',() => {
         render(<Taskbar/>, {wrapper: BrowserRouter})

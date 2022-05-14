@@ -2,6 +2,8 @@ import SetModeButtons from "./SetModeButtons";
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+//tests all mode components render with correct text and Upload Sounds button renders with link
+
 describe("SetModeButtons", () => {
     test('button renders and link renders',() => {
         render(<SetModeButtons/>, {wrapper: BrowserRouter})

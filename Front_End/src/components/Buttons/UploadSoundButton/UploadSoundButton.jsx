@@ -1,7 +1,7 @@
 import "./UploadSoundButton.css";
 import { Link } from 'react-router-dom';
 
-
+//creates button to take users to Assign Touchpads page from the Upload Sounds page
 
 function UploadSoundButton() {
 

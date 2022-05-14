@@ -1,7 +1,7 @@
 import "./ActivateBoardButton.css";
 
 
-
+//creates activate and deactivate board buttons on Activation Page
 
 function ActivateBoardButton({ onClick1, onClick2 }) {
 

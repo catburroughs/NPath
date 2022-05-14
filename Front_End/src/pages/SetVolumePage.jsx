@@ -12,6 +12,10 @@ import VolumeSlider from "../components/Slider/VolumeSlider";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import ShowVolume from "../components/Functions/ShowVolume";
 
+//receives current volume from Flask API
+//onclick of confirm new volume sends the new volume level to Flask API
+//displays a success banner on confirmation
+//change IP address to reflect user's configuration or use localhost if running without hardware
 
 function SetVolumePage() {
   let location = useLocation();
@@ -20,7 +24,7 @@ function SetVolumePage() {
   const [alert, setAlert] = useState(false);
 
   useEffect(() => { 
-  fetch("http://192.168.148.150:5000/getvolume", {
+  fetch("http://localhost:5000/getvolume", {
     methods: "GET",
     headers: {
       "Access-Control-Allow-Origin": "*",

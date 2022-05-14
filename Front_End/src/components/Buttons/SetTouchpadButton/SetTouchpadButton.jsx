@@ -1,6 +1,7 @@
 import "./SetTouchpadButton.css";
 
-
+//creates Set Touchpad Button with onclick funtionality that will send the user's touchpad assignment
+//to the Back End via the Flask API
 
 function SetTouchpadButton({ onClick }) {
 

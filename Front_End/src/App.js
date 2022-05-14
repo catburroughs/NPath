@@ -9,6 +9,10 @@ import SetModePage from './pages/SetModePage';
 import SetVolumePage from './pages/SetVolumePage';
 import AboutNpathPage from './pages/AboutNPathPage';
 
+//main runnable Front End program, run in terminal by navigating into Front End folder 
+// and entering 'npm run' in the terminal 
+//test with 'npm test'
+//unless altered website will run on localhost port 3000
 
 const App = () => {
 

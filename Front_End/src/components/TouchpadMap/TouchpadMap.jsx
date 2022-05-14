@@ -1,6 +1,8 @@
 import "./TouchpadMap.css";
 import labmap from "./numberedtouchpads.jpg";
 
+//displays touchpad map on Touchpad Assignment page
+
 function TouchpadMap() {
     return(
 <>

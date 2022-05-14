@@ -1,6 +1,7 @@
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import AboutNpathButton from "../components/Buttons/AboutNpathButton/AboutNpathButton";
 
+
+//About NPath page gives basic instructions on using the software and hardware
 
 function AboutNPath() {
 

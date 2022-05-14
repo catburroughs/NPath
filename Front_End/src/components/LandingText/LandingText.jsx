@@ -1,5 +1,7 @@
 import "./LandingText.css";
 
+//creates Landing Page text
+
 function LandingText() {
 
     return (

@@ -2,6 +2,8 @@ import "./Taskbar.css";
 import TaskbarLink from '../TaskbarLink/TaskbarLink';
 import {Link} from 'react-router-dom';
 
+//creates Taskbar links to main pages
+
 function Taskbar() {
   
     return (

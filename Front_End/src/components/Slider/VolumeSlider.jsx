@@ -1,7 +1,7 @@
 import { Slider } from "@material-ui/core";
 import "./VolumeSlider.css";
 
-
+//MUI volume slider component shown on Volume page
 
 function VolumeSlider({ newvolume, setNewVolume, currentvolume, setCurrentVolume}
   ){

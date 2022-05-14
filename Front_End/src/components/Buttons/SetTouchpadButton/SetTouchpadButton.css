@@ -1,3 +1,4 @@
+/*css styling for go back to upload sounds button and confirm touchpad button on Assign Touchpad page*/
 
 .SetTouchpadButton {
   left: 50px;
@@ -16,8 +17,6 @@
     background-color: rgb(248, 179, 6);
     cursor: pointer;
   }
-
-
 
 .Back_to_Upload_Button{
   left: 50px;

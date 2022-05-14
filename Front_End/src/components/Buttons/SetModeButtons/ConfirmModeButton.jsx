@@ -1,6 +1,6 @@
 import "./SetModeButtons.css";
 
-
+//Creates Confirm Mode button on Mode Page with On Click functionality to send new mode choice to Back End
 
 function ConfirmModeButton({ onClick }) {
 

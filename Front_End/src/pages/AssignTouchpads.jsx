@@ -7,6 +7,9 @@ import SetTouchpadButton from "../components/Buttons/SetTouchpadButton/SetTouchp
 import Alert from '@mui/material/Alert';
 import SendTouchpads from "../components/Functions/Touchpads/SendTouchpads";
 
+//receives a list of sound file names from Flask API 
+//sends list to Assign Touchpads page to be displayed as option on MUI select boxes
+//change IP address to reflect user's configuration or use localhost if running without hardware
 
 function AssignTouchpads() {
   const [touchpads, setTouchpads] = useState([]);
@@ -15,7 +18,7 @@ function AssignTouchpads() {
   
 
   useEffect(() => {
-    fetch("http://192.168.148.150:5000/getsoundfiles", {
+    fetch("http://localhost:5000/getsoundfiles", {
       methods: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",

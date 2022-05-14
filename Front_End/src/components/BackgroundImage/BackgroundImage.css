@@ -1,3 +1,6 @@
+/* Gives css positioning and layer control for the background image*/
+
+
 #Labyrinth_Background {
     z-index: 2;
     width: 100vw;

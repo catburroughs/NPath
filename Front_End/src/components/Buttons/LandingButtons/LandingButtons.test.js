@@ -2,6 +2,8 @@ import LandingButtons from "./LandingButtons";
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+//tests ensure that all Landing Page buttons render with the correct text and the correct links
+
 describe("LandingButtons", () => {
     test('button renders and link renders',() => {
         render(<LandingButtons/>, {wrapper: BrowserRouter})

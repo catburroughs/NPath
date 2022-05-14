@@ -2,6 +2,8 @@ import ActivateBoardButton from "./ActivateBoardButton";
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
+//tests that both activate and deactivate buttons render with correct text
+
 describe("Renders Activate Board Buttons and check text", () => {
     test('button renders',() => {
         render(<ActivateBoardButton/>, {wrapper: BrowserRouter})

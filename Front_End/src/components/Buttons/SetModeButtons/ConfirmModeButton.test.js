@@ -1,6 +1,8 @@
-import ConfirmModeButton from './ConfirmModeButton'; "./ConfirmModeButton"
+import ConfirmModeButton from './ConfirmModeButton'; 
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+
+//tests confirm mode button renders with correct text and hover text
 
 describe("ConfirmModeButton", () => {
     test('button renders and link renders',() => {

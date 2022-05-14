@@ -1,6 +1,7 @@
 import "./LandingButtons.css";
 import { Link } from 'react-router-dom';
 
+//creates Landing Page button and connecting links
 
 function LandingButtons() {
   return (

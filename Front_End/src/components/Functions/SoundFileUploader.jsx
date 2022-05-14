@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Alert from '@mui/material/Alert';
 
+//function to upload multiple .wav files to the Creator Mode folder
+//change IP address to reflect user's configuration or use localhost if running without hardware
 
 class SoundFileUploader extends React.Component {
   constructor(props) {
@@ -22,12 +24,12 @@ class SoundFileUploader extends React.Component {
         data.append("file", this.uploadInput.files[i]);
       }
 
-    fetch('http://192.168.148.150:5000/upload', {
+    fetch('http://localhost:5000/upload', {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ URL: `http://192.168.148.150:5000/${body.file}`});
+        this.setState({ URL: `http://localhost:5000/${body.file}`});
       });
     })
     .then(this.setState({loading: true}))

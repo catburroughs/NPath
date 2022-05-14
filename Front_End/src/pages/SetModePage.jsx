@@ -13,6 +13,10 @@ import {
 import SetModeRadio from "../components/Buttons/SetModeButtons/SetModeRadio";
 import ConfirmModeButton from  "../components/Buttons/SetModeButtons/ConfirmModeButton";
 
+//receives current set mode from Flask API
+//onclick of confirm mode sends user's new mode selection to Flask API
+//displays a success banner on confirmation
+//change IP address to reflect user's configuration or use localhost if running without hardware
 
 function SetModePage() {
   let location = useLocation();
@@ -21,7 +25,7 @@ function SetModePage() {
 
 
   useEffect(() => { 
-  fetch("http://192.168.148.150:5000/getmode", {
+  fetch("http://localhost:5000/getmode", {
     methods: "GET",
     headers: {
       "Access-Control-Allow-Origin": "*",

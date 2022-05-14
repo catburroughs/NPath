@@ -1,6 +1,9 @@
 import "./BackgroundImage.css";
 import background from "./labyrinthbackground.jpg";
 
+//Creates background image seen in every page except the Touchpad Map page
+
+
 function BackgroundImage() {
 
     return (

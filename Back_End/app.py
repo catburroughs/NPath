@@ -8,6 +8,8 @@ import os
 from flask_wtf.csrf import CSRFProtect
 from flask_cors import CORS
 
+#app.py runs the Flask app and instantiates the NPath class object which controls program settings
+#CORS security is established and the upload folder path is set out
 
 npath = NPath()
 npath.set_volume()
@@ -19,14 +21,13 @@ SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 csrf.init_app(app)
 cors.init_app(app)
-
 path = os.getcwd()
-UPLOAD_FOLDER = os.path.join(path, '/home/pi/NPath/Creator_Sounds')
+UPLOAD_FOLDER = os.path.join(path, '/home/pi/NPath/Creator_Sounds') #change this absolute path to your system's set up
 if not os.path.isdir(UPLOAD_FOLDER):
     os.mkdir(UPLOAD_FOLDER)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
+#API app routes for communicating with the React Front End
 
 @app.route("/getvolume", methods = ['GET'], strict_slashes=False)
 @csrf.exempt
@@ -104,9 +105,8 @@ def getsoundfiles():
     return_soundlist = []
     files_from_folder = _get_files()
     for key,value in files_from_folder.items():
-        #print(value)
         return_soundlist.append(value)
-    print("files from folder are ", return_soundlist)
+    print("files from folder are ", return_soundlist) #print statement for debugging
     return jsonify(return_soundlist)
 
 
@@ -120,7 +120,7 @@ def upload_file():
         return redirect(request.url)
   
     upload_files = request.files.getlist('file')
-    print("upload files ---->", str(upload_files))
+    print("upload files ---->", str(upload_files)) #print statement for debugging
   
     if not upload_files:
         print("2: file not in upload files")
@@ -131,7 +131,7 @@ def upload_file():
         file.save(os.path.join(UPLOAD_FOLDER, filename)) 
         file_list = os.path.join(UPLOAD_FOLDER, 'files.json')
         files = _get_files()
-        files[filename] = filename
+        files[filename] = filename # creates a json list with the names of all sound files uploaded
         with open(file_list, 'w') as fh:
             json.dump(files, fh)
     return redirect(url_for('upload_file'))

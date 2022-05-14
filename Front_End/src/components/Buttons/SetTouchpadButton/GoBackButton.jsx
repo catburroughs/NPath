@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import "./SetTouchpadButton.css";
 
+//creates a button on the Assign Touchpad page allowing the user to return to the Upload Sounds page
 
 function GoBackButton() {
 

@@ -1,3 +1,5 @@
+//shows current mode on Mode Page translated from number value to text value
+
 function GetMode({mode}) {
     function ReturnMode(){
         if(mode == 1){
